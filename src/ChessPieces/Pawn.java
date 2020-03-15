@@ -57,9 +57,7 @@ public final class Pawn extends Piece {
             // Diagonala - Dreapta
             if (newColumn < 8 && newLine > 1) {
                 if (!board.isEmpty(newLine - 1, newColumn + 1)) {
-                    System.out.println("!@#!@#!@#!@#!@#");
                     if (!board.getPiece(newLine - 1, newColumn + 1).getTeam().equals(team)) {
-                        System.out.println("SUNTEM ADVERSARI BOSS");
                         moves.add(new Position(newLine - 1, newColumn + 1));
                     }
                 }
