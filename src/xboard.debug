@@ -10,62 +10,97 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") fairymax
-104 >first : xboard
+111 >first : xboard
 protover 2
-154 <first : tellics say     Fairy-Max 5.0b
-154 <first : tellics say     by H.G. Muller
-154 <first : feature myname="Fairy-Max 5.0b"
-154 >first : accepted myname
-154 <first : feature memory=1 exclude=1
-154 >first : accepted memory
-154 >first : accepted exclude
-154 <first : feature setboard=0 xedit=1 ping=1 done=0
-154 >first : accepted setboard
-154 >first : accepted xedit
-154 >first : accepted ping
-154 >first : accepted done
-154 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
-154 >first : accepted variants
-154 <first : feature option="Resign -check 0"
-154 >first : accepted option
-154 <first : feature option="Resign Threshold -spin 800 200 1200"
-154 >first : accepted option
-154 <first : feature option="Claim draw after -spin 50 0 200"
-154 >first : accepted option
-154 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
-154 >first : accepted option
-154 <first : feature option="Multi-PV Margin -spin 0 0 1000"
-154 >first : accepted option
-154 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
-154 >first : accepted option
-154 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
-154 >first : accepted option
-154 <first : feature option="Dummy Slider Example -slider 20 0 100"
-154 >first : accepted option
-154 <first : feature option="Dummy String Example -string happy birthday!"
-154 >first : accepted option
-154 <first : feature option="Dummy Path Example -path ."
-154 >first : accepted option
-154 <first : feature option="Automatic persistent-hash dialog -check 0"
-154 >first : accepted option
-154 <first : feature option="Info -button"
-154 >first : accepted option
-154 <first : feature option="Save in hash file -button"
-154 >first : accepted option
-154 <first : feature option="Clear Hash -button"
-154 >first : accepted option
-154 <first : feature done=1
-154 >first : accepted done
-156 >first : memory 68
-156 >first : new
+162 <first : tellics say     Fairy-Max 5.0b
+162 <first : tellics say     by H.G. Muller
+162 <first : feature myname="Fairy-Max 5.0b"
+162 >first : accepted myname
+162 <first : feature memory=1 exclude=1
+162 >first : accepted memory
+162 >first : accepted exclude
+162 <first : feature setboard=0 xedit=1 ping=1 done=0
+162 >first : accepted setboard
+162 >first : accepted xedit
+162 >first : accepted ping
+162 >first : accepted done
+162 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+162 >first : accepted variants
+162 <first : feature option="Resign -check 0"
+162 >first : accepted option
+162 <first : feature option="Resign Threshold -spin 800 200 1200"
+162 >first : accepted option
+162 <first : feature option="Claim draw after -spin 50 0 200"
+162 >first : accepted option
+162 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+162 >first : accepted option
+162 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+162 >first : accepted option
+162 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+162 >first : accepted option
+162 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+162 >first : accepted option
+162 <first : feature option="Dummy Slider Example -slider 20 0 100"
+162 >first : accepted option
+162 <first : feature option="Dummy String Example -string happy birthday!"
+162 >first : accepted option
+162 <first : feature option="Dummy Path Example -path ."
+162 >first : accepted option
+162 <first : feature option="Automatic persistent-hash dialog -check 0"
+162 >first : accepted option
+162 <first : feature option="Info -button"
+162 >first : accepted option
+162 <first : feature option="Save in hash file -button"
+162 >first : accepted option
+162 <first : feature option="Clear Hash -button"
+162 >first : accepted option
+162 <first : feature done=1
+162 >first : accepted done
+163 >first : memory 68
+163 >first : new
 random
-156 >first : level 40 5 0
-156 >first : post
-156 >first : hard
-156 >first : ping 1
-179 <first : pong 1
+163 >first : level 40 5 0
+163 >first : post
+163 >first : hard
+163 >first : ping 1
+186 <first : pong 1
+4696 >first : quit
+Unload first
+StartChildProcess (dir=".") java Main
+4699 >first : xboard
+protover 2
+Reset(1, 1) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+4699 >first : force
+shuffleOpenings = 0
+4700 >first : new
+random
+4700 >first : level 40 5 0
+4700 >first : post
+4700 >first : hard
+4726 <first : feature sigint=0 done=1
+4726 >first : accepted sigint
+4726 >first : accepted done
+recognized 'normal' (-1) as variant normal
+4727 >first : new
+random
+4727 >first : level 40 5 0
+4727 >first : post
+4727 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+6136 >first : time 30000
+6136 >first : otim 30000
+book hit = (NULL)
+6136 >first : a2a3
+6216 <first : move a7a6
+6902 >first : time 29992
+6902 >first : otim 29931
+book hit = (NULL)
+6902 >first : a3a4
+6977 <first : move a6a5
 GameEnds(29, xboard exit, 2)
-2617 >first : result * {xboard exit}
-2617 >first : force
-2617 >first : ping 2
-2617 >first : quit
+7898 >first : result * {xboard exit}
+7898 >first : force
+7898 >first : quit

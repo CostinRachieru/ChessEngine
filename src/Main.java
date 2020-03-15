@@ -12,6 +12,8 @@ public class Main {
 
         Board board = Board.getInstance();
         String team = new String();
+        String nowPlaying = new String();
+        boolean forceMode = false;
         while (true) {
             String command = new String();
             command = reader.readLine();
@@ -23,6 +25,29 @@ public class Main {
             if (command.equals("new")) {
                 board = Board.getInstance();
                 team = "Black";
+                forceMode = false;
+                nowPlaying = "White";
+                continue;
+            }
+
+            if (command.equals("force")) {
+                forceMode = true;
+                nowPlaying = "White";
+                continue;
+            }
+
+            if (command.equals("go")) {
+                forceMode = false;
+                team = nowPlaying;
+            }
+
+            if (command.equals("White")) {
+                team = "Black";
+                continue;
+            }
+
+            if (command.equals("Black")) {
+                team = "White";
                 continue;
             }
 
@@ -42,6 +67,14 @@ public class Main {
             boolean third = command.charAt(2) >= 'a' && command.charAt(2) <= 'h';
             boolean forth = command.charAt(3) >= '1' && command.charAt(3) <= '8';
             if (first && second && third && forth) {
+                if (forceMode == true) {
+                    if (nowPlaying.equals("Black"))
+                        nowPlaying = "White";
+                    else
+                        nowPlaying = "Black";
+                    board.moveEnemyPiece(command);
+                    continue;
+                }
                 board.moveEnemyPiece(command);
                 String output = "move ";
                 ArrayList<Piece> pawns = board.getPawns(team);
