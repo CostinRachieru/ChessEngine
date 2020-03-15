@@ -1,0 +1,71 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + fairymax ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") fairymax
+104 >first : xboard
+protover 2
+154 <first : tellics say     Fairy-Max 5.0b
+154 <first : tellics say     by H.G. Muller
+154 <first : feature myname="Fairy-Max 5.0b"
+154 >first : accepted myname
+154 <first : feature memory=1 exclude=1
+154 >first : accepted memory
+154 >first : accepted exclude
+154 <first : feature setboard=0 xedit=1 ping=1 done=0
+154 >first : accepted setboard
+154 >first : accepted xedit
+154 >first : accepted ping
+154 >first : accepted done
+154 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+154 >first : accepted variants
+154 <first : feature option="Resign -check 0"
+154 >first : accepted option
+154 <first : feature option="Resign Threshold -spin 800 200 1200"
+154 >first : accepted option
+154 <first : feature option="Claim draw after -spin 50 0 200"
+154 >first : accepted option
+154 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+154 >first : accepted option
+154 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+154 >first : accepted option
+154 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+154 >first : accepted option
+154 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+154 >first : accepted option
+154 <first : feature option="Dummy Slider Example -slider 20 0 100"
+154 >first : accepted option
+154 <first : feature option="Dummy String Example -string happy birthday!"
+154 >first : accepted option
+154 <first : feature option="Dummy Path Example -path ."
+154 >first : accepted option
+154 <first : feature option="Automatic persistent-hash dialog -check 0"
+154 >first : accepted option
+154 <first : feature option="Info -button"
+154 >first : accepted option
+154 <first : feature option="Save in hash file -button"
+154 >first : accepted option
+154 <first : feature option="Clear Hash -button"
+154 >first : accepted option
+154 <first : feature done=1
+154 >first : accepted done
+156 >first : memory 68
+156 >first : new
+random
+156 >first : level 40 5 0
+156 >first : post
+156 >first : hard
+156 >first : ping 1
+179 <first : pong 1
+GameEnds(29, xboard exit, 2)
+2617 >first : result * {xboard exit}
+2617 >first : force
+2617 >first : ping 2
+2617 >first : quit
