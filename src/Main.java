@@ -38,15 +38,17 @@ public class Main {
             String command = new String();
             command = reader.readLine();
             if (command.equals("xboard")) {
+                board = board.getInstance();
                 continue;
             }
 
             if (command.equals("new")) {
-                if (board == null) {
-                    board = Board.getInstance();
-                } else {
-                    board.init();
-                }
+//                if (board == null) {
+//                    board = Board.getInstance();
+//                } else {
+//                    board.init();
+//                }
+                board.init();
                 team = "Black";
                 forceMode = false;
                 nowPlaying = "White";

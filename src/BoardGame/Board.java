@@ -15,6 +15,17 @@ public class Board {
     private static Board instance = null;
 
     private Board() {
+        init();
+    }
+
+    public final static Board getInstance() {
+        if (instance == null) {
+            instance = new Board();
+        }
+        return instance;
+    }
+
+    public final void init() {
         whitePieces = new ArrayList<>();
         blackPieces = new ArrayList<>();
         PieceFactory pieceFactory = PieceFactory.getInstance();
@@ -58,17 +69,6 @@ public class Board {
             board[7][i] = pieceFactory.createPiece("Pawn", 7, i, "Black");
             blackPieces.add(board[7][i]);
         }
-    }
-
-    public final static Board getInstance() {
-        if (instance == null) {
-            instance = new Board();
-        }
-        return instance;
-    }
-
-    public final static void init() {
-        instance = new Board();
     }
 
     public final boolean isEmpty(final Integer line, final Integer column) {
