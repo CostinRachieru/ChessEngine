@@ -3,4 +3,6 @@ build: Main.java
 run:
 	java Main
 clean:
-	$(RM) *.class
+	rm -f *.class
+	rm -f ./ChessPieces/*.class
+	rm -f ./BoardGame/*.class

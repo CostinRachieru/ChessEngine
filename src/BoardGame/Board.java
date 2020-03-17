@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Board {
     // We do not use the line and column 0.
-    private Piece[][] board = new Piece[9][9];
+    private Piece[][] board = new Piece[10][10];
     private ArrayList<Piece> whitePieces;
     private ArrayList<Piece> blackPieces;
 
@@ -84,6 +84,23 @@ public class Board {
 
     public final ArrayList<Piece> getBlackPieces() {
         return blackPieces;
+    }
+
+    public final Piece getKing(String team) {
+        if (team.equals("Black")) {
+            for (Piece piece : blackPieces) {
+                if (piece.getType().equals("King")) {
+                    return piece;
+                }
+            }
+        } else {
+            for (Piece piece : whitePieces) {
+                if (piece.getType().equals("King")) {
+                    return piece;
+                }
+            }
+        }
+        return null;
     }
 
     public final ArrayList<Piece> getPawns(final String color) {

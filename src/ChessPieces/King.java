@@ -10,6 +10,12 @@ public final class King extends Piece {
         team = color;
         type = "King";
     }
+
+    @Override
+    public final boolean isCheckMate() {
+        return false;
+    }
+
     public ArrayList<Position> getMoves() {
         return null;
     }

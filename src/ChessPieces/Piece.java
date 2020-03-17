@@ -34,6 +34,10 @@ public abstract class Piece {
         column = newPos.getColumn();
     }
 
+    public boolean isCheckMate() {
+        return false;
+    }
+
     public boolean movedTwoPawn() {
         return false;
     }
