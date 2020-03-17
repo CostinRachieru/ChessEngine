@@ -40,11 +40,13 @@ public final class Pawn extends Piece {
         Integer newLine = line;
         Integer newColumn = column;
         if (team.equals("Black")) {
+            // First forward
             if (board.isEmpty(newLine - 1, newColumn)) {
                 newLine--;
                 if (newLine > 0) {
                     moves.add(new Position(newLine, newColumn));
                 }
+                // Two forward.
                 if (newLine > 1) {
                     if (board.isEmpty(newLine - 1, newColumn) && newLine + 1 == 7) {
                         newLine--;
@@ -54,7 +56,7 @@ public final class Pawn extends Piece {
             }
             newLine = line;
             newColumn = column;
-            // Diagonala - Dreapta
+            // Diagonally - Right
             if (newColumn < 8 && newLine > 1) {
                 if (!board.isEmpty(newLine - 1, newColumn + 1)) {
                     if (!board.getPiece(newLine - 1, newColumn + 1).getTeam().equals(team)) {
@@ -62,7 +64,7 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-            // Diagonala - Stanga
+            // Diagonally - Left
             if (newColumn > 1 && newLine > 1) {
                 if (!board.isEmpty(newLine - 1, newColumn - 1)) {
                     if (!board.getPiece(newLine - 1, newColumn - 1).getTeam().equals(team)) {
@@ -70,7 +72,7 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-            // En-passant - stanga
+            // En-passant - Left
             if (newColumn > 1 && newLine > 1) {
                 if (!board.isEmpty(newLine, newColumn - 1)) {
                     if (!board.getPiece(newLine, newColumn - 1).getTeam().equals(team)) {
@@ -80,7 +82,7 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-            // En-passant - dreapta
+            // En-passant - Right
             if (newColumn < 8 && newLine > 1) {
                 if (!board.isEmpty(newLine, newColumn + 1)) {
                     if (!board.getPiece(newLine, newColumn + 1).getTeam().equals(team)) {
@@ -90,14 +92,15 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-            //Team is White
+            // Team is White.
         } else {
-            //Prima in fata.
+            // First forward.
             if (board.isEmpty(newLine + 1, newColumn)) {
                 newLine++;
                 if (newLine < 9) {
                     moves.add(new Position(newLine, newColumn));
                 }
+                // Two forward.
                 if (newLine < 8) {
                     if (board.isEmpty(newLine + 1, newColumn) && newLine - 1 == 2) {
                         newLine++;
@@ -107,7 +110,7 @@ public final class Pawn extends Piece {
             }
             newLine = line;
             newColumn = column;
-            // Diagonala - Dreapta
+            // Diagonally - Right
             if (newColumn < 8 && newLine < 8) {
                 if (!board.isEmpty(newLine + 1, newColumn + 1)) {
                     if (!board.getPiece(newLine + 1, newColumn + 1).getTeam().equals(team)) {
@@ -115,7 +118,7 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-            // Diagonala - Stanga
+            // Diagonally - Left
             if (newColumn > 1 && newLine < 8) {
                 if (!board.isEmpty(newLine + 1, newColumn - 1)) {
                     if (!board.getPiece(newLine + 1, newColumn - 1).getTeam().equals(team)) {
@@ -123,7 +126,7 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-            // En-passant - stanga
+            // En-passant - Left
             if (newColumn > 1 && newLine < 8) {
                 if (!board.isEmpty(newLine, newColumn - 1)) {
                     if (!board.getPiece(newLine, newColumn - 1).getTeam().equals(team)) {
@@ -133,7 +136,7 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-            // En-passant - dreapta
+            // En-passant - Right
             if (newColumn < 8 && newLine < 8) {
                 if (!board.isEmpty(newLine, newColumn + 1)) {
                     if (!board.getPiece(newLine, newColumn + 1).getTeam().equals(team)) {

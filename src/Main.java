@@ -95,6 +95,7 @@ public class Main {
             }
 
             if (command.length() >= 4) {
+                // Checks if it is a move from the xboard.
                 boolean first = command.charAt(0) >= 'a' && command.charAt(0) <= 'h';
                 boolean second = command.charAt(1) >= '1' && command.charAt(1) <= '8';
                 boolean third = command.charAt(2) >= 'a' && command.charAt(2) <= 'h';
