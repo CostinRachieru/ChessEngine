@@ -41,3 +41,5 @@
 		-> after the engine receives a command with the pattern
 	letter-number-letter-number(-letter) it thinks the next move and outputs
 	"move letter-number-letter-number".
+
+		Link repository: https://github.com/CostinRachieru/ChessEngine
