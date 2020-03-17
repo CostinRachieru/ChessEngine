@@ -7,7 +7,7 @@
 
 	First stage of the project:
 		We chose to approach this project from an object oriented perspective:
-		-> The boardgame is a Singletone and has an "init()" method that 
+		-> The boardgame is a Singleton and has an "init()" method that 
 	reinitializes the board to the beginning position. This class contains
 	the following:
 			- A matrix that contains "Piece" elements where there is a piece
