@@ -67,6 +67,10 @@ public class Board {
         return instance;
     }
 
+    public final static void init() {
+        instance = new Board();
+    }
+
     public final boolean isEmpty(final Integer line, final Integer column) {
         if (board[line][column] == null) {
             return true;

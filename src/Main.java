@@ -42,7 +42,11 @@ public class Main {
             }
 
             if (command.equals("new")) {
-                board = Board.getInstance();
+                if (board == null) {
+                    board = Board.getInstance();
+                } else {
+                    board.init();
+                }
                 team = "Black";
                 forceMode = false;
                 nowPlaying = "White";
