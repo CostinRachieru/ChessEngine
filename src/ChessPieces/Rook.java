@@ -20,9 +20,8 @@ public final class Rook extends Piece {
     private ArrayList<Position> generateAllMovesByTeam(final String team, final Integer line, final Integer column,
                                                        final Board board) {
         ArrayList<Position> moves = new ArrayList<>();
-
+        // move down
         for (int i = line + 1; i <= 8; ++i) {
-            // move down
             if (board.isEmpty(i, column)) {
                 moves.add(new Position(i, column));
             } else {
@@ -32,8 +31,8 @@ public final class Rook extends Piece {
                 break;
             }
         }
+        // move up
         for (int i = line - 1; i >= 1; --i) {
-            // move up
             if (board.isEmpty(i, column)) {
                 moves.add(new Position(i, column));
             } else {
@@ -43,8 +42,8 @@ public final class Rook extends Piece {
                 break;
             }
         }
+        // move right
         for (int i = column + 1; i <= 8; ++i) {
-            // move right
             if (board.isEmpty(line, i)) {
                 moves.add(new Position(line, i));
             } else {
@@ -54,8 +53,8 @@ public final class Rook extends Piece {
                 break;
             }
         }
+        // move left
         for (int i = column - 1; i >= 1; --i) {
-            // move left
             if (board.isEmpty(line, i)) {
                 moves.add(new Position(line, i));
             } else {
