@@ -62,7 +62,7 @@ public class Main {
             if (command.equals("go")) {
                 forceMode = false;
                 team = nowPlaying;
-                writer.write(movePawn(team));
+                writer.write(gamePlayer.playTurn(team));
                 writer.flush();
                 if (nowPlaying.equals("White")) {
                     nowPlaying = "Black";
