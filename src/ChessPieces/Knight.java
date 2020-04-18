@@ -1,5 +1,7 @@
 package ChessPieces;
 
+import BoardGame.Board;
+
 import java.util.ArrayList;
 
 public final class Knight extends Piece {
@@ -12,6 +14,49 @@ public final class Knight extends Piece {
     }
 
     public ArrayList<Position> getMoves() {
-        return null;
+        Board board = Board.getInstance();
+        ArrayList<Position> moves = new ArrayList<>();
+        // move up-right
+        if (isOnBoard(line - 2, column + 1)) {
+            if (board.isEmpty(line - 2, column + 1)) {
+                moves.add(new Position(line - 2, column + 1));
+            } else {
+                if (!board.getPiece(line - 2, column + 1).getTeam().equals(team)) {
+                    moves.add(new Position(line - 2, column + 1));
+                }
+            }
+        }
+        // move right-down
+        if (isOnBoard(line + 1, column + 2)) {
+            if (board.isEmpty(line - 1, column + 2)) {
+                moves.add(new Position(line - 1, column + 2));
+            } else {
+                if (!board.getPiece(line - 1, column + 2).getTeam().equals(team)) {
+                    moves.add(new Position(line - 1, column + 2));
+                }
+            }
+        }
+        // move down-left
+        if (isOnBoard(line + 2, column - 1)) {
+            if (board.isEmpty(line + 2, column - 1)) {
+                moves.add(new Position(line + 2, column - 1));
+            } else {
+                if (!board.getPiece(line + 2, column - 1).getTeam().equals(team)) {
+                    moves.add(new Position(line + 2, column - 1));
+                }
+            }
+        }
+        // move left-up
+        if (isOnBoard(line - 1, column - 2)) {
+            if (board.isEmpty(line - 1, column - 2)) {
+                moves.add(new Position(line - 1, column - 2));
+            } else {
+                if (!board.getPiece(line - 1, column - 2).getTeam().equals(team)) {
+                    moves.add(new Position(line - 1, column - 2));
+                }
+            }
+        }
+
+        return moves;
     }
 }
