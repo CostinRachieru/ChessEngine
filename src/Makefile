@@ -6,3 +6,4 @@ clean:
 	rm -f *.class
 	rm -f ./ChessPieces/*.class
 	rm -f ./BoardGame/*.class
+	rm -f ./GameMechanics/*.class

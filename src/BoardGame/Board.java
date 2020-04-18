@@ -161,4 +161,12 @@ public class Board {
         if (piece != null) movePiece(piece, newPos);
     }
 
+    public final ArrayList<Piece> getPieces(String team) {
+        if (team.equals("White")) {
+            return getWhitePieces();
+        } else {
+            return getBlackPieces();
+        }
+    }
+
 }

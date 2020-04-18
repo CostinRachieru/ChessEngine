@@ -3,6 +3,7 @@ import ChessPieces.Bishop;
 import ChessPieces.King;
 import ChessPieces.Piece;
 import ChessPieces.Position;
+import GameMechanics.GamePlayer;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class Main {
         Board board = Board.getInstance();
         String team = new String();
         String nowPlaying = new String();
+        GamePlayer gamePlayer = new GamePlayer(board);
         boolean forceMode = false;
         while (true) {
             String command = new String();
@@ -109,7 +111,7 @@ public class Main {
                         continue;
                     }
                     board.moveEnemyPiece(command);
-                    writer.write(movePawn(team));
+                    writer.write(gamePlayer.playTurn(team));  // make next move
                     writer.flush();
                     continue;
                 }
