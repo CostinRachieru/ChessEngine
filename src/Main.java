@@ -1,4 +1,6 @@
 import BoardGame.Board;
+import ChessPieces.Bishop;
+import ChessPieces.King;
 import ChessPieces.Piece;
 import ChessPieces.Position;
 
@@ -43,11 +45,6 @@ public class Main {
             }
 
             if (command.equals("new")) {
-//                if (board == null) {
-//                    board = Board.getInstance();
-//                } else {
-//                    board.init();
-//                }
                 board.init();
                 team = "Black";
                 forceMode = false;
@@ -86,7 +83,7 @@ public class Main {
             }
 
             if (command.equals("protover 2")) {
-                String output = "feature sigint=0 done=1\n";
+                String output = "feature sigint=0 san=0 done=1\n";
                 writer.write(output);
                 writer.flush();
                 continue;
