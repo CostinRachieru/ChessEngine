@@ -34,7 +34,7 @@ public abstract class Piece {
         column = newPos.getColumn();
     }
 
-    public static boolean isOnBoard(int line, int column) {
+    public boolean isOnBoard(int line, int column) {
         return line > 0 && line < 9 && column > 0 && column < 9;
     }
 
