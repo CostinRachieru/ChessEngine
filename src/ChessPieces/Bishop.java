@@ -21,10 +21,14 @@ public final class Bishop extends Piece {
         int newColumn = column - 1;
         while (isOnBoard(newLine, newColumn)) {
             if (board.isEmpty(newLine, newColumn)) {
-                moves.add(new Position(newLine, newColumn));
+                if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                    moves.add(new Position(newLine, newColumn));
+                }
             } else {
                 if (!board.getPiece(newLine, newColumn).getTeam().equals(team)) {
-                    moves.add(new Position(newLine, newColumn));
+                    if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                        moves.add(new Position(newLine, newColumn));
+                    }
                 }
                 break;
             }
@@ -37,10 +41,14 @@ public final class Bishop extends Piece {
         newColumn = column + 1;
         while (isOnBoard(newLine, newColumn)) {
             if (board.isEmpty(newLine, newColumn)) {
-                moves.add(new Position(newLine, newColumn));
+                if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                    moves.add(new Position(newLine, newColumn));
+                }
             } else {
                 if (!board.getPiece(newLine, newColumn).getTeam().equals(team)) {
-                    moves.add(new Position(newLine, newColumn));
+                    if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                        moves.add(new Position(newLine, newColumn));
+                    }
                 }
                 break;
             }
@@ -53,10 +61,14 @@ public final class Bishop extends Piece {
         newColumn = column - 1;
         while (isOnBoard(newLine, newColumn)) {
             if (board.isEmpty(newLine, newColumn)) {
-                moves.add(new Position(newLine, newColumn));
+                if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                    moves.add(new Position(newLine, newColumn));
+                }
             } else {
                 if (!board.getPiece(newLine, newColumn).getTeam().equals(team)) {
-                    moves.add(new Position(newLine, newColumn));
+                    if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                        moves.add(new Position(newLine, newColumn));
+                    }
                 }
                 break;
             }
@@ -69,10 +81,14 @@ public final class Bishop extends Piece {
         newColumn = column + 1;
         while (isOnBoard(newLine, newColumn)) {
             if (board.isEmpty(newLine, newColumn)) {
-                moves.add(new Position(newLine, newColumn));
+                if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                    moves.add(new Position(newLine, newColumn));
+                }
             } else {
                 if (!board.getPiece(newLine, newColumn).getTeam().equals(team)) {
-                    moves.add(new Position(newLine, newColumn));
+                    if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                        moves.add(new Position(newLine, newColumn));
+                    }
                 }
                 break;
             }
