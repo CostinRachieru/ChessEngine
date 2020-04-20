@@ -15,108 +15,109 @@ public final class Queen extends Piece {
     }
     public ArrayList<Position> getMoves() {
         Board board = Board.getInstance();
-        ArrayList<Position> moves = generateBishopLikeMovesByTeam(team, line, column, board);
-        moves.addAll(generateRookLikeMovesByTeam(team, line, column, board));
-
-        return moves;
-    }
-
-    private ArrayList<Position> generateBishopLikeMovesByTeam(final String team, final Integer line, final Integer column,
-                                                              final Board board) {
         ArrayList<Position> moves = new ArrayList<>();
         // up-right
-        for (int i = line - 1, j = column + 1; i >= 1 && j <= 8; --i, ++j) {
-            if (board.isEmpty(i, j)) {
-                moves.add((new Position(i, j)));
-            } else {
-                if (!board.getPiece(i, j).getTeam().equals(team)) {
-                    moves.add(new Position(i, j));
+        for (int i = line + 1, j = column + 1; i <= 8 && j <= 8; ++i, ++j) {
+            if (isOnBoard(i, j)) {
+                if (board.isEmpty(i, j)) {
+                    moves.add((new Position(i, j)));
+                } else {
+                    if (!board.getPiece(i, j).getTeam().equals(team)) {
+                        moves.add(new Position(i, j));
+                    }
+                    break;
                 }
-                break;
             }
         }
         // up-left
-        for (int i = line - 1, j = column - 1; i >= 1 && j >= 1; --i, --j) {
-            if (board.isEmpty(i, j)) {
-                moves.add((new Position(i, j)));
-            } else {
-                if (!board.getPiece(i, j).getTeam().equals(team)) {
-                    moves.add(new Position(i, j));
+        for (int i = line + 1, j = column - 1; i <= 8 && j >= 1; ++i, --j) {
+            if (isOnBoard(i, j)) {
+                if (board.isEmpty(i, j)) {
+                    moves.add((new Position(i, j)));
+                } else {
+                    if (!board.getPiece(i, j).getTeam().equals(team)) {
+                        moves.add(new Position(i, j));
+                    }
+                    break;
                 }
-                break;
             }
         }
         // down-left
-        for (int i = line + 1, j = column - 1; i <= 8 && j >= 1; ++i, --j) {
-            if (board.isEmpty(i, j)) {
-                moves.add((new Position(i, j)));
-            } else {
-                if (!board.getPiece(i, j).getTeam().equals(team)) {
-                    moves.add(new Position(i, j));
+        for (int i = line - 1, j = column - 1; i >= 1 && j >= 1; --i, --j) {
+            if (isOnBoard(i, j)) {
+                if (board.isEmpty(i, j)) {
+                    moves.add((new Position(i, j)));
+                } else {
+                    if (!board.getPiece(i, j).getTeam().equals(team)) {
+                        moves.add(new Position(i, j));
+                    }
+                    break;
                 }
-                break;
             }
         }
-        // move-right
-        for (int i = line + 1, j = column + 1; i <= 8 && j <= 8; ++i, ++j) {
-            if (board.isEmpty(i, j)) {
-                moves.add((new Position(i, j)));
-            } else {
-                if (!board.getPiece(i, j).getTeam().equals(team)) {
-                    moves.add(new Position(i, j));
+        // down-right
+        for (int i = line - 1, j = column + 1; i >= 1 && j <= 8; --i, ++j) {
+            if (isOnBoard(i, j)) {
+                if (board.isEmpty(i, j)) {
+                    moves.add((new Position(i, j)));
+                } else {
+                    if (!board.getPiece(i, j).getTeam().equals(team)) {
+                        moves.add(new Position(i, j));
+                    }
+                    break;
                 }
-                break;
-            }
-        }
-
-        return moves;
-    }
-
-    private ArrayList<Position> generateRookLikeMovesByTeam(final String team, final Integer line, final Integer column,
-                                                       final Board board) {
-        ArrayList<Position> moves = new ArrayList<>();
-        // move down
-        for (int i = line + 1; i <= 8; ++i) {
-            if (board.isEmpty(i, column)) {
-                moves.add(new Position(i, column));
-            } else {
-                if (!board.getPiece(i, column).getTeam().equals(team)) {
-                    moves.add(new Position(i, column));
-                }
-                break;
             }
         }
         // move up
-        for (int i = line - 1; i >= 1; --i) {
-            if (board.isEmpty(i, column)) {
-                moves.add(new Position(i, column));
-            } else {
-                if (!board.getPiece(i, column).getTeam().equals(team)) {
+        for (int i = line + 1; i <= 8; ++i) {
+            if (isOnBoard(i, column)) {
+                if (board.isEmpty(i, column)) {
                     moves.add(new Position(i, column));
+                } else {
+                    if (!board.getPiece(i, column).getTeam().equals(team)) {
+                        moves.add(new Position(i, column));
+                    }
+                    break;
                 }
-                break;
+            }
+        }
+        // move down
+        for (int i = line - 1; i >= 1; --i) {
+            if (isOnBoard(i, column)) {
+                if (board.isEmpty(i, column)) {
+                    moves.add(new Position(i, column));
+                } else {
+                    if (!board.getPiece(i, column).getTeam().equals(team)) {
+                        moves.add(new Position(i, column));
+                    }
+                    break;
+                }
             }
         }
         // move right
         for (int i = column + 1; i <= 8; ++i) {
-            if (board.isEmpty(line, i)) {
-                moves.add(new Position(line, i));
-            } else {
-                if (!board.getPiece(line, i).getTeam().equals(team)) {
+            if (isOnBoard(line, i)) {
+                if (board.isEmpty(line, i)) {
                     moves.add(new Position(line, i));
+                } else {
+                    if (!board.getPiece(line, i).getTeam().equals(team)) {
+                        moves.add(new Position(line, i));
+                    }
+                    break;
                 }
-                break;
             }
         }
         // move left
         for (int i = column - 1; i >= 1; --i) {
-            if (board.isEmpty(line, i)) {
-                moves.add(new Position(line, i));
-            } else {
-                if (!board.getPiece(line, i).getTeam().equals(team)) {
+            if (isOnBoard(line, i)) {
+                if (board.isEmpty(line, i)) {
                     moves.add(new Position(line, i));
+                } else {
+                    if (!board.getPiece(line, i).getTeam().equals(team)) {
+                        moves.add(new Position(line, i));
+                    }
+                    break;
                 }
-                break;
             }
         }
 

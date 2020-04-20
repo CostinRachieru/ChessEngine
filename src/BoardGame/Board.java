@@ -1,3 +1,4 @@
+
 package BoardGame;
 
 import ChessPieces.King;
@@ -80,10 +81,7 @@ public class Board {
     }
 
     public final boolean isEmpty(final Integer line, final Integer column) {
-        if (board[line][column] == null) {
-            return true;
-        }
-        return false;
+        return board[line][column] == null;
     }
 
     public final Piece getPiece(Integer line, Integer column) {
@@ -115,6 +113,12 @@ public class Board {
         return null;
     }
 
+    /**
+     *  Method used to determine if a move leaves the king in check
+     * @param piece piece to be moved
+     * @param newPos position where piece will be moved
+     * @return true if the move is valid, false if the move puts the king in check
+     */
     public final boolean isMoveValid(final Piece piece, final Position newPos) {
         movePiece(piece, newPos);
         King king = getKing(piece.getTeam());
@@ -130,15 +134,15 @@ public class Board {
     public final ArrayList<Piece> getPawns(final String color) {
         ArrayList<Piece> pawns = new ArrayList<>();
         if (color.equals("Black")) {
-            for (int i = 0 ; i < blackPieces.size(); ++i) {
-                if (blackPieces.get(i).getType().equals("Pawn")) {
-                    pawns.add(blackPieces.get(i));
+            for (Piece blackPiece : blackPieces) {
+                if (blackPiece.getType().equals("Pawn")) {
+                    pawns.add(blackPiece);
                 }
             }
         } else {
-            for (int i = 0; i < whitePieces.size(); ++i) {
-                if (whitePieces.get(i).getType().equals("Pawn")) {
-                    pawns.add(whitePieces.get(i));
+            for (Piece whitePiece : whitePieces) {
+                if (whitePiece.getType().equals("Pawn")) {
+                    pawns.add(whitePiece);
                 }
             }
         }
@@ -146,31 +150,20 @@ public class Board {
     }
 
     // TODO: improve capture with getPiece function
-    private final void capture(Piece lostPiece) {
+    private void capture(Piece lostPiece) {
         board[lostPiece.getLine()][lostPiece.getColumn()] = null;
         if (lostPiece.getTeam().equals("White")) {
-            for (int i = 0; i < whitePieces.size(); ++i) {
-                Piece piece = whitePieces.get(i);
-                if (piece.getLine() == lostPiece.getLine() && piece.getColumn() == lostPiece.getColumn()) {
-                    whitePieces.remove(i);
-                    whiteCapturedPieces.add(piece);
-                }
-            }
+            whitePieces.remove(lostPiece);
+            whiteCapturedPieces.add(lostPiece);
         } else {
-            for (int i = 0; i < blackPieces.size(); ++i) {
-                Piece piece = blackPieces.get(i);
-                if (piece.getLine() == lostPiece.getLine() && piece.getColumn() ==
-                        lostPiece.getColumn()) {
-                    blackPieces.remove(i);
-                    blackCapturedPieces.add(piece);
-                }
-            }
+            blackPieces.remove(lostPiece);
+            blackCapturedPieces.add(lostPiece);
         }
     }
 
     /* Return 0 if it is not a castling move, a positive number if it is Kingside castling or a
     negative number if it is a Queenside castling */
-    private final int isCastling(Piece piece, Position newPos) {
+    private int isCastling(Piece piece, Position newPos) {
         // It is a king.
         if (!piece.getType().equals("King")) {
             return 0;

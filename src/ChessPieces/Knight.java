@@ -18,82 +18,114 @@ public final class Knight extends Piece {
         Board board = Board.getInstance();
         ArrayList<Position> moves = new ArrayList<>();
         // move up-right
-        if (isOnBoard(line - 2, column + 1)) {
-            if (board.isEmpty(line - 2, column + 1)) {
-                moves.add(new Position(line - 2, column + 1));
+        if (isOnBoard(line + 2, column + 1)) {
+            if (board.isEmpty(line + 2, column + 1)) {
+                if (board.isMoveValid(this, new Position(line + 2, column + 1))) {
+                    moves.add(new Position(line + 2, column + 1));
+                }
             } else {
-                if (!board.getPiece(line - 2, column + 1).getTeam().equals(team)) {
-                    moves.add(new Position(line - 2, column + 1));
+                if (!board.getPiece(line + 2, column + 1).getTeam().equals(team)) {
+                    if (board.isMoveValid(this, new Position(line + 2, column + 1))) {
+                        moves.add(new Position(line + 2, column + 1));
+                    }
                 }
             }
         }
         // move up-left
-        if (isOnBoard(line - 2, column - 1)) {
-            if (board.isEmpty(line - 2, column - 1)) {
-                moves.add(new Position(line - 2, column - 1));
+        if (isOnBoard(line + 2, column - 1)) {
+            if (board.isEmpty(line + 2, column - 1)) {
+                if (board.isMoveValid(this, new Position(line + 2, column - 1))) {
+                    moves.add(new Position(line + 2, column - 1));
+                }
             } else {
-                if (!board.getPiece(line - 2, column - 1).getTeam().equals(team)) {
-                    moves.add(new Position(line - 2, column - 1));
+                if (!board.getPiece(line + 2, column - 1).getTeam().equals(team)) {
+                    if (board.isMoveValid(this, new Position(line + 2, column - 1))) {
+                        moves.add(new Position(line + 2, column - 1));
+                    }
                 }
             }
         }
         // move right-up
-        if (isOnBoard(line - 1, column + 2)) {
-            if (board.isEmpty(line - 1, column + 2)) {
-                moves.add(new Position(line - 1, column + 2));
+        if (isOnBoard(line + 1, column + 2)) {
+            if (board.isEmpty(line + 1, column + 2)) {
+                if (board.isMoveValid(this, new Position(line + 1, column + 2))) {
+                    moves.add(new Position(line + 1, column + 2));
+                }
             } else {
-                if (!board.getPiece(line - 1, column + 2).getTeam().equals(team)) {
-                    moves.add(new Position(line - 1, column + 2));
+                if (!board.getPiece(line + 1, column + 2).getTeam().equals(team)) {
+                    if (board.isMoveValid(this, new Position(line + 1, column + 2))) {
+                        moves.add(new Position(line + 1, column + 2));
+                    }
                 }
             }
         }
         // move right-down
-        if (isOnBoard(line + 1, column + 2)) {
+        if (isOnBoard(line - 1, column + 2)) {
             if (board.isEmpty(line - 1, column + 2)) {
-                moves.add(new Position(line - 1, column + 2));
+                if (board.isMoveValid(this, new Position(line - 1, column + 2))) {
+                    moves.add(new Position(line - 1, column + 2));
+                }
             } else {
                 if (!board.getPiece(line - 1, column + 2).getTeam().equals(team)) {
-                    moves.add(new Position(line - 1, column + 2));
+                    if (board.isMoveValid(this, new Position(line - 1, column + 2))) {
+                        moves.add(new Position(line - 1, column + 2));
+                    }
                 }
             }
         }
         // move down-right
-        if (isOnBoard(line + 2, column + 1)) {
-            if (board.isEmpty(line + 2, column + 1)) {
-                moves.add(new Position(line + 2, column + 1));
+        if (isOnBoard(line - 2, column + 1)) {
+            if (board.isEmpty(line - 2, column + 1)) {
+                if (board.isMoveValid(this, new Position(line - 2, column + 1))) {
+                    moves.add(new Position(line - 2, column + 1));
+                }
             } else {
-                if (!board.getPiece(line + 2, column + 1).getTeam().equals(team)) {
-                    moves.add(new Position(line + 2, column + 1));
+                if (!board.getPiece(line - 2, column + 1).getTeam().equals(team)) {
+                    if (board.isMoveValid(this, new Position(line - 2, column + 1))) {
+                        moves.add(new Position(line - 2, column + 1));
+                    }
                 }
             }
         }
         // move down-left
-        if (isOnBoard(line + 2, column - 1)) {
-            if (board.isEmpty(line + 2, column - 1)) {
-                moves.add(new Position(line + 2, column - 1));
+        if (isOnBoard(line - 2, column - 1)) {
+            if (board.isEmpty(line - 2, column - 1)) {
+                if (board.isMoveValid(this, new Position(line - 2, column - 1))) {
+                    moves.add(new Position(line - 2, column - 1));
+                }
             } else {
-                if (!board.getPiece(line + 2, column - 1).getTeam().equals(team)) {
-                    moves.add(new Position(line + 2, column - 1));
+                if (!board.getPiece(line - 2, column - 1).getTeam().equals(team)) {
+                    if (board.isMoveValid(this, new Position(line - 2, column - 1))) {
+                        moves.add(new Position(line - 2, column - 1));
+                    }
                 }
             }
         }
         // move left-down
-        if (isOnBoard(line + 1, column - 2)) {
-            if (board.isEmpty(line + 1, column - 2)) {
-                moves.add(new Position(line + 1, column - 2));
+        if (isOnBoard(line - 1, column - 2)) {
+            if (board.isEmpty(line - 1, column - 2)) {
+                if (board.isMoveValid(this, new Position(line - 1, column - 2))) {
+                    moves.add(new Position(line - 1, column - 2));
+                }
             } else {
-                if (!board.getPiece(line + 1, column - 2).getTeam().equals(team)) {
-                    moves.add(new Position(line + 1, column -2));
+                if (!board.getPiece(line - 1, column - 2).getTeam().equals(team)) {
+                    if (board.isMoveValid(this, new Position(line - 1, column -2))) {
+                        moves.add(new Position(line - 1, column -2));
+                    }
                 }
             }
         }
         // move left-up
-        if (isOnBoard(line - 1, column - 2)) {
-            if (board.isEmpty(line - 1, column - 2)) {
-                moves.add(new Position(line - 1, column - 2));
+        if (isOnBoard(line + 1, column - 2)) {
+            if (board.isEmpty(line + 1, column - 2)) {
+                if (board.isMoveValid(this, new Position(line + 1, column - 2))) {
+                    moves.add(new Position(line + 1, column - 2));
+                }
             } else {
-                if (!board.getPiece(line - 1, column - 2).getTeam().equals(team)) {
-                    moves.add(new Position(line - 1, column - 2));
+                if (!board.getPiece(line + 1, column - 2).getTeam().equals(team)) {
+                    if (board.isMoveValid(this, new Position(line + 1, column - 2))) {
+                        moves.add(new Position(line + 1, column - 2));
+                    }
                 }
             }
         }
