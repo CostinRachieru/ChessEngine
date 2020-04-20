@@ -29,7 +29,6 @@ public final class King extends Piece {
             if (!rook.getHadMoved()) {
                 // The rook never moved.
                 boolean allSquaresEmpty = true;
-                System.out.println("line: " + line + "  column:" + column);
                 for (int i = column + 1; i < RIGHT_COLUMN; ++i) {
                     if (board.getPiece(line, i) != null) {
                         allSquaresEmpty = false;
@@ -37,7 +36,6 @@ public final class King extends Piece {
                     }
                 }
                 if (allSquaresEmpty) {
-                    System.out.println("!@#!@#!@#!@");
                     // The squares between them are empty.
                     boolean isInCheck = false;
                     for (int i = column; i < RIGHT_COLUMN; ++i) {
@@ -47,13 +45,16 @@ public final class King extends Piece {
                         }
                     }
                     if (isInCheck) {
-                        System.out.println("E in Check undeva.");
                         return false;
                     }
                 }
             }
         }
         return true;
+    }
+
+    public boolean canCastleQueenSide() {
+        return false;
     }
 
     private boolean checkPawn(final Integer line, final Integer column) {
