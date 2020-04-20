@@ -5,12 +5,14 @@ import BoardGame.Board;
 import java.util.ArrayList;
 
 public final class Rook extends Piece {
+    boolean hadMoved;
 
     public Rook(final Integer line, final Integer column, final String color) {
         this.line = line;
         this.column = column;
         team = color;
         type = "Rook";
+        hadMoved = false;
     }
     public ArrayList<Position> getMoves() {
         Board board = Board.getInstance();

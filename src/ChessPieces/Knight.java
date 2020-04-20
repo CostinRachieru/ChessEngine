@@ -11,6 +11,7 @@ public final class Knight extends Piece {
         this.column = column;
         team = color;
         type = "Knight";
+        hadMoved = false;
     }
 
     public ArrayList<Position> getMoves() {

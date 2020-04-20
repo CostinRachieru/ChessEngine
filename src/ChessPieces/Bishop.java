@@ -11,6 +11,7 @@ public final class Bishop extends Piece {
         this.column = column;
         team = color;
         type = "Bishop";
+        hadMoved = false;
     }
     public ArrayList<Position> getMoves() {
         Board board = Board.getInstance();

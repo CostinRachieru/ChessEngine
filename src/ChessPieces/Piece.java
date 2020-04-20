@@ -9,6 +9,7 @@ public abstract class Piece {
     protected Integer prevColumn;
     protected Integer line;
     protected Integer column;
+    protected boolean hadMoved;
 
     public String toStringPosition() {
         String output = new String();
@@ -32,6 +33,9 @@ public abstract class Piece {
         prevColumn = column;
         line = newPos.getLine();
         column = newPos.getColumn();
+        if (hadMoved == false) {
+            hadMoved = true;
+        }
     }
 
     public boolean isOnBoard(int line, int column) {
@@ -86,5 +90,9 @@ public abstract class Piece {
 
     public String getTeam() {
         return team;
+    }
+
+    public boolean getHadMoved() {
+        return hadMoved;
     }
 }

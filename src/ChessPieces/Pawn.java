@@ -13,6 +13,7 @@ public final class Pawn extends Piece {
         team = color;
         type = "Pawn";
         movedTwo = false;
+        hadMoved = false;
     }
 
     @Override

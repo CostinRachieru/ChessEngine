@@ -11,6 +11,7 @@ public final class Queen extends Piece {
         this.column = column;
         team = color;
         type = "Queen";
+        hadMoved = false;
     }
     public ArrayList<Position> getMoves() {
         Board board = Board.getInstance();

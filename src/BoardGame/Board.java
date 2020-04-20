@@ -39,9 +39,9 @@ public class Board {
         whitePieces.add(board[1][2]);
         board[1][3] = pieceFactory.createPiece("Bishop", 1, 3, "White");
         whitePieces.add(board[1][3]);
-        board[1][4] = pieceFactory.createPiece("King", 1, 4, "White");
+        board[1][4] = pieceFactory.createPiece("Queen", 1, 4, "White");
         whitePieces.add(board[1][4]);
-        board[1][5] = pieceFactory.createPiece("Queen", 1, 5, "White");
+        board[1][5] = pieceFactory.createPiece("King", 1, 5, "White");
         whitePieces.add(board[1][5]);
         board[1][6] = pieceFactory.createPiece("Bishop", 1, 6, "White");
         whitePieces.add(board[1][6]);
@@ -56,9 +56,9 @@ public class Board {
         blackPieces.add(board[8][2]);
         board[8][3] = pieceFactory.createPiece("Bishop", 8, 3, "Black");
         blackPieces.add(board[8][3]);
-        board[8][4] = pieceFactory.createPiece("King", 8, 4, "Black");
+        board[8][4] = pieceFactory.createPiece("Queen", 8, 4, "Black");
         blackPieces.add(board[8][4]);
-        board[8][5] = pieceFactory.createPiece("Queen", 8, 5, "Black");
+        board[8][5] = pieceFactory.createPiece("King", 8, 5, "Black");
         blackPieces.add(board[8][5]);
         board[8][6] = pieceFactory.createPiece("Bishop", 8, 6, "Black");
         blackPieces.add(board[8][6]);
