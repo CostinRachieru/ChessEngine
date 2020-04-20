@@ -22,6 +22,14 @@ public final class King extends Piece {
         Integer rookLine = line;
         Integer rookColumn = RIGHT_COLUMN;
         Board board = Board.getInstance();
+        // If there is no rook for castling.
+        if (!board.isEmpty(rookLine, rookColumn)) {
+            if (!board.getPiece(rookLine, rookColumn).getType().equals("Rook")) {
+                return false;
+            }
+        } else {
+            return false;
+        }
         if (!hadMoved) {
             // The king never moved.
             Piece rook = board.getPiece(rookLine, rookColumn);
@@ -58,6 +66,14 @@ public final class King extends Piece {
         Integer rookLine = line;
         Integer rookColumn = LEFT_COLUMN;
         Board board = Board.getInstance();
+        // If there is no rook for castling.
+        if (!board.isEmpty(rookLine, rookColumn)) {
+            if (!board.getPiece(rookLine, rookColumn).getType().equals("Rook")) {
+                return false;
+            }
+        } else {
+            return false;
+        }
         if (!hadMoved) {
             // The king never moved.
             Piece rook = board.getPiece(rookLine, rookColumn);
