@@ -108,6 +108,7 @@ public class Main {
                         else
                             nowPlaying = "Black";
                         board.moveEnemyPiece(command);
+                        board.printBoard(); // TODO: debug, remove laterx
                         continue;
                     }
                     board.moveEnemyPiece(command);
