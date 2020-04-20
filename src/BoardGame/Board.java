@@ -259,4 +259,46 @@ public class Board {
         }
     }
 
+    // print board for debugging
+    public final void printBoard() {
+        String res = "";
+        for (int i = 1; i <= 8; ++i) {
+            res +="|";
+            for (int j = 1; j <= 8; ++j) {
+                if (board[i][j] != null) {
+                    res += pieceSymbol(board[i][j]) + "|";
+                } else {
+                    res += " |";
+                }
+            }
+            res += "\n";
+        }
+        System.out.println(res);
+    }
+
+    public final char pieceSymbol(Piece piece) {
+        String pieceType = piece.getType();
+        if (piece.getTeam().equals("White")) {
+            switch (pieceType) {
+                case "King": return 'K';
+                case "Queen": return 'Q';
+                case "Rook": return 'R';
+                case "Bishop": return 'B';
+                case "Knight": return 'N';
+                case "Pawn": return 'P';
+                default : return 'X';
+            }
+        } else {
+            switch (pieceType) {
+                case "King": return 'k';
+                case "Queen": return 'q';
+                case "Rook": return 'r';
+                case "Bishop": return 'b';
+                case "Knight": return 'n';
+                case "Pawn": return 'p';
+                default : return 'X';
+            }
+        }
+    }
+
 }
