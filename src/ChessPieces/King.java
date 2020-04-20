@@ -4,11 +4,10 @@ import BoardGame.Board;
 
 import java.util.ArrayList;
 
-public final class King extends Piece {
-    private static final int BLACK_FIRST_LINE = 8;
-    private static final int RIGHT_COLUMN = 8;
-    private static final int LEFT_COLUMN = 1;
+import static Helper.Constants.LEFT_COLUMN;
+import static Helper.Constants.RIGHT_COLUMN;
 
+public final class King extends Piece {
     boolean hadMoved;
 
     public King(final Integer line, final Integer column, final String color) {

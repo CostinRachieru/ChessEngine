@@ -1,11 +1,15 @@
 package BoardGame;
 
+import ChessPieces.King;
 import ChessPieces.Piece;
 import ChessPieces.PieceFactory;
 import ChessPieces.Position;
 import Helper.Helper;
 
 import java.util.ArrayList;
+
+import static Helper.Constants.LEFT_COLUMN;
+import static Helper.Constants.RIGHT_COLUMN;
 
 public class Board {
     // We do not use the line and column 0.
@@ -94,21 +98,33 @@ public class Board {
         return blackPieces;
     }
 
-    public final Piece getKing(String team) {
+    public final King getKing(String team) {
         if (team.equals("Black")) {
             for (Piece piece : blackPieces) {
                 if (piece.getType().equals("King")) {
-                    return piece;
+                    return (King) piece;
                 }
             }
         } else {
             for (Piece piece : whitePieces) {
                 if (piece.getType().equals("King")) {
-                    return piece;
+                    return (King) piece;
                 }
             }
         }
         return null;
+    }
+
+    public final boolean isMoveValid(final Piece piece, final Position newPos) {
+        movePiece(piece, newPos);
+        King king = getKing(piece.getTeam());
+        if (king != null) {
+            if (king.isCheck(king.getLine(), king.getColumn())) {
+                return false;
+            }
+        }
+        undoMove(piece);
+        return true;
     }
 
     public final ArrayList<Piece> getPawns(final String color) {
@@ -143,7 +159,8 @@ public class Board {
         } else {
             for (int i = 0; i < blackPieces.size(); ++i) {
                 Piece piece = blackPieces.get(i);
-                if (piece.getLine() == lostPiece.getLine() && piece.getColumn() == lostPiece.getColumn()) {
+                if (piece.getLine() == lostPiece.getLine() && piece.getColumn() ==
+                        lostPiece.getColumn()) {
                     blackPieces.remove(i);
                     blackCapturedPieces.add(piece);
                 }
@@ -151,17 +168,57 @@ public class Board {
         }
     }
 
-    public final void movePiece(Piece piece, Position newPos) {
-        if (!isEmpty(newPos.getLine(), newPos.getColumn())) {
-            Piece lostPiece = getPiece(newPos.getLine(), newPos.getColumn());
-            capture(lostPiece);
-            wasCaptured.add(true);
-        } else {
-            wasCaptured.add(false);
+    /* Return 0 if it is not a castling move, a positive number if it is Kingside castling or a
+    negative number if it is a Queenside castling */
+    private final int isCastling(Piece piece, Position newPos) {
+        // It is a king.
+        if (!piece.getType().equals("King")) {
+            return 0;
         }
-        board[piece.getLine()][piece.getColumn()] = null;
-        board[newPos.getLine()][newPos.getColumn()] = piece;
-        piece.move(newPos);
+        // Moves on the same line
+        if (piece.getLine() != newPos.getLine()) {
+            return 0;
+        }
+        // Moves two squares on the same line
+        int squaresMoved = newPos.getColumn() - piece.getColumn();
+        if (Math.abs(squaresMoved) == 1) {
+            return 0;
+        }
+        return squaresMoved;
+    }
+
+    public final void movePiece(Piece piece, Position newPos) {
+        int castlingType = isCastling(piece, newPos);
+        // Assumes that the castling move is valid.
+        if (castlingType != 0) {
+            // Move the king the board.
+            board[piece.getLine()][piece.getColumn()] = null;
+            board[newPos.getLine()][newPos.getColumn()] = piece;
+            // Moves the rook on the board.
+            if (castlingType < 0) {
+                Piece rook = getPiece(piece.getLine(), LEFT_COLUMN);
+                board[piece.getLine()][LEFT_COLUMN] = null;
+                board[piece.getLine()][newPos.getColumn() + 1] = rook;
+                rook.move(new Position(piece.getLine(), newPos.getColumn() + 1));
+            } else {
+                Piece rook = getPiece(piece.getLine(), RIGHT_COLUMN);
+                board[piece.getLine()][RIGHT_COLUMN] = null;
+                board[piece.getLine()][newPos.getColumn() - 1] = rook;
+                rook.move(new Position(piece.getLine(), newPos.getColumn() - 1));
+            }
+            piece.move(newPos);
+        } else {
+            if (!isEmpty(newPos.getLine(), newPos.getColumn())) {
+                Piece lostPiece = getPiece(newPos.getLine(), newPos.getColumn());
+                capture(lostPiece);
+                wasCaptured.add(true);
+            } else {
+                wasCaptured.add(false);
+            }
+            board[piece.getLine()][piece.getColumn()] = null;
+            board[newPos.getLine()][newPos.getColumn()] = piece;
+            piece.move(newPos);
+        }
     }
 
     // Move piece back to the old position. Place back on the board any captured piece
