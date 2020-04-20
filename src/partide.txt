@@ -104,3 +104,51 @@ Rb8 9. bxc6 Ra8 10. cxb7
 Rb7 8. Qxb7 e6 9. Qxc7 Ke7 10. Qxa7 Kf6 11. Qc7 Ke7 12. Qxd8+
 {xboard exit (Clocks: 292, 312)} *
 
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.20"]
+[Round "-"]
+[White "costintudi"]
+[Black "java"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. a3
+{xboard exit (Clocks: 302, 294)} *
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.20"]
+[Round "-"]
+[White "costintudi"]
+[Black "java"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. a3
+{xboard exit (Clocks: 302, 295)} *
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.20"]
+[Round "-"]
+[White "costintudi"]
+[Black "java"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. a3 Nc6 2. a4 Rb8 3. a5 Ra8
+{xboard exit (Clocks: 302, 305)} *
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.20"]
+[Round "-"]
+[White "costintudi"]
+[Black "java"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. a3
+{xboard exit (Clocks: 302, 285)} *
+

@@ -168,6 +168,10 @@ public class Board {
         if (!piece.getType().equals("King")) {
             return 0;
         }
+        // Never moved.
+        if (piece.getHadMoved() == true) {
+            return 0;
+        }
         // Moves on the same line
         if (piece.getLine() != newPos.getLine()) {
             return 0;
