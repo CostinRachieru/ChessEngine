@@ -13,37 +13,132 @@ public final class King extends Piece {
         type = "King";
     }
 
-    private boolean checkPawn(final Integer line, final Integer column, final Board board) {
+    private boolean checkPawn(final Integer line, final Integer column) {
+        Board board = Board.getInstance();
         if (team.equals("White")) {
             // check up-right
             if (isOnBoard(line + 1, column + 1)) {
-                if (!board.getPiece(line + 1, column + 1).getTeam().equals(team)) {
-                    if (board.getPiece(line + 1, column + 1).getType().equals("Pawn")) {
-                        return true;
+                if (!board.isEmpty(line + 1, column + 1)) {
+                    if (!board.getPiece(line + 1, column + 1).getTeam().equals(team)) {
+                        if (board.getPiece(line + 1, column + 1).getType().equals("Pawn")) {
+                            return true;
+                        }
                     }
                 }
             }
             // check up-left
             if (isOnBoard(line + 1, column - 1)) {
-                if (!board.getPiece(line + 1, column - 1).getTeam().equals(team)) {
-                    if (board.getPiece(line + 1, column - 1).getType().equals("Pawn")) {
-                        return true;
+                if (!board.isEmpty(line + 1, column - 1)) {
+                    if (!board.getPiece(line + 1, column - 1).getTeam().equals(team)) {
+                        if (board.getPiece(line + 1, column - 1).getType().equals("Pawn")) {
+                            return true;
+                        }
                     }
                 }
             }
         } else {
             // check down-right
             if (isOnBoard(line - 1, column + 1)) {
-                if (!board.getPiece(line - 1, column + 1).getTeam().equals(team)) {
-                    if (board.getPiece(line - 1, column + 1).getType().equals("Pawn")) {
-                        return true;
+                if (!board.isEmpty(line - 1, column + 1)) {
+                    if (!board.getPiece(line - 1, column + 1).getTeam().equals(team)) {
+                        if (board.getPiece(line - 1, column + 1).getType().equals("Pawn")) {
+                            return true;
+                        }
                     }
                 }
             }
             // check down-left
             if (isOnBoard(line - 1, column - 1)) {
+                if (!board.isEmpty(line - 1, column - 1)) {
+                    if (!board.getPiece(line - 1, column - 1).getTeam().equals(team)) {
+                        if (board.getPiece(line - 1, column - 1).getType().equals("Pawn")) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private boolean checkKing(final Integer line, final Integer column) {
+        Board board = Board.getInstance();
+        // up-right
+        if (isOnBoard(line + 1, column + 1)) {
+            if (!board.isEmpty(line + 1, column + 1)) {
+                if (!board.getPiece(line + 1, column + 1).getTeam().equals(team)) {
+                    if (board.getPiece(line + 1, column + 1).getType().equals("King")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        // up
+        if (isOnBoard(line + 1, column)) {
+            if (!board.isEmpty(line + 1, column)) {
+                if (!board.getPiece(line + 1, column).getTeam().equals(team)) {
+                    if (board.getPiece(line + 1, column).getType().equals("King")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        // up-left
+        if (isOnBoard(line + 1, column - 1)) {
+            if (!board.isEmpty(line + 1, column - 1)) {
+                if (!board.getPiece(line + 1, column - 1).getTeam().equals(team)) {
+                    if (board.getPiece(line + 1, column - 1).getType().equals("King")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        // left
+        if (isOnBoard(line, column - 1)) {
+            if (!board.isEmpty(line, column - 1)) {
+                if (!board.getPiece(line, column - 1).getTeam().equals(team)) {
+                    if (board.getPiece(line, column - 1).getType().equals("King")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        // down-left
+        if (isOnBoard(line - 1, column - 1)) {
+            if (!board.isEmpty(line - 1, column - 1)) {
                 if (!board.getPiece(line - 1, column - 1).getTeam().equals(team)) {
-                    if (board.getPiece(line - 1, column - 1).getType().equals("Pawn")) {
+                    if (board.getPiece(line - 1, column - 1).getType().equals("King")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        // down
+        if (isOnBoard(line - 1, column)) {
+            if (!board.isEmpty(line - 1, column)) {
+                if (!board.getPiece(line - 1, column).getTeam().equals(team)) {
+                    if (board.getPiece(line - 1, column).getType().equals("King")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        // down-right
+        if (isOnBoard(line - 1, column + 1)) {
+            if (!board.isEmpty(line - 1, column + 1)) {
+                if (!board.getPiece(line - 1, column + 1).getTeam().equals(team)) {
+                    if (board.getPiece(line - 1, column + 1).getType().equals("King")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        // right
+        if (isOnBoard(line, column + 1)) {
+            if (!board.isEmpty(line, column + 1)) {
+                if (!board.getPiece(line, column + 1).getTeam().equals(team)) {
+                    if (board.getPiece(line, column + 1).getType().equals("King")) {
                         return true;
                     }
                 }
@@ -53,129 +148,77 @@ public final class King extends Piece {
         return false;
     }
 
-    private boolean checkKing(final Integer line, final Integer column, final Board board) {
-        // up-right
-        if (isOnBoard(line + 1, column + 1)) {
-            if (!board.getPiece(line + 1, column + 1).getTeam().equals(team)) {
-                if (board.getPiece(line + 1, column + 1).getType().equals("King")) {
-                    return true;
-                }
-            }
-        }
-        // up
-        if (isOnBoard(line + 1, column)) {
-            if (!board.getPiece(line + 1, column).getTeam().equals(team)) {
-                if (board.getPiece(line + 1, column).getType().equals("King")) {
-                    return true;
-                }
-            }
-        }
-        // up-left
-        if (isOnBoard(line + 1, column - 1)) {
-            if (!board.getPiece(line + 1, column - 1).getTeam().equals(team)) {
-                if (board.getPiece(line + 1, column - 1).getType().equals("King")) {
-                    return true;
-                }
-            }
-        }
-        // left
-        if (isOnBoard(line, column - 1)) {
-            if (!board.getPiece(line, column - 1).getTeam().equals(team)) {
-                if (board.getPiece(line, column - 1).getType().equals("King")) {
-                    return true;
-                }
-            }
-        }
-        // down-left
-        if (isOnBoard(line - 1, column - 1)) {
-            if (!board.getPiece(line - 1, column - 1).getTeam().equals(team)) {
-                if (board.getPiece(line - 1, column - 1).getType().equals("King")) {
-                    return true;
-                }
-            }
-        }
-        // down
-        if (isOnBoard(line - 1, column)) {
-            if (!board.getPiece(line - 1, column).getTeam().equals(team)) {
-                if (board.getPiece(line - 1, column).getType().equals("King")) {
-                    return true;
-                }
-            }
-        }
-        // down-right
-        if (isOnBoard(line - 1, column + 1)) {
-            if (!board.getPiece(line - 1, column + 1).getTeam().equals(team)) {
-                if (board.getPiece(line - 1, column + 1).getType().equals("King")) {
-                    return true;
-                }
-            }
-        }
-        // right
-        if (isOnBoard(line, column + 1)) {
-            if (!board.getPiece(line, column + 1).getTeam().equals(team)) {
-                if (board.getPiece(line, column + 1).getType().equals("King")) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    private boolean checkKnight(final Integer line, final Integer column, final Board board) {
+    private boolean checkKnight(final Integer line, final Integer column) {
+        Board board = Board.getInstance();
         if (isOnBoard(line - 2, column + 1)) {
-            if (!board.getPiece(line - 2, column + 1).getTeam().equals(team)) {
-                if (board.getPiece(line - 2, column + 1).getType().equals("Knight")) {
-                    return true;
+            if (!board.isEmpty(line - 2, column + 1)) {
+                if (!board.getPiece(line - 2, column + 1).getTeam().equals(team)) {
+                    if (board.getPiece(line - 2, column + 1).getType().equals("Knight")) {
+                        return true;
+                    }
                 }
             }
         }
         if (isOnBoard(line - 2, column - 1)) {
-            if (!board.getPiece(line - 2, column - 1).getTeam().equals(team)) {
-                if (board.getPiece(line - 2, column - 1).getType().equals("Knight")) {
-                    return true;
+            if (!board.isEmpty(line - 2, column - 1)) {
+                if (!board.getPiece(line - 2, column - 1).getTeam().equals(team)) {
+                    if (board.getPiece(line - 2, column - 1).getType().equals("Knight")) {
+                        return true;
+                    }
                 }
             }
         }
         if (isOnBoard(line + 2, column - 1)) {
-            if (!board.getPiece(line + 2, column - 1).getTeam().equals(team)) {
-                if (board.getPiece(line + 2, column - 1).getType().equals("Knight")) {
-                    return true;
+            if (!board.isEmpty(line + 2, column - 1)) {
+                if (!board.getPiece(line + 2, column - 1).getTeam().equals(team)) {
+                    if (board.getPiece(line + 2, column - 1).getType().equals("Knight")) {
+                        return true;
+                    }
                 }
             }
         }
         if (isOnBoard(line + 2, column + 1)) {
-            if (!board.getPiece(line + 2, column + 1).getTeam().equals(team)) {
-                if (board.getPiece(line + 2, column + 1).getType().equals("Knight")) {
-                    return true;
+            if (!board.isEmpty(line + 2, column + 1)) {
+                if (!board.getPiece(line + 2, column + 1).getTeam().equals(team)) {
+                    if (board.getPiece(line + 2, column + 1).getType().equals("Knight")) {
+                        return true;
+                    }
                 }
             }
         }
         if (isOnBoard(line - 1, column + 2)) {
-            if (!board.getPiece(line - 1, column + 2).getTeam().equals(team)) {
-                if (board.getPiece(line - 1, column + 2).getType().equals("Knight")) {
-                    return true;
+            if (!board.isEmpty(line - 1, column + 2)) {
+                if (!board.getPiece(line - 1, column + 2).getTeam().equals(team)) {
+                    if (board.getPiece(line - 1, column + 2).getType().equals("Knight")) {
+                        return true;
+                    }
                 }
             }
         }
         if (isOnBoard(line - 1, column - 2)) {
-            if (!board.getPiece(line - 1, column - 2).getTeam().equals(team)) {
-                if (board.getPiece(line - 1, column - 2).getType().equals("Knight")) {
-                    return true;
+            if (!board.isEmpty(line - 1, column - 2)) {
+                if (!board.getPiece(line - 1, column - 2).getTeam().equals(team)) {
+                    if (board.getPiece(line - 1, column - 2).getType().equals("Knight")) {
+                        return true;
+                    }
                 }
             }
         }
         if (isOnBoard(line + 1, column - 2)) {
-            if (!board.getPiece(line + 1, column - 2).getTeam().equals(team)) {
-                if (board.getPiece(line + 1, column - 2).getType().equals("Knight")) {
-                    return true;
+            if (!board.isEmpty(line + 1, column - 2)) {
+                if (!board.getPiece(line + 1, column - 2).getTeam().equals(team)) {
+                    if (board.getPiece(line + 1, column - 2).getType().equals("Knight")) {
+                        return true;
+                    }
                 }
             }
         }
         if (isOnBoard(line + 1, column + 2)) {
-            if (!board.getPiece(line + 1, column + 2).getTeam().equals(team)) {
-                if (board.getPiece(line + 1, column + 2).getType().equals("Knight")) {
-                    return true;
+            if (!board.isEmpty(line + 1, column + 2)) {
+                if (!board.getPiece(line + 1, column + 2).getTeam().equals(team)) {
+                    if (board.getPiece(line + 1, column + 2).getType().equals("Knight")) {
+                        return true;
+                    }
                 }
             }
         }
@@ -183,7 +226,8 @@ public final class King extends Piece {
         return false;
     }
 
-    private boolean checkBishopOrQueen(final Integer line, final Integer column, final Board board) {
+    private boolean checkBishopOrQueen(final Integer line, final Integer column) {
+        Board board = Board.getInstance();
         if (!board.getPiece(line, column).getTeam().equals(team)) {
             return board.getPiece(line, column).getType().equals("Bishop")
                     || board.getPiece(line, column).getType().equals("Queen");
@@ -192,7 +236,8 @@ public final class King extends Piece {
         return false;
     }
 
-    private boolean checkRookOrQueen(final Integer line, final Integer column, final Board board) {
+    private boolean checkRookOrQueen(final Integer line, final Integer column) {
+        Board board = Board.getInstance();
         if (!board.getPiece(line, column).getTeam().equals(team)) {
             return board.getPiece(line, column).getType().equals("Rook")
                     || board.getPiece(line, column).getType().equals("Queen");
@@ -206,7 +251,7 @@ public final class King extends Piece {
         // check vertically-down
         for (int i = line - 1; i >= 1; --i) {
             if (!board.isEmpty(i, column)) {
-                if (checkRookOrQueen(i, column, board)) {
+                if (checkRookOrQueen(i, column)) {
                     return true;
                 }
                 break;
@@ -215,7 +260,7 @@ public final class King extends Piece {
         // check vertically-up
         for (int i = line + 1; i<= 8; ++i) {
             if (!board.isEmpty(i, column)) {
-                if (checkRookOrQueen(i, column, board)) {
+                if (checkRookOrQueen(i, column)) {
                     return true;
                 }
                 break;
@@ -224,7 +269,7 @@ public final class King extends Piece {
         // check horizontally-right
         for (int i = column + 1; i <= 8; ++i) {
             if (!board.isEmpty(line, i)) {
-                if (checkRookOrQueen(line, i, board)) {
+                if (checkRookOrQueen(line, i)) {
                     return true;
                 }
                 break;
@@ -233,7 +278,7 @@ public final class King extends Piece {
         // check horizontally-left
         for (int i = column - 1; i >= 1; --i) {
             if (!board.isEmpty(line, i)) {
-                if (checkRookOrQueen(line, i, board)) {
+                if (checkRookOrQueen(line, i)) {
                     return true;
                 }
                 break;
@@ -242,7 +287,7 @@ public final class King extends Piece {
         // check diagonal up-right
         for (int i = line + 1, j = column + 1; i <= 8 && j <= 8; ++i, ++j) {
             if (!board.isEmpty(i, j)) {
-                if (checkBishopOrQueen(i, j, board)) {
+                if (checkBishopOrQueen(i, j)) {
                     return true;
                 }
                 break;
@@ -251,7 +296,7 @@ public final class King extends Piece {
         // check diagonal up-left
         for (int i = line + 1, j = column - 1; i <= 8 && j >= 1; ++i, --j) {
             if (!board.isEmpty(i, j)) {
-                if (checkBishopOrQueen(i, j, board)) {
+                if (checkBishopOrQueen(i, j)) {
                     return true;
                 }
                 break;
@@ -260,7 +305,7 @@ public final class King extends Piece {
         // check diagonal down-left
         for (int i = line - 1, j = column - 1; i >= 1 && j >= 1; --i, --j) {
             if (!board.isEmpty(i, j)) {
-                if (checkBishopOrQueen(i, j, board)) {
+                if (checkBishopOrQueen(i, j)) {
                     return true;
                 }
                 break;
@@ -269,22 +314,22 @@ public final class King extends Piece {
         // check diagonal down-right
         for (int i = line - 1, j = column + 1; i >= 1 && j <= 8; --i, ++j) {
             if (!board.isEmpty(i, j)) {
-                if (checkBishopOrQueen(i, j, board)) {
+                if (checkBishopOrQueen(i, j)) {
                     return true;
                 }
                 break;
             }
         }
         // check all threatening knight positions
-        if (checkKnight(line, column, board)) {
+        if (checkKnight(line, column)) {
             return true;
         }
         // check all threatening king positions
-        if (checkKing(line, column, board)) {
+        if (checkKing(line, column)) {
             return true;
         }
         // check all threatening pawn positions
-        if (checkPawn(line, column, board)) {
+        if (checkPawn(line, column)) {
             return true;
         }
 
