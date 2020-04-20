@@ -1,8 +1,7 @@
 package GameMechanics;
 
 import BoardGame.Board;
-import ChessPieces.Piece;
-import ChessPieces.Position;
+import ChessPieces.*;
 import Helper.Helper;
 
 import java.util.ArrayList;
@@ -11,11 +10,22 @@ public class GamePlayer {
     private static final int MAX_DEPTH = 5;
     private static final int INITIAL_DEPTH = 1;
     private static final boolean INITIAL_IS_MAXIMIZING = false;
+    private static final int KING_POINTS = 900;
+    private static final int QUEEN_POINTS = 90;
+    private static final int ROOK_POINTS = 50;
+    private static final int KNIGHT_POINTS = 30;
+    private static final int BISHOP_POINTS = 30;
+    private static final int PAWN_POINTS = 10;
 
     private Board board;
+    private String team;
 
     public GamePlayer(Board board) {
         this.board = board;
+    }
+
+    public void setTeam(String team) {
+        this.team = team;
     }
 
     // function returns a string representing the next move as a XBoard command
@@ -26,6 +36,7 @@ public class GamePlayer {
         Position bestPosition = null;
         ArrayList<Piece> pieces = board.getPieces(team);
 
+        setTeam(team);
         // check every possible move and return the best of them
         for (Piece piece : pieces) {
             ArrayList<Position> possibleMoves = piece.getMoves();
@@ -48,6 +59,7 @@ public class GamePlayer {
             nextMove = "exit\n";
         }
 
+        board.printBoard();  // TODO: debug | remove later
         return nextMove;
     }
 
@@ -55,7 +67,7 @@ public class GamePlayer {
         int bestScore, score;
         ArrayList<Piece> pieces = board.getPieces(currentTeam);
         if (depth == MAX_DEPTH || board.getKing(currentTeam).isCheckMate()) {
-            return evaluate();
+            return evaluate(this.team);
         }
 
         if (isMaximizing) {
@@ -85,8 +97,44 @@ public class GamePlayer {
         return bestScore;
     }
 
-    // TODO: evaluate function
-    public final int evaluate() {
-        return 0;
+    public final int evaluate(String team) {
+        if (team.equals("White")) {
+            return evaluateForWhite() - evaluateForBlack();
+        } else {
+            return evaluateForBlack() - evaluateForWhite();
+        }
+    }
+
+    public final int evaluateForWhite() {
+        int sum = 0;
+
+        for (Piece piece : board.getWhitePieces()) {
+            sum += evaluatePiece(piece);
+        }
+
+        return sum;
+    }
+
+    public final int evaluateForBlack() {
+        int sum = 0;
+
+        for (Piece piece : board.getBlackPieces()) {
+            sum += evaluatePiece(piece);
+        }
+
+        return sum;
+    }
+
+    public final int evaluatePiece(Piece piece) {
+        String pieceType = piece.getType();
+        switch (pieceType) {
+            case "King": return KING_POINTS;
+            case "Queen": return QUEEN_POINTS;
+            case "Rook": return ROOK_POINTS;
+            case "Bishop": return BISHOP_POINTS;
+            case "Knight": return KNIGHT_POINTS;
+            case "Pawn": return PAWN_POINTS;
+            default : return 0;
+        }
     }
 }
