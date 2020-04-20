@@ -3,6 +3,7 @@ package GameMechanics;
 import BoardGame.Board;
 import ChessPieces.Piece;
 import ChessPieces.Position;
+import Helper.Helper;
 
 import java.util.ArrayList;
 
@@ -30,16 +31,14 @@ public class GamePlayer {
             ArrayList<Position> possibleMoves = piece.getMoves();
             for (Position nextPosition : possibleMoves) {
                 board.movePiece(piece, nextPosition);
-                score = minimax(INITIAL_DEPTH, INITIAL_IS_MAXIMIZING, enemyTeam(team));
+                score = minimax(INITIAL_DEPTH, INITIAL_IS_MAXIMIZING, Helper.enemyTeam(team));
                 if (score > maxScore) {
                     score = maxScore;
                     bestPiece = piece;
                     bestPosition = nextPosition;
                 }
                 // return board to initial state
-                // TODO: return captured piece if needed
-                Position oldPos = new Position(piece.getPrevLine(), piece.getPrevColumn());
-                board.movePiece(piece, oldPos);
+                board.undoMove(piece);
             }
         }
 
@@ -65,9 +64,9 @@ public class GamePlayer {
                 ArrayList<Position> possibleMoves = piece.getMoves();
                 for (Position nextPos : possibleMoves) {
                     board.movePiece(piece, nextPos);
-                    score = minimax(depth + 1, !isMaximizing, enemyTeam(currentTeam));
+                    score = minimax(depth + 1, !isMaximizing, Helper.enemyTeam(currentTeam));
                     bestScore = Math.max(bestScore, score);
-                    // TODO: return to old state
+                    board.undoMove(piece);
                 }
             }
         } else {
@@ -76,22 +75,14 @@ public class GamePlayer {
                 ArrayList<Position> possibleMoves = piece.getMoves();
                 for (Position nextPos : possibleMoves) {
                     board.movePiece(piece, nextPos);
-                    score = minimax(depth + 1, !isMaximizing, enemyTeam(currentTeam));
+                    score = minimax(depth + 1, !isMaximizing, Helper.enemyTeam(currentTeam));
                     bestScore = Math.min(bestScore, score);
-                    // TODO: return to old state
+                    board.undoMove(piece);
                 }
             }
         }
 
         return bestScore;
-    }
-
-    public String enemyTeam(String team) {
-        if (team.equals("White")) {
-            return "Black";
-        } else {
-            return "White";
-        }
     }
 
     // TODO: evaluate function

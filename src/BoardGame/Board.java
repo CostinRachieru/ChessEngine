@@ -3,6 +3,7 @@ package BoardGame;
 import ChessPieces.Piece;
 import ChessPieces.PieceFactory;
 import ChessPieces.Position;
+import Helper.Helper;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,9 @@ public class Board {
     private Piece[][] board = new Piece[10][10];
     private ArrayList<Piece> whitePieces;
     private ArrayList<Piece> blackPieces;
+    private ArrayList<Boolean> wasCaptured = new ArrayList<Boolean>();
+    private ArrayList<Piece> whiteCapturedPieces = new ArrayList<Piece>();
+    private ArrayList<Piece> blackCapturedPieces = new ArrayList<Piece>();
 
     private static Board instance = null;
 
@@ -125,6 +129,7 @@ public class Board {
         return pawns;
     }
 
+    // TODO: improve capture with getPiece function
     private final void capture(Piece lostPiece) {
         board[lostPiece.getLine()][lostPiece.getColumn()] = null;
         if (lostPiece.getTeam().equals("White")) {
@@ -132,6 +137,7 @@ public class Board {
                 Piece piece = whitePieces.get(i);
                 if (piece.getLine() == lostPiece.getLine() && piece.getColumn() == lostPiece.getColumn()) {
                     whitePieces.remove(i);
+                    whiteCapturedPieces.add(piece);
                 }
             }
         } else {
@@ -139,6 +145,7 @@ public class Board {
                 Piece piece = blackPieces.get(i);
                 if (piece.getLine() == lostPiece.getLine() && piece.getColumn() == lostPiece.getColumn()) {
                     blackPieces.remove(i);
+                    blackCapturedPieces.add(piece);
                 }
             }
         }
@@ -148,10 +155,36 @@ public class Board {
         if (!isEmpty(newPos.getLine(), newPos.getColumn())) {
             Piece lostPiece = getPiece(newPos.getLine(), newPos.getColumn());
             capture(lostPiece);
+            wasCaptured.add(true);
+        } else {
+            wasCaptured.add(false);
         }
         board[piece.getLine()][piece.getColumn()] = null;
         board[newPos.getLine()][newPos.getColumn()] = piece;
         piece.move(newPos);
+    }
+
+    // Move piece back to the old position. Place back on the board any captured piece
+    public final void undoMove(Piece piece) {
+        Position oldPos = new Position(piece.getPrevLine(), piece.getPrevColumn());
+        Piece enemyPiece;
+
+        movePiece(piece, oldPos);
+        boolean restoreCapturedPiece = wasCaptured.get(wasCaptured.size() - 1);
+        wasCaptured.remove(wasCaptured.size() - 1);
+        if (restoreCapturedPiece) {
+            String enemyTeam = Helper.enemyTeam(piece.getTeam());
+            if (enemyTeam.equals("White")) {
+                enemyPiece = whiteCapturedPieces.get(whiteCapturedPieces.size() - 1);
+                whiteCapturedPieces.remove(whiteCapturedPieces.size() - 1);
+                whitePieces.add(enemyPiece);
+            } else {
+                enemyPiece = blackCapturedPieces.get(blackCapturedPieces.size() - 1);
+                blackCapturedPieces.remove(blackCapturedPieces.size() - 1);
+                blackPieces.add(enemyPiece);
+            }
+            board[enemyPiece.getLine()][enemyPiece.getColumn()] = enemyPiece;
+        }
     }
 
     public final void moveEnemyPiece(String move) {
