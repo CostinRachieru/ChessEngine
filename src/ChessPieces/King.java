@@ -4,11 +4,10 @@ import BoardGame.Board;
 
 import java.util.ArrayList;
 
-public final class King extends Piece {
-    private static final int BLACK_FIRST_LINE = 8;
-    private static final int RIGHT_COLUMN = 8;
-    private static final int LEFT_COLUMN = 1;
+import static Helper.Constants.LEFT_COLUMN;
+import static Helper.Constants.RIGHT_COLUMN;
 
+public final class King extends Piece {
     boolean hadMoved;
 
     public King(final Integer line, final Integer column, final String color) {
@@ -30,7 +29,9 @@ public final class King extends Piece {
                 // The rook never moved.
                 boolean allSquaresEmpty = true;
                 for (int i = column + 1; i < RIGHT_COLUMN; ++i) {
-                    if (board.getPiece(line, i) != null) {
+                    System.out.println("verifica: " + i);
+                    if (!board.isEmpty(line, i)) {
+                        System.out.println("!@#!@#!@#");
                         allSquaresEmpty = false;
                         break;
                     }
@@ -44,16 +45,46 @@ public final class King extends Piece {
                             break;
                         }
                     }
-                    if (isInCheck) {
-                        return false;
+                    if (!isInCheck) {
+                        return true;
                     }
                 }
             }
         }
-        return true;
+        return false;
     }
 
     public boolean canCastleQueenSide() {
+        Integer rookLine = line;
+        Integer rookColumn = LEFT_COLUMN;
+        Board board = Board.getInstance();
+        if (!hadMoved) {
+            // The king never moved.
+            Piece rook = board.getPiece(rookLine, rookColumn);
+            if (!rook.getHadMoved()) {
+                // The rook never moved.
+                boolean allSquaresEmpty = true;
+                for (int i = column - 1; i > LEFT_COLUMN; --i) {
+                    if (!board.isEmpty(line, i)) {
+                        allSquaresEmpty = false;
+                        break;
+                    }
+                }
+                if (allSquaresEmpty) {
+                    // The squares between them are empty.
+                    boolean isInCheck = false;
+                    for (int i = column; i > LEFT_COLUMN; --i) {
+                        if (isCheck(line, i)) {
+                            isInCheck = true;
+                            break;
+                        }
+                    }
+                    if (!isInCheck) {
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
 
@@ -400,6 +431,10 @@ public final class King extends Piece {
         Board board = Board.getInstance();
         ArrayList<Position> moves = new ArrayList<>();
 
+        //Castling QueenSide
+        if (canCastleQueenSide()) {
+            moves.add(new Position(line, column - 2));
+        }
         // Castling Kingside
         if (canCastleKingSide()) {
             moves.add(new Position(line, column + 2));
