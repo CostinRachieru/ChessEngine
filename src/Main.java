@@ -62,8 +62,8 @@ public class Main {
             if (command.equals("go")) {
                 forceMode = false;
                 team = nowPlaying;
-//                writer.write(gamePlayer.playTurn(team));
-//                writer.flush();
+                writer.write(gamePlayer.playTurn(team));
+                writer.flush();
                 if (nowPlaying.equals("White")) {
                     nowPlaying = "Black";
                 } else {
@@ -111,14 +111,9 @@ public class Main {
                         continue;
                     }
                     board.moveEnemyPiece(command);
-                    Piece King = board.getKing("Black");
-                    ArrayList<Position> mov = King.getMoves();
-                    for (Position pos : mov) {
-                        System.out.println(pos);
-                    }
 //                    board.printBoard();  // TODO: debug | remove later
-//                    writer.write(gamePlayer.playTurn(team));  // make next move
-//                    writer.flush();
+                    writer.write(gamePlayer.playTurn(team));  // make next move
+                    writer.flush();
                     continue;
                 }
             }
