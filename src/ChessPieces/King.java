@@ -122,7 +122,7 @@ public final class King extends Piece {
         return false;
     }
 
-    private boolean checkAllKnightPositions(final Integer line, final Integer column, final Board board) {
+    private boolean checkKnight(final Integer line, final Integer column, final Board board) {
         if (isOnBoard(line - 2, column + 1)) {
             if (!board.getPiece(line - 2, column + 1).getTeam().equals(team)) {
                 if (board.getPiece(line - 2, column + 1).getType().equals("Knight")) {
@@ -276,7 +276,7 @@ public final class King extends Piece {
             }
         }
         // check all threatening knight positions
-        if (checkAllKnightPositions(line, column, board)) {
+        if (checkKnight(line, column, board)) {
             return true;
         }
         // check all threatening king positions
