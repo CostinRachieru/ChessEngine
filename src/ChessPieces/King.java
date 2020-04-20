@@ -387,9 +387,10 @@ public final class King extends Piece {
         ArrayList<Position> moves = new ArrayList<>();
 
         // Castling Kingside
-        if (canCastleKingSide()) {
-            moves.add(new Position(line, column + 2));
-        }
+        // TODO: uncomment
+//        if (canCastleKingSide()) {
+//            moves.add(new Position(line, column + 2));
+//        }
 
         // Up - Left
         if (isOnBoard(line + 1, column - 1) && !isCheck(line + 1, column - 1)) {

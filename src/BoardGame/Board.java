@@ -204,9 +204,9 @@ public class Board {
 
     // print board for debugging
     public final void printBoard() {
-        String res = "";
+        String res = "   A B C D E F G H\n";
         for (int i = 1; i <= 8; ++i) {
-            res +="|";
+            res = res + i + " |";
             for (int j = 1; j <= 8; ++j) {
                 if (board[i][j] != null) {
                     res += pieceSymbol(board[i][j]) + "|";
@@ -244,4 +244,19 @@ public class Board {
         }
     }
 
+//    public void setWhitePieces(ArrayList<Piece> whitePieces) {
+//        this.whitePieces = whitePieces;
+//    }
+//
+//    public void setBlackPieces(ArrayList<Piece> blackPieces) {
+//        this.blackPieces = blackPieces;
+//    }
+//
+//    public void setPieces(ArrayList<Piece> pieces, String team) {
+//        if (team.equals("White")) {
+//            setWhitePieces(pieces);
+//        } else {
+//            setBlackPieces(pieces);
+//        }
+//    }
 }

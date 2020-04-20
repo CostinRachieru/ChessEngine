@@ -95,4 +95,9 @@ public abstract class Piece {
     public boolean getHadMoved() {
         return hadMoved;
     }
+
+    @Override
+    public String toString() {
+        return type + " " + toStringPosition();
+    }
 }
