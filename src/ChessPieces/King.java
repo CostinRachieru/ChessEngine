@@ -3,6 +3,7 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.spi.AbstractResourceBundleProvider;
 
 import static Helper.Constants.LEFT_COLUMN;
 import static Helper.Constants.RIGHT_COLUMN;
@@ -334,6 +335,14 @@ public final class King extends Piece {
                     || board.getPiece(line, column).getType().equals("Queen");
         }
 
+        return false;
+    }
+
+    public final boolean isCheckMate() {
+        ArrayList<Position> moves = getMoves();
+        if (moves.size() == 0 && isCheck(line, column)) {
+            return true;
+        }
         return false;
     }
 

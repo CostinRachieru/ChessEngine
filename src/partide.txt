@@ -78,3 +78,29 @@ c3 Qb6 {+5,80/2 0,1} 11. c4 Qxf2# {+1000,01/2 0,1}
 bxc1=Q 8. axb8=Q b5 9. c3 b4 10. c4 b3 11. c5 b2 12. c6 bxa1=Q 13. cxd7+
 {Xboard: Forfeit due to invalid move: c7c6 (c7c6 via `0, `0) res=24} 1-0
 
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.20"]
+[Round "-"]
+[White "costintudi"]
+[Black "java"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. a3 Nc6 2. d3 Rb8 3. c3 Ra8 4. b3 Rb8 5. c4 Ra8 6. b4 Nb8 7. c5 Nc6 8. b5
+Rb8 9. bxc6 Ra8 10. cxb7
+{xboard exit (Clocks: 270, 272)} *
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.20"]
+[Round "-"]
+[White "costintudi"]
+[Black "java"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. b3 Nc6 2. c3 Rb8 3. b4 Ra8 4. b5 Rb8 5. bxc6 Ra8 6. cxb7 Rb8 7. bxc8=Q
+Rb7 8. Qxb7 e6 9. Qxc7 Ke7 10. Qxa7 Kf6 11. Qc7 Ke7 12. Qxd8+
+{xboard exit (Clocks: 292, 312)} *
+

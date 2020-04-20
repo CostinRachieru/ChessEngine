@@ -112,7 +112,7 @@ public class Main {
                         continue;
                     }
                     board.moveEnemyPiece(command);
-//                    board.printBoard();  // TODO: debug | remove later
+                    board.printBoard();  // TODO: debug | remove later
                     writer.write(gamePlayer.playTurn(team));  // make next move
                     writer.flush();
                     continue;
