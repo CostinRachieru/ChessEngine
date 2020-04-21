@@ -4,11 +4,13 @@ import BoardGame.Board;
 import BoardGame.Evaluator;
 import ChessPieces.*;
 import Helper.Helper;
+import Helper.Constants;
 
 import java.util.ArrayList;
 
 public class GamePlayer {
-    private static final int MAX_DEPTH = 3;
+<<<<<<< HEAD
+    private static final int MAX_DEPTH = 4;
     private static final int INITIAL_DEPTH = 1;
     private static final boolean INITIAL_IS_MAXIMIZING = false;
     private static final int KING_POINTS = 900;
@@ -64,14 +66,24 @@ public class GamePlayer {
         }
 
         board.printBoard();  // TODO: debug | remove later
+        System.out.println("History is: " + board.getMoveHistory());
         return nextMove;
     }
 
     public int minimax(int depth, boolean isMaximizing, String currentTeam) {
         Evaluator evaluator = Evaluator.getInstance();
         int bestScore, score;
-        ArrayList<Piece> pieces = board.getPieces(team);
-        if (depth == MAX_DEPTH || board.getKing(currentTeam).isCheckMate()) {
+        ArrayList<Piece> pieces = new ArrayList<Piece>(board.getPieces(currentTeam));
+
+        if (board.getKing(currentTeam).isCheckMate()) {
+            if (currentTeam == this.team) {
+                return -Constants.CHECK_MATE_POINTS;
+            } else {
+                return Constants.CHECK_MATE_POINTS;
+            }
+        }
+
+        if (depth == MAX_DEPTH) {
             return evaluator.eval(this.team);
         }
 
@@ -95,11 +107,10 @@ public class GamePlayer {
             for (int i = 0; i < pieces.size(); ++i) {
                 Piece piece = pieces.get(i);
                 if (piece.isAlive()) {
+                    // System.out.println("Currently exploring " + piece);  // TODO: debug
                     ArrayList<Position> possibleMoves = piece.getMoves();
                     for (Position nextPos : possibleMoves) {
-                        if (!piece.isOnBoard(nextPos.getLine(), nextPos.getColumn())) {
-                            continue;
-                        }
+                        // System.out.println("Current move: " + nextPos);  // TODO: debug
                         board.movePiece(piece, nextPos);
                         score = minimax(depth + 1, !isMaximizing, Helper.enemyTeam(currentTeam));
                         board.undoMove();

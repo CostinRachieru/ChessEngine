@@ -79,6 +79,10 @@ public class Board {
         }
     }
 
+    public ArrayList<Piece> getMoveHistory() {
+        return moveHistory;
+    }
+
     public final boolean isEmpty(final Integer line, final Integer column) {
         return board[line][column] == null;
     }
