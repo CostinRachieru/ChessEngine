@@ -115,7 +115,7 @@ public abstract class Piece {
         return type + " " + toStringPosition();
     }
 
-    public PieceHistory createHistoy() {
+    public PieceHistory createHistory() {
         return new PieceHistory(line, column, hadMoved);
     }
     public void addHistory(PieceHistory entry) {

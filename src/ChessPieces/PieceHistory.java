@@ -1,10 +1,14 @@
+
 package ChessPieces;
+
+import java.util.ArrayList;
 
 public class PieceHistory {
     private Integer prevLine;
     private Integer prevCol;
     private boolean prevHadMoved;
     private boolean hasCaptured = false;
+    private boolean wasCastling = false;
     private Piece capturedPiece = null;
 
     // Constructors
@@ -23,6 +27,14 @@ public class PieceHistory {
     }
 
     // Getters and Setter
+    public boolean wasCastling() {
+        return wasCastling;
+    }
+
+    public void setWasCastling(boolean wasCastling) {
+        this.wasCastling = wasCastling;
+    }
+
     public Integer getPrevLine() {
         return prevLine;
     }

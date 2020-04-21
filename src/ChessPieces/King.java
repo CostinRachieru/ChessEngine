@@ -345,8 +345,13 @@ public final class King extends Piece {
                 if (!board.isEmpty(i, column)) {
                     if (checkRookOrQueen(i, column)) {
                         return true;
+                    } else {
+                        if (board.getPiece(i, column).getType().equals("King")) {
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }
@@ -356,8 +361,13 @@ public final class King extends Piece {
                 if (!board.isEmpty(i, column)) {
                     if (checkRookOrQueen(i, column)) {
                         return true;
+                    } else {
+                        if (board.getPiece(i, column).getType().equals("King")) {
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }
@@ -367,8 +377,13 @@ public final class King extends Piece {
                 if (!board.isEmpty(line, i)) {
                     if (checkRookOrQueen(line, i)) {
                         return true;
+                    } else {
+                        if (board.getPiece(line, i).getType().equals("King")) {
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }
@@ -378,8 +393,13 @@ public final class King extends Piece {
                 if (!board.isEmpty(line, i)) {
                     if (checkRookOrQueen(line, i)) {
                         return true;
+                    } else {
+                        if (board.getPiece(line, i).getType().equals("King")) {
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }
@@ -389,8 +409,13 @@ public final class King extends Piece {
                 if (!board.isEmpty(i, j)) {
                     if (checkBishopOrQueen(i, j)) {
                         return true;
+                    } else {
+                        if (board.getPiece(i, j).getType().equals("King")) {
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }
@@ -400,8 +425,13 @@ public final class King extends Piece {
                 if (!board.isEmpty(i, j)) {
                     if (checkBishopOrQueen(i, j)) {
                         return true;
+                    } else {
+                        if (board.getPiece(i, j).getType().equals("King")) {
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }
@@ -411,8 +441,13 @@ public final class King extends Piece {
                 if (!board.isEmpty(i, j)) {
                     if (checkBishopOrQueen(i, j)) {
                         return true;
+                    } else {
+                        if (board.getPiece(i, j).getType().equals("King")) {
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }
@@ -422,8 +457,13 @@ public final class King extends Piece {
                 if (!board.isEmpty(i, j)) {
                     if (checkBishopOrQueen(i, j)) {
                         return true;
+                    } else {
+                        if (board.getPiece(i, j).getType().equals("King")) {
+                            continue;
+                        } else {
+                            break;
+                        }
                     }
-                    break;
                 }
             }
         }

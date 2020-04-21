@@ -120,6 +120,7 @@ public class Main {
                     board.moveEnemyPiece(command);
 //                    board.printBoard();  // TODO: debug | remove later
                     writer.write(gamePlayer.playTurn(team));  // make next move
+                    King king = new King(1,7, "Black");
                     writer.flush();
                     continue;
                 }
