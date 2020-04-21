@@ -1,0 +1,383 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + fairymax ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") fairymax
+101 >first : xboard
+protover 2
+149 <first : tellics say     Fairy-Max 5.0b
+149 <first : tellics say     by H.G. Muller
+149 <first : feature myname="Fairy-Max 5.0b"
+149 >first : accepted myname
+149 <first : feature memory=1 exclude=1
+149 >first : accepted memory
+149 >first : accepted exclude
+149 <first : feature setboard=0 xedit=1 ping=1 done=0
+149 >first : accepted setboard
+149 >first : accepted xedit
+149 >first : accepted ping
+149 >first : accepted done
+149 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+149 >first : accepted variants
+149 <first : feature option="Resign -check 0"
+149 >first : accepted option
+149 <first : feature option="Resign Threshold -spin 800 200 1200"
+149 >first : accepted option
+149 <first : feature option="Claim draw after -spin 50 0 200"
+149 >first : accepted option
+149 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+149 >first : accepted option
+149 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+149 >first : accepted option
+149 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+149 >first : accepted option
+149 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+149 >first : accepted option
+149 <first : feature option="Dummy Slider Example -slider 20 0 100"
+149 >first : accepted option
+149 <first : feature option="Dummy String Example -string happy birthday!"
+149 >first : accepted option
+149 <first : feature option="Dummy Path Example -path ."
+149 >first : accepted option
+149 <first : feature option="Automatic persistent-hash dialog -check 0"
+149 >first : accepted option
+149 <first : feature option="Info -button"
+149 >first : accepted option
+149 <first : feature option="Save in hash file -button"
+149 >first : accepted option
+149 <first : feature option="Clear Hash -button"
+149 >first : accepted option
+149 <first : feature done=1
+149 >first : accepted done
+150 >first : memory 68
+150 >first : new
+random
+150 >first : level 0 5 2
+150 >first : post
+150 >first : hard
+150 >first : ping 1
+172 <first : pong 1
+4716 >first : quit
+Unload first
+StartChildProcess (dir=".") java Main
+4723 >first : xboard
+protover 2
+Reset(1, 1) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+4724 >first : force
+shuffleOpenings = 0
+4729 >first : new
+random
+4729 >first : level 0 5 2
+4729 >first : post
+4729 >first : hard
+4766 <first : feature sigint=0 san=0 done=1
+4766 >first : accepted sigint
+4766 >first : accepted san
+4766 >first : accepted done
+recognized 'normal' (-1) as variant normal
+4767 >first : new
+random
+4767 >first : level 0 5 2
+4767 >first : post
+4767 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+5964 >first : time 30000
+5964 >first : otim 30200
+book hit = (NULL)
+5964 >first : a2a3
+6036 <first : Before move:
+6036 <first :    A B C D E F G H
+6036 <first : 8 |r|n|b|q|k|b|n|r|
+6036 <first : 7 |p|p|p|p|p|p|p|p|
+6036 <first : 6 | | | | | | | | |
+6036 <first : 5 | | | | | | | | |
+6036 <first : 4 | | | | | | | | |
+6036 <first : 3 |P| | | | | | | |
+6036 <first : 2 | |P|P|P|P|P|P|P|
+6036 <first : 1 |R|N|B|Q|K|B|N|R|
+6036 <first : 
+6053 <first : 8 - 2
+6054 <first : 6 - 3
+6054 <first : move b8c6
+6149 <first : After move:
+6150 <first :    A B C D E F G H
+6150 <first : 8 |r| |b|q|k|b|n|r|
+6150 <first : 7 |p|p|p|p|p|p|p|p|
+6150 <first : 6 | | |n| | | | | |
+6150 <first : 5 | | | | | | | | |
+6150 <first : 4 | | | | | | | | |
+6150 <first : 3 |P| | | | | | | |
+6150 <first : 2 | |P|P|P|P|P|P|P|
+6150 <first : 1 |R|N|B|Q|K|B|N|R|
+6150 <first : 
+7266 >first : time 30191
+7266 >first : otim 30278
+book hit = (NULL)
+7266 >first : b2b3
+7339 <first : Before move:
+7339 <first :    A B C D E F G H
+7339 <first : 8 |r| |b|q|k|b|n|r|
+7339 <first : 7 |p|p|p|p|p|p|p|p|
+7339 <first : 6 | | |n| | | | | |
+7339 <first : 5 | | | | | | | | |
+7339 <first : 4 | | | | | | | | |
+7339 <first : 3 |P|P| | | | | | |
+7339 <first : 2 | | |P|P|P|P|P|P|
+7339 <first : 1 |R|N|B|Q|K|B|N|R|
+7339 <first : 
+7339 <first : 8 - 7
+7339 <first : 6 - 6
+7339 <first : move g8f6
+7437 <first : After move:
+7437 <first :    A B C D E F G H
+7437 <first : 8 |r| |b|q|k|b| |r|
+7437 <first : 7 |p|p|p|p|p|p|p|p|
+7437 <first : 6 | | |n| | |n| | |
+7437 <first : 5 | | | | | | | | |
+7437 <first : 4 | | | | | | | | |
+7437 <first : 3 |P|P| | | | | | |
+7437 <first : 2 | | |P|P|P|P|P|P|
+7437 <first : 1 |R|N|B|Q|K|B|N|R|
+7437 <first : 
+8319 >first : time 30383
+8319 >first : otim 30380
+book hit = (NULL)
+8319 >first : c2c3
+8392 <first : Before move:
+8392 <first :    A B C D E F G H
+8392 <first : 8 |r| |b|q|k|b| |r|
+8392 <first : 7 |p|p|p|p|p|p|p|p|
+8392 <first : 6 | | |n| | |n| | |
+8392 <first : 5 | | | | | | | | |
+8392 <first : 4 | | | | | | | | |
+8392 <first : 3 |P|P|P| | | | | |
+8392 <first : 2 | | | |P|P|P|P|P|
+8392 <first : 1 |R|N|B|Q|K|B|N|R|
+8392 <first : 
+8392 <first : 7 - 4
+8392 <first : 5 - 4
+8392 <first : move d7d5
+8466 <first : After move:
+8466 <first :    A B C D E F G H
+8466 <first : 8 |r| |b|q|k|b| |r|
+8466 <first : 7 |p|p|p| |p|p|p|p|
+8466 <first : 6 | | |n| | |n| | |
+8466 <first : 5 | | | |p| | | | |
+8466 <first : 4 | | | | | | | | |
+8466 <first : 3 |P|P|P| | | | | |
+8466 <first : 2 | | | |P|P|P|P|P|
+8466 <first : 1 |R|N|B|Q|K|B|N|R|
+8466 <first : 
+9935 >first : time 30576
+9935 >first : otim 30426
+book hit = (NULL)
+9935 >first : c3c4
+10007 <first : Before move:
+10008 <first :    A B C D E F G H
+10008 <first : 8 |r| |b|q|k|b| |r|
+10008 <first : 7 |p|p|p| |p|p|p|p|
+10008 <first : 6 | | |n| | |n| | |
+10008 <first : 5 | | | |p| | | | |
+10008 <first : 4 | | |P| | | | | |
+10008 <first : 3 |P|P| | | | | | |
+10008 <first : 2 | | | |P|P|P|P|P|
+10008 <first : 1 |R|N|B|Q|K|B|N|R|
+10008 <first : 
+10008 <first : 5 - 4
+10008 <first : 4 - 4
+10008 <first : move d5d4
+10082 <first : After move:
+10082 <first :    A B C D E F G H
+10083 <first : 8 |r| |b|q|k|b| |r|
+10083 <first : 7 |p|p|p| |p|p|p|p|
+10083 <first : 6 | | |n| | |n| | |
+10083 <first : 5 | | | | | | | | |
+10083 <first : 4 | | |P|p| | | | |
+10083 <first : 3 |P|P| | | | | | |
+10083 <first : 2 | | | |P|P|P|P|P|
+10083 <first : 1 |R|N|B|Q|K|B|N|R|
+10083 <first : 
+12995 >first : time 30769
+12995 >first : otim 30327
+book hit = (NULL)
+12995 >first : e2e3
+13068 <first : Before move:
+13068 <first :    A B C D E F G H
+13068 <first : 8 |r| |b|q|k|b| |r|
+13068 <first : 7 |p|p|p| |p|p|p|p|
+13068 <first : 6 | | |n| | |n| | |
+13068 <first : 5 | | | | | | | | |
+13068 <first : 4 | | |P|p| | | | |
+13068 <first : 3 |P|P| | |P| | | |
+13068 <first : 2 | | | |P| |P|P|P|
+13068 <first : 1 |R|N|B|Q|K|B|N|R|
+13068 <first : 
+13068 <first : 7 - 5
+13068 <first : 5 - 5
+13068 <first : move e7e5
+13143 <first : After move:
+13143 <first :    A B C D E F G H
+13143 <first : 8 |r| |b|q|k|b| |r|
+13143 <first : 7 |p|p|p| | |p|p|p|
+13143 <first : 6 | | |n| | |n| | |
+13143 <first : 5 | | | | |p| | | |
+13143 <first : 4 | | |P|p| | | | |
+13143 <first : 3 |P|P| | |P| | | |
+13143 <first : 2 | | | |P| |P|P|P|
+13143 <first : 1 |R|N|B|Q|K|B|N|R|
+13143 <first : 
+14383 >first : time 30961
+14383 >first : otim 30396
+book hit = (NULL)
+14383 >first : e3d4
+14455 <first : Before move:
+14455 <first :    A B C D E F G H
+14455 <first : 8 |r| |b|q|k|b| |r|
+14455 <first : 7 |p|p|p| | |p|p|p|
+14455 <first : 6 | | |n| | |n| | |
+14455 <first : 5 | | | | |p| | | |
+14455 <first : 4 | | |P|P| | | | |
+14455 <first : 3 |P|P| | | | | | |
+14455 <first : 2 | | | |P| |P|P|P|
+14455 <first : 1 |R|N|B|Q|K|B|N|R|
+14455 <first : 
+14455 <first : 5 - 5
+14455 <first : 4 - 5
+14455 <first : move e5e4
+14529 <first : After move:
+14529 <first :    A B C D E F G H
+14529 <first : 8 |r| |b|q|k|b| |r|
+14529 <first : 7 |p|p|p| | |p|p|p|
+14529 <first : 6 | | |n| | |n| | |
+14529 <first : 5 | | | | | | | | |
+14529 <first : 4 | | |P|P|p| | | |
+14529 <first : 3 |P|P| | | | | | |
+14529 <first : 2 | | | |P| |P|P|P|
+14529 <first : 1 |R|N|B|Q|K|B|N|R|
+14529 <first : 
+16112 >first : time 31154
+16112 >first : otim 30430
+book hit = (NULL)
+16112 >first : f2f3
+16184 <first : Before move:
+16184 <first :    A B C D E F G H
+16184 <first : 8 |r| |b|q|k|b| |r|
+16184 <first : 7 |p|p|p| | |p|p|p|
+16184 <first : 6 | | |n| | |n| | |
+16184 <first : 5 | | | | | | | | |
+16184 <first : 4 | | |P|P|p| | | |
+16184 <first : 3 |P|P| | | |P| | |
+16184 <first : 2 | | | |P| | |P|P|
+16184 <first : 1 |R|N|B|Q|K|B|N|R|
+16184 <first : 
+16184 <first : 8 - 3
+16184 <first : 6 - 5
+16184 <first : move c8e6
+16283 <first : After move:
+16283 <first :    A B C D E F G H
+16283 <first : 8 |r| | |q|k|b| |r|
+16283 <first : 7 |p|p|p| | |p|p|p|
+16283 <first : 6 | | |n| |b|n| | |
+16283 <first : 5 | | | | | | | | |
+16283 <first : 4 | | |P|P|p| | | |
+16283 <first : 3 |P|P| | | |P| | |
+16283 <first : 2 | | | |P| | |P|P|
+16283 <first : 1 |R|N|B|Q|K|B|N|R|
+16283 <first : 
+17315 >first : time 31347
+17315 >first : otim 30517
+book hit = (NULL)
+17315 >first : f3e4
+17387 <first : Before move:
+17387 <first :    A B C D E F G H
+17387 <first : 8 |r| | |q|k|b| |r|
+17387 <first : 7 |p|p|p| | |p|p|p|
+17387 <first : 6 | | |n| |b|n| | |
+17387 <first : 5 | | | | | | | | |
+17387 <first : 4 | | |P|P|P| | | |
+17387 <first : 3 |P|P| | | | | | |
+17387 <first : 2 | | | |P| | |P|P|
+17387 <first : 1 |R|N|B|Q|K|B|N|R|
+17387 <first : 
+17387 <first : 8 - 6
+17387 <first : 6 - 4
+17387 <first : move f8d6
+17480 <first : After move:
+17480 <first :    A B C D E F G H
+17480 <first : 8 |r| | |q|k| | |r|
+17480 <first : 7 |p|p|p| | |p|p|p|
+17480 <first : 6 | | |n|b|b|n| | |
+17480 <first : 5 | | | | | | | | |
+17480 <first : 4 | | |P|P|P| | | |
+17480 <first : 3 |P|P| | | | | | |
+17480 <first : 2 | | | |P| | |P|P|
+17480 <first : 1 |R|N|B|Q|K|B|N|R|
+17480 <first : 
+19956 >first : time 31540
+19956 >first : otim 30460
+book hit = (NULL)
+19956 >first : g2g3
+20028 <first : Before move:
+20028 <first :    A B C D E F G H
+20028 <first : 8 |r| | |q|k| | |r|
+20028 <first : 7 |p|p|p| | |p|p|p|
+20028 <first : 6 | | |n|b|b|n| | |
+20028 <first : 5 | | | | | | | | |
+20028 <first : 4 | | |P|P|P| | | |
+20028 <first : 3 |P|P| | | | |P| |
+20028 <first : 2 | | | |P| | | |P|
+20028 <first : 1 |R|N|B|Q|K|B|N|R|
+20028 <first : 
+20028 <first : 8 - 5
+20028 <first : 8 - 6
+20028 <first : move e8f8
+20101 <first : After move:
+20101 <first :    A B C D E F G H
+20101 <first : 8 |r| | |q| |k| |r|
+20101 <first : 7 |p|p|p| | |p|p|p|
+20101 <first : 6 | | |n| |b|n| | |
+20101 <first : 5 | | | | | | | | |
+20101 <first : 4 | | |P|P|P| | | |
+20101 <first : 3 |P|P| | | | |P| |
+20101 <first : 2 | | |N|P| | | |P|
+20101 <first : 1 |R| |B|Q|K|B|N|R|
+20101 <first : 
+21591 >first : time 31732
+21591 >first : otim 30504
+book hit = (NULL)
+21591 >first : h2h3
+21664 <first : Before move:
+21664 <first :    A B C D E F G H
+21664 <first : 8 |r| | |q| |k| |r|
+21664 <first : 7 |p|p|p| | |p|p|p|
+21664 <first : 6 | | |n| |b|n| | |
+21664 <first : 5 | | | | | | | | |
+21664 <first : 4 | | |P|P|P| | | |
+21664 <first : 3 |P|P| | | | |P|P|
+21664 <first : 2 | | |N|P| | | | |
+21664 <first : 1 |R| |B|Q|K|B|N|R|
+21664 <first : 
+21664 <first : 2 - 6
+21664 <first : 6 - 4
+21664 <first : move f2d6
+21664 <first : After move:
+21664 <first :    A B C D E F G H
+21664 <first : 8 |r| | |q| |k| | |
+21664 <first : 7 | | |p|n| | | | |
+21664 <first : 6 | | |n|b|b| | | |
+21664 <first : 5 |p|p| | | | |p|p|
+21664 <first : 4 | | |P|P|P| | | |
+21664 <first : 3 |P|P| | |N| |P|P|
+21664 <first : 2 | | | |P| | | |N|
+21664 <first : 1 |R|B|B|Q|K| | |R|
+21664 <first : 

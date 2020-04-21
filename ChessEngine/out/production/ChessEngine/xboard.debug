@@ -1,0 +1,156 @@
+locale = LC_CTYPE=en_US.UTF-8;LC_NUMERIC=ro_RO.UTF-8;LC_TIME=ro_RO.UTF-8;LC_COLLATE=en_US.UTF-8;LC_MONETARY=ro_RO.UTF-8;LC_MESSAGES=en_US.UTF-8;LC_PAPER=ro_RO.UTF-8;LC_NAME=ro_RO.UTF-8;LC_ADDRESS=ro_RO.UTF-8;LC_TELEPHONE=ro_RO.UTF-8;LC_MEASUREMENT=ro_RO.UTF-8;LC_IDENTIFICATION=ro_RO.UTF-8
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+recognized 'normal' (-1) as variant normal
+shuffleOpenings = 0
+shuffleOpenings = 0
+Version: xboard 4.9.1 + fairymax ()
+Reset(1, 0) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+shuffleOpenings = 0
+StartChildProcess (dir=".") fairymax
+104 >first : xboard
+protover 2
+155 <first : tellics say     Fairy-Max 5.0b
+155 <first : tellics say     by H.G. Muller
+155 <first : feature myname="Fairy-Max 5.0b"
+155 >first : accepted myname
+155 <first : feature memory=1 exclude=1
+155 >first : accepted memory
+155 >first : accepted exclude
+155 <first : feature setboard=0 xedit=1 ping=1 done=0
+155 >first : accepted setboard
+155 >first : accepted xedit
+155 >first : accepted ping
+155 >first : accepted done
+155 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+155 >first : accepted variants
+155 <first : feature option="Resign -check 0"
+155 >first : accepted option
+155 <first : feature option="Resign Threshold -spin 800 200 1200"
+155 >first : accepted option
+155 <first : feature option="Claim draw after -spin 50 0 200"
+155 >first : accepted option
+155 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+155 >first : accepted option
+155 <first : feature option="Multi-PV Margin -spin 0 0 1000"
+155 >first : accepted option
+155 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+155 >first : accepted option
+155 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+155 >first : accepted option
+155 <first : feature option="Dummy Slider Example -slider 20 0 100"
+155 >first : accepted option
+155 <first : feature option="Dummy String Example -string happy birthday!"
+155 >first : accepted option
+155 <first : feature option="Dummy Path Example -path ."
+155 >first : accepted option
+155 <first : feature option="Automatic persistent-hash dialog -check 0"
+155 >first : accepted option
+155 <first : feature option="Info -button"
+155 >first : accepted option
+155 <first : feature option="Save in hash file -button"
+155 >first : accepted option
+155 <first : feature option="Clear Hash -button"
+155 >first : accepted option
+155 <first : feature done=1
+155 >first : accepted done
+156 >first : memory 68
+156 >first : new
+random
+156 >first : level 40 5 0
+156 >first : post
+156 >first : hard
+156 >first : ping 1
+181 <first : pong 1
+8340 >first : quit
+Unload first
+StartChildProcess (dir=".") java Main
+8350 >first : xboard
+protover 2
+Reset(1, 1) from gameMode 0
+recognized 'normal' (-1) as variant normal
+GameEnds(0, (null), 2)
+8351 >first : force
+shuffleOpenings = 0
+8355 >first : new
+random
+8355 >first : level 40 5 0
+8355 >first : post
+8355 >first : hard
+8431 <first : feature sigint=0 done=1
+8431 >first : accepted sigint
+8431 >first : accepted done
+recognized 'normal' (-1) as variant normal
+8432 >first : new
+random
+8432 >first : level 40 5 0
+8432 >first : post
+8432 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+10226 >first : time 30000
+10226 >first : otim 30000
+book hit = (NULL)
+10226 >first : h2h3
+10298 <first : move a7a6
+10978 >first : time 29992
+10978 >first : otim 29932
+book hit = (NULL)
+10978 >first : h3h4
+11053 <first : move a6a5
+11794 >first : time 29985
+11794 >first : otim 29857
+book hit = (NULL)
+11794 >first : h4h5
+11869 <first : move a5a4
+12502 >first : time 29977
+12502 >first : otim 29794
+book hit = (NULL)
+12502 >first : h5h6
+12584 <first : move a4a3
+13894 >first : time 29969
+13894 >first : otim 29663
+book hit = (NULL)
+13894 >first : g2g3
+13969 <first : move a3b2
+20018 >first : time 29962
+20018 >first : otim 29058
+book hit = (NULL)
+20018 >first : g3g4
+20101 <first : move b2c1
+20867 >first : time 29953
+20867 >first : otim 28982
+book hit = (NULL)
+20867 >first : g4g5
+20942 <first : move b7b6
+23174 >first : time 29946
+23174 >first : otim 28759
+book hit = (NULL)
+23174 >first : g5g6
+23249 <first : move b6b5
+24150 >first : time 29938
+24150 >first : otim 28669
+book hit = (NULL)
+24150 >first : f2f3
+24225 <first : move b5b4
+24806 >first : time 29931
+24806 >first : otim 28611
+book hit = (NULL)
+24806 >first : f3f4
+24889 <first : move b4b3
+25470 >first : time 29922
+25470 >first : otim 28552
+book hit = (NULL)
+25470 >first : f4f5
+25545 <first : move b3b2
+26178 >first : time 29915
+26178 >first : otim 28489
+book hit = (NULL)
+26178 >first : f5f6
+26253 <first : move b2c1
+GameEnds(29, xboard exit, 2)
+27858 >first : result * {xboard exit}
+27858 >first : force
+27858 >first : quit
