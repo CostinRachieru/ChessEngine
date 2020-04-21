@@ -47,7 +47,7 @@ public final class King extends Piece {
                 if (allSquaresEmpty) {
                     // The squares between them are empty.
                     boolean isInCheck = false;
-                    for (int i = column; i < RIGHT_COLUMN; ++i) {
+                    for (int i = column; i <= RIGHT_COLUMN; ++i) {
                         if (isCheck(line, i)) {
                             isInCheck = true;
                             break;
@@ -95,7 +95,7 @@ public final class King extends Piece {
             if (!rook.getHadMoved()) {
                 // The rook never moved.
                 boolean allSquaresEmpty = true;
-                for (int i = column - 1; i > LEFT_COLUMN; --i) {
+                for (int i = column - 1; i >= LEFT_COLUMN; --i) {
                     if (!board.isEmpty(line, i)) {
                         allSquaresEmpty = false;
                         break;

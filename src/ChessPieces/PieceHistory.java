@@ -6,10 +6,13 @@ import java.util.ArrayList;
 public class PieceHistory {
     private Integer prevLine;
     private Integer prevCol;
+    private String prevType;
     private boolean prevHadMoved;
     private boolean hasCaptured = false;
     private boolean wasCastling = false;
     private Piece capturedPiece = null;
+    private Boolean isPawnPromotion;
+    private Boolean isEnPassant;
 
     // Constructors
     public PieceHistory(Integer prevLine, Integer prevCol, boolean prevHadMoved, boolean hasCaptured, Piece capturedPiece) {
@@ -20,13 +23,20 @@ public class PieceHistory {
         this.capturedPiece = capturedPiece;
     }
 
-    public PieceHistory(Integer prevLine, Integer prevCol, boolean prevHadMoved) {
+    public PieceHistory(Integer prevLine, Integer prevCol, boolean prevHadMoved, String prevType, Boolean isPawnPromotion, Boolean isEnPassant) {
         this.prevLine = prevLine;
         this.prevCol = prevCol;
         this.prevHadMoved = prevHadMoved;
+        this.prevType = prevType;
+        this.isPawnPromotion = isPawnPromotion;
+        this.isEnPassant =isEnPassant;
     }
 
     // Getters and Setter
+    public Boolean getIsEnPassant() {
+        return isEnPassant;
+    }
+
     public boolean wasCastling() {
         return wasCastling;
     }
@@ -73,6 +83,14 @@ public class PieceHistory {
 
     public void setCapturedPiece(Piece capturedPiece) {
         this.capturedPiece = capturedPiece;
+    }
+
+    public String getPrevType() {
+        return prevType;
+    }
+
+    public Boolean getIsPawnPromotion() {
+        return  isPawnPromotion;
     }
 
     // Methods

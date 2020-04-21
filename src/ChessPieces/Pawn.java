@@ -30,7 +30,7 @@ public final class Pawn extends Piece {
     public final void move(Position newPos) {
         int dist = Math.abs(newPos.getColumn() - this.column);
         super.move(newPos);
-        if (dist == 2) {
+        if (dist >= 2) {
             movedTwo = true;
         } else {
             movedTwo = false;
@@ -84,26 +84,26 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-//            // En-passant - Left
-//            if (newColumn > 1 && newLine > 1) {
-//                if (!board.isEmpty(newLine, newColumn - 1)) {
-//                    if (!board.getPiece(newLine, newColumn - 1).getTeam().equals(team)) {
-//                        if (board.getPiece(newLine, newColumn - 1).movedTwoPawn()) {
-//                            moves.add(new Position(newLine - 1, newColumn - 1));
-//                        }
-//                    }
-//                }
-//            }
-//            // En-passant - Right
-//            if (newColumn < 8 && newLine > 1) {
-//                if (!board.isEmpty(newLine, newColumn + 1)) {
-//                    if (!board.getPiece(newLine, newColumn + 1).getTeam().equals(team)) {
-//                        if (board.getPiece(newLine, newColumn + 1).movedTwoPawn()) {
-//                            moves.add(new Position(newLine - 1, newColumn + 1));
-//                        }
-//                    }
-//                }
-//            }
+            // En-passant - Left
+            if (newColumn > 1 && newLine > 1) {
+                if (!board.isEmpty(newLine, newColumn - 1)) {
+                    if (!board.getPiece(newLine, newColumn - 1).getTeam().equals(team)) {
+                        if (board.getPiece(newLine, newColumn - 1).movedTwoPawn()) {
+                            moves.add(new Position(newLine - 1, newColumn - 1));
+                        }
+                    }
+                }
+            }
+            // En-passant - Right
+            if (newColumn < 8 && newLine > 1) {
+                if (!board.isEmpty(newLine, newColumn + 1)) {
+                    if (!board.getPiece(newLine, newColumn + 1).getTeam().equals(team)) {
+                        if (board.getPiece(newLine, newColumn + 1).movedTwoPawn()) {
+                            moves.add(new Position(newLine - 1, newColumn + 1));
+                        }
+                    }
+                }
+            }
             // Team is White.
         } else {
             // First forward.
@@ -146,26 +146,26 @@ public final class Pawn extends Piece {
                     }
                 }
             }
-//            // En-passant - Left
-//            if (newColumn > 1 && newLine < 8) {
-//                if (!board.isEmpty(newLine, newColumn - 1)) {
-//                    if (!board.getPiece(newLine, newColumn - 1).getTeam().equals(team)) {
-//                        if (board.getPiece(newLine, newColumn - 1).movedTwoPawn()) {
-//                            moves.add(new Position(newLine + 1, newColumn - 1));
-//                        }
-//                    }
-//                }
-//            }
-//            // En-passant - Right
-//            if (newColumn < 8 && newLine < 8) {
-//                if (!board.isEmpty(newLine, newColumn + 1)) {
-//                    if (!board.getPiece(newLine, newColumn + 1).getTeam().equals(team)) {
-//                        if (board.getPiece(newLine, newColumn + 1).movedTwoPawn()) {
-//                            moves.add(new Position(newLine + 1, newColumn + 1));
-//                        }
-//                    }
-//                }
-//            }
+            // En-passant - Left
+            if (newColumn > 1 && newLine < 8) {
+                if (!board.isEmpty(newLine, newColumn - 1)) {
+                    if (!board.getPiece(newLine, newColumn - 1).getTeam().equals(team)) {
+                        if (board.getPiece(newLine, newColumn - 1).movedTwoPawn()) {
+                            moves.add(new Position(newLine + 1, newColumn - 1));
+                        }
+                    }
+                }
+            }
+            // En-passant - Right
+            if (newColumn < 8 && newLine < 8) {
+                if (!board.isEmpty(newLine, newColumn + 1)) {
+                    if (!board.getPiece(newLine, newColumn + 1).getTeam().equals(team)) {
+                        if (board.getPiece(newLine, newColumn + 1).movedTwoPawn()) {
+                            moves.add(new Position(newLine + 1, newColumn + 1));
+                        }
+                    }
+                }
+            }
         }
         return moves;
     }

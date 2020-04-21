@@ -184,8 +184,23 @@ public class Board {
         }
     }
 
+    private Boolean checkEnPassant(Piece piece, Position newPos) {
+        return Math.abs(piece.getLine() - newPos.getLine()) == 1 &&
+                piece.getColumn() != newPos.getColumn() &&
+                isEmpty(newPos.getLine(), newPos.getColumn()) &&
+                piece.getType().equals("Pawn");
+    }
+
     public final void movePiece(Piece piece, Position newPos) {
-        PieceHistory pieceHistory = piece.createHistory();
+        Boolean isEnPassant = false;
+        if (checkEnPassant(piece, newPos)) {
+            isEnPassant = true;
+        }
+        Boolean isPawnPromotion = false;
+        if (piece.getType().equals("Queen") && piece.getColumn() == 0 && piece.getLine() == 0) {
+            isPawnPromotion = true;
+        }
+        PieceHistory pieceHistory = piece.createHistory(isPawnPromotion, isEnPassant);
         int newLine = newPos.getLine();
         int newCol = newPos.getColumn();
 
@@ -208,8 +223,37 @@ public class Board {
         board[newLine][newCol] = piece;
         piece.move(newPos);
         piece.addHistory(pieceHistory);
-
         moveHistory.add(piece);
+
+
+        // Pawn-Promotion
+        if (piece.getType().equals("Pawn")) {
+            if (piece.getLine() == BLACK_FIRST_LINE || piece.getLine() == WHITE_FIRST_LINE) {
+                PieceFactory pieceFactory = PieceFactory.getInstance();
+                Piece newPiece = pieceFactory.createPiece("Queen", 0, 0, piece.getTeam());
+                Board board = Board.getInstance();
+                ArrayList<Piece> pieces = board.getPieces(piece.getTeam());
+                pieces.add(newPiece);
+                movePiece(newPiece, new Position(piece.getLine(), piece.getColumn()));
+            }
+        }
+
+        if (isEnPassant) {
+            System.out.println("!@#!@#!@#!@#");
+            if (piece.getType().equals("White")) {
+                newLine--;
+            } else {
+                newLine++;
+            }
+            if (!isEmpty(newLine, newCol)) {
+                System.out.println("!@#!@");
+                Piece capturedPiece = getPiece(newLine, newCol);
+                pieceHistory.setHasCaptured(true);
+                pieceHistory.setCapturedPiece(capturedPiece);
+                capturedPiece.setAlive(false);
+                board[newLine][newCol] = null;
+            }
+        }
     }
 
     public final void undoMove() {
@@ -229,12 +273,26 @@ public class Board {
         if (pieceHistory.hasCaptured()) {
             Piece capturedPiece = pieceHistory.getCapturedPiece();
             capturedPiece.setAlive(true);
-            board[currentLine][currentCol] = capturedPiece;
+            if (pieceHistory.getIsEnPassant()) {
+                if (capturedPiece.getTeam().equals("White")) {
+                    board[currentLine + 1][currentCol] = capturedPiece;
+                } else {
+                    board[currentLine - 1][currentCol] = capturedPiece;
+                }
+            } else {
+                board[currentLine][currentCol] = capturedPiece;
+            }
         }
 
         // if castling was done move the rook back
         if (pieceHistory.wasCastling()) {
             undoMove();
+        }
+
+        if (pieceHistory.getIsPawnPromotion()) {
+            undoMove();
+            ArrayList<Piece> pieces = getPieces(piece.getTeam());
+            pieces.remove(pieces.size() - 1);
         }
     }
 

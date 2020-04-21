@@ -268,8 +268,10 @@ public class Evaluator {
 //            }
         if (team.equals("White")) {
             return whiteScore - blackScore;
+//            return whiteScore;
         } else {
             return blackScore - whiteScore;
+//            return blackScore;
         }
     }
 }

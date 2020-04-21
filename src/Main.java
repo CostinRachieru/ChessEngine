@@ -95,6 +95,11 @@ public class Main {
                 System.exit(0);
             }
 
+            if (command.equals("undo")) {
+                board.undoMove();
+                board.printBoard();
+            }
+
             if (command.length() >= 4) {
                 // Checks if it is a move from the xboard.
                 boolean first = command.charAt(0) >= 'a' && command.charAt(0) <= 'h';

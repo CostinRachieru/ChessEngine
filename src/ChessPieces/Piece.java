@@ -1,5 +1,7 @@
 package ChessPieces;
 
+import BoardGame.Board;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -66,8 +68,10 @@ public abstract class Piece {
         return history;
     }
 
-    public void setHistory(LinkedList<PieceHistory> history) {
-        this.history = history;
+    public void setHistory(LinkedList<PieceHistory> newHistory) {
+        for (PieceHistory piece : newHistory) {
+            this.history.add(piece);
+        }
     }
 
     // Methods
@@ -111,8 +115,8 @@ public abstract class Piece {
         return type + " " + toStringPosition();
     }
 
-    public PieceHistory createHistory() {
-        return new PieceHistory(line, column, hadMoved);
+    public PieceHistory createHistory(final Boolean isAlive, final Boolean isEnPassant) {
+        return new PieceHistory(line, column, hadMoved, type, isAlive, isEnPassant);
     }
     public void addHistory(PieceHistory entry) {
         history.add(entry);
@@ -123,13 +127,31 @@ public abstract class Piece {
         return pieceHistory;
     }
 
+
     public void restoreToLastState(PieceHistory pieceHistory) {
         line = pieceHistory.getPrevLine();
         column = pieceHistory.getPrevCol();
         hadMoved = pieceHistory.hadPrevMoved();
+
+
+//            System.out.println("!@#!@#!@#!@##@");
+//            Board board = Board.getInstance();
+//            PieceFactory pieceFactory = PieceFactory.getInstance();
+//            ArrayList<Piece> pieces = board.getPieces(team);
+//            System.out.println(pieces);
+//            pieces.remove(this);
+//            pieces.add(pieceFactory.createPiece(pieceHistory.getPrevType(),
+//                    pieceHistory.getPrevLine(), pieceHistory.getPrevCol(), team));
+//            pieces.get(pieces.size() - 1).restoreToLastState(pieceHistory);
+//            System.out.println(pieces);
+//        }
+        }
+
+        public final Integer getValue() {
+        return value;
     }
 
-    public final Integer getValue() {
-        return value;
+    public final void setHadMover(boolean hadMoved) {
+        this.hadMoved = hadMoved;
     }
 }
