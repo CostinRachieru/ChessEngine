@@ -6,8 +6,8 @@ import Helper.Helper;
 
 import java.util.ArrayList;
 
-import static Helper.Constants.LEFT_COLUMN;
-import static Helper.Constants.RIGHT_COLUMN;
+import static Helper.Constants.*;
+import static Helper.Constants.LEFT_ROOK_CASTLING_COLUMN;
 
 public class Board {
     // We do not use the line and column 0.
@@ -168,16 +168,36 @@ public class Board {
         return squaresMoved;
     }
 
+    public void doCastling(int line, int side) {
+        if (side > 0) {
+            Piece rook = getPiece(line, RIGHT_COLUMN);
+            Position newRookPos = new Position(line, RIGHT_ROOK_CASTLING_COLUMN);
+            movePiece(rook, newRookPos);
+        } else {
+            Piece rook = getPiece(line, LEFT_COLUMN);
+            Position newRookPos = new Position(line, LEFT_ROOK_CASTLING_COLUMN);
+            movePiece(rook, newRookPos);
+        }
+    }
+
     public final void movePiece(Piece piece, Position newPos) {
         PieceHistory pieceHistory = piece.createHistoy();
         int newLine = newPos.getLine();
         int newCol = newPos.getColumn();
 
+        // check if piece captures other piece
         if (!isEmpty(newLine, newCol)) {
             Piece capturedPiece = getPiece(newLine, newCol);
             pieceHistory.setHasCaptured(true);
             pieceHistory.setCapturedPiece(capturedPiece);
             capturedPiece.setAlive(false);
+        }
+
+        // check if piece dose castling
+        int castlingSide = isCastling(piece, newPos);
+        if (castlingSide != 0) {
+            doCastling(piece.getLine(), castlingSide);
+            pieceHistory.setWasCastling(true);
         }
 
         board[piece.getLine()][piece.getColumn()] = null;
@@ -201,10 +221,16 @@ public class Board {
         piece.restoreToLastState(pieceHistory);
         board[prevLine][prevCol] = piece;
 
+        // if a piece was captured restore it
         if (pieceHistory.hasCaptured()) {
             Piece capturedPiece = pieceHistory.getCapturedPiece();
             capturedPiece.setAlive(true);
             board[currentLine][currentCol] = capturedPiece;
+        }
+
+        // if castling was done move the rook back
+        if (pieceHistory.wasCastling()) {
+            undoMove();
         }
     }
 

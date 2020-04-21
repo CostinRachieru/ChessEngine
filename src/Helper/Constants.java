@@ -8,6 +8,8 @@ public final class Constants {
     public static final int RIGHT_COLUMN = 8;
     public static final int LEFT_COLUMN = 1;
     public static final int BOARD_SIZE = 8;
+    public static final int RIGHT_ROOK_CASTLING_COLUMN = 6;
+    public static final int LEFT_ROOK_CASTLING_COLUMN = 3;
 
     public static final int PAWN_VALUE = 100;
     public static final int KNIGHT_VALUE = 320;
