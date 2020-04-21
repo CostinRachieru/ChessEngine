@@ -276,10 +276,6 @@ public class Board {
         System.out.println(res);
     }
 
-    public final ArrayList<Piece> getMoveHistory() {
-        return moveHistory;
-    }
-
     public final char pieceSymbol(Piece piece) {
         String pieceType = piece.getType();
         if (piece.getTeam().equals("White")) {

@@ -9,7 +9,6 @@ import Helper.Constants;
 import java.util.ArrayList;
 
 public class GamePlayer {
-<<<<<<< HEAD
     private static final int MAX_DEPTH = 4;
     private static final int INITIAL_DEPTH = 1;
     private static final boolean INITIAL_IS_MAXIMIZING = false;
