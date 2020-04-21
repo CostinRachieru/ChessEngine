@@ -1039,3 +1039,227 @@ Rxb7 Bxb7 {+23,19/2 0,1} 16. d5 Bxd5 {+24,24/2 0,1} 17. Bd4 Nxf3+
 f3 Ne2+ {+30,63/2 0,1}
 {Xboard: Forfeit due to invalid move: f3e4 (f3e4 via `0, `0) res=24} 0-1
 
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 a6 {+0,02/2 0,1} 2. e4 d5 {+0,15/2 0,1} 3. Nc3 Nf6 {-0,03/2 0,1} 4.
+Nf3 dxe4 {+0,63/2 0,1} 5. Be3 exf3 {+2,34/2 0,1} 6. Nd5 Nxd5 {+5,45/2 0,1}
+7. Kd2 Nxe3 {+7,00/2 0,1} 8. Qxf3 Nxf1+ {+9,14/2 0,1} 9. Kd1 Qxd4+
+{+12,08/2 0,1} 10. Qd3 Qxb2 {+12,58/2 0,1} 11. Rb1 Qxb1+ {+17,26/2 0,1}
+{Xboard: Forfeit due to invalid move: d3e4 (d3e4 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. d4 Nf6 {+0,12/2 0,1} 2. Nc3 Nc6 {+0,07/2 0,1} 3. Nf3 d6 {+0,11/2 0,1} 4.
+e4 Be6 {-0,01/2 0,1} 5. Be3 Ng4 {-0,02/2 0,1} 6. Nd5 Nxe3 {+0,29/2 0,1}
+{xboard exit (Clocks: 54, 311)} *
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 Nf6 {+0,08/2 0,1} 2. Nc3 d5 {+0,05/2 0,1} 3. Nf3 c6 {+0,05/2 0,1} 4.
+e4 dxe4 {+0,63/2 0,1} 5. Be3 exf3 {+2,34/2 0,1} 6. Bd3 fxg2 {+5,20/2 0,1}
+7. Nd5 gxh1=Q+ {+18,85/2 0,1}
+{Xboard: Forfeit due to invalid move: e1f1 (e1f1 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 f5 {+0,13/2 0,1} 2. Nc3 Nf6 {+0,11/2 0,1} 3. Nf3 Nc6 {+0,14/2 0,1} 4.
+e4 fxe4 {+0,66/2 0,1} 5. Be3 exf3 {+2,34/2 0,1} 6. Bd3 fxg2 {+5,20/2 0,1}
+7. Nd5 gxh1=Q+ {+18,85/2 0,1}
+{Xboard: Forfeit due to invalid move: e1f1 (e1f1 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 f6 {+0,10/2 0,1} 2. Nc3 g5 {+0,06/2 0,1} 3. Nf3 c6 {+0,13/2 0,1} 4.
+e4 g4 {-0,06/2 0,1} 5. Be3 gxf3 {+1,64/2 0,1} 6. Bd3 fxg2 {+4,46/2 0,1} 7.
+Nd5 gxh1=Q+ {+17,45/2 0,1}
+{Xboard: Forfeit due to invalid move: e1f1 (e1f1 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. d4 Nf6 {+0,13/2 0,1} 2. Nc3 d5 {+0,14/2 0,1} 3. Nf3 Be6 {+0,10/2 0,1} 4.
+e4 dxe4 {+0,62/2 0,1} 5. Be3 exf3 {+2,34/2 0,1} 6. Bd3 fxg2 {+5,20/2 0,1}
+7. Nd5 gxh1=Q+ {+18,85/2 0,1}
+{xboard exit (Clocks: 289, 313)} *
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 d5 {+0,11/2 0,1} 2. e4 dxe4 {+0,36/2 0,1} 3. Nc3 Nc6 {+0,77/2 0,1} 4.
+Nf3 exf3 {+3,13/2 0,1} 5. Nd5 Qxd5 {+5,93/2 0,1} 6. Be2 fxe2 {+8,76/2 0,1}
+7. Be3 exd1=Q+ {+17,08/2 0,1}
+{Xboard: Forfeit due to invalid move: e1g1 (e1g1 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 d5 {+0,12/2 0,1} 2. e4 dxe4 {+0,51/2 0,1} 3. Nc3 Bf5 {+0,75/2 0,1} 4.
+Nf3 exf3 {+2,35/2 0,1} 5. Nd5 Qxd5 {+5,15/2 0,1} 6. Be2 fxe2 {+8,71/2 0,1}
+7. Be3 exd1=Q+ {+17,08/2 0,1}
+{Xboard: Forfeit due to invalid move: e1g1 (e1g1 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 f6 {+0,13/2 0,1} 2. e4 b6 {+0,03/2 0,1} 3. Nc3 c5 {+0,02/2 0,1} 4.
+Nf3 Nc6 {+0,00/2 0,1} 5. Be3 e5 {+0,01/2 0,1} 6. Nd5 cxd4 {+0,81/2 0,1} 7.
+Kd2 dxe3+ {+2,87/2 0,1} 8. Nxe3 Bb4+ {+3,00/2 0,1} 9. Ke2 Nge7
+{+2,99/2 0,1} 10. Qd3 O-O {+3,15/2 0,1} 11. Nxe5 Nxe5 {+4,87/2 0,1} 12. Rd1
+Nxd3 {+10,61/2 0,1} 13. Nd5 Nxd5 {+13,25/2 0,1} 14. c4 N5f4+ {+16,68/2 0,1}
+{Xboard: Forfeit due to invalid move: a2a4 (a2a4 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 f6 {+0,13/2 0,1} 2. e4 Nc6 {+0,13/2 0,1} 3. Nc3 g5 {+0,04/2 0,1} 4.
+Nf3 g4 {-0,04/2 0,1} 5. Be3 gxf3 {+1,64/2 0,1} 6. Nd5 e6 {+3,19/2 0,1} 7.
+Be2 fxe2 {+6,50/2 0,1} 8. Qxe2 exd5 {+6,51/2 0,1} 9. O-O dxe4 {+8,00/2 0,1}
+10. Rad1 Bd6 {+8,15/2 0,1} 11. Qf3 exf3 {+15,90/2 0,1} 12. Rfe1 Bb4
+{+17,13/2 0,1} 13. d5 Bxe1 {+18,58/2 0,1} 14. d6 Bb4 {+20,51/2 0,1} 15. Re1
+Bxe1 {+24,89/2 0,1} 16. Bd4 Nxd4 {+28,41/2 0,1} 17. a3 cxd6 {+29,39/2 0,1}
+18. c3 Ne2+ {+29,79/2 0,1} 19. Kh1 b5 {+29,36/2 0,1} 20. c4 bxc4
+{+29,88/2 0,1} 21. h3 d5 {+30,06/2 0,1} 22. Kh2 Qc7+ {+30,66/2 0,1} 23. Kh1
+Ne7 {+30,04/2 0,1} 24. a4 O-O {+30,10/2 0,1} 25. a5 Bxf2 {+30,67/2 0,1} 26.
+a6 Kf7 {+30,70/2 0,1} 27. h4 Bxa6 {+31,30/2 0,1} 28. h5 Ng3+ {+32,73/2 0,1}
+29. Kh2 Nxh5+ {+32,76/2 0,1} 30. Kh1 Ng3+ {+32,80/2 0,1} 31. Kh2 Ne4+
+{+32,85/2 0,1} 32. Kh1 Qf4 {+32,11/2 0,1} 33. gxf3 Qxf3+ {+32,13/2 0,1}
+{Xboard: Forfeit due to invalid move: b2b4 (b2b4 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 d6 {+0,12/2 0,1} 2. e4 Nd7 {+0,14/2 0,1} 3. Nc3 c6 {+0,13/2 0,1} 4.
+Nf3 Ngf6 {-0,02/2 0,1} 5. Be3 Qb6 {+0,00/2 0,1} 6. Nd5 cxd5 {+2,65/2 0,1}
+7. Kd2 dxe4 {+4,00/2 0,1} 8. Bd3 exd3 {+6,00/2 0,1} 9. Ne5 dxe5
+{+8,72/2 0,1} 10. Qf3 e4 {+10,19/2 0,1} 11. Rad1 exf3 {+17,45/2 0,1} 12.
+Kc1 fxg2 {+20,04/2 0,1} 13. Kb1 gxh1=Q {+22,63/2 0,1} 14. d5 Qxd1+
+{+36,92/2 0,1}
+{Xboard: Forfeit due to invalid move: d5d6 (d5d6 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "0-1"]
+[TimeControl "300+2"]
+
+1. d4 d5 {+0,14/2 0,1} 2. Nc3 Nc6 {+0,10/2 0,1} 3. Nf3 f6 {+0,04/2 0,1} 4.
+e4 e6 {-0,11/2 0,1} 5. Be3 Nge7 {+0,00/2 0,1} 6. Nxd5 exd5 {+1,67/2 0,1} 7.
+Ne5 fxe5 {+4,35/2 0,1} 8. Be2 dxe4 {+5,06/2 0,1} 9. O-O Nxd4 {+5,95/2 0,1}
+10. Bc4 Bf5 {+5,99/2 0,1} 11. Qd3 exd3 {+13,50/2 0,1} 12. Rad1 dxc2
+{+16,34/2 0,1} 13. Rfe1 Nf3+ {+20,73/2 0,1} 14. Kh1 cxd1=Q {+23,52/2 0,1}
+15. Bf4 Qxe1+ {+34,91/2 0,1}
+{Xboard: Forfeit due to invalid move: f4e3 (f4e3 via `0, `0) res=24} 0-1
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. d4 d6 {+0,12/2 0,1}
+{xboard exit (Clocks: 300, 301)} *
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. d4 c6 {+0,13/2 0,1} 2. Nc3 d5 {+0,15/2 0,1} 3. Nf3 Bf5 {+0,09/2 0,1} 4.
+e4 dxe4 {+0,63/2 0,1} 5. Be3 exf3 {+2,36/2 0,1} 6. Bd3 fxg2 {+5,20/2 0,1}
+7. Nd5 gxh1=Q+ {+18,83/2 0,1}
+{xboard exit (Clocks: 293, 313)} *
+
+[Event "Computer Chess Game"]
+[Site "costinpc"]
+[Date "2020.04.21"]
+[Round "1"]
+[White "make"]
+[Black "fairymax"]
+[Result "*"]
+[TimeControl "300+2"]
+
+1. d4 Nc6 {+0,24/1 0,1} 2. Nc3 f5 {+0,30/1 0,1} 3. Nf3 d5 {+0,19/1 0,1} 4.
+e4 fxe4 {+0,75/1 0,1} 5. Be3 exf3 {+2,33/1 0,1} 6. Bd3 fxg2 {+5,10/1 0,1}
+{xboard exit (Clocks: 294, 311)} *
+

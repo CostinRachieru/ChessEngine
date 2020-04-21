@@ -10,1022 +10,465 @@ recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-101 >first : xboard
+95 >first : xboard
 protover 2
-103 <first : java Main
-134 <first : feature sigint=0 san=0 done=1
-134 >first : accepted sigint
-134 >first : accepted san
-134 >first : accepted done
-135 >first : new
+96 <first : java Main
+123 <first : feature sigint=0 san=0 done=1
+123 >first : accepted sigint
+123 >first : accepted san
+123 >first : accepted done
+124 >first : new
 random
-135 >first : level 0 5 2
-135 >first : post
-135 >first : hard
+124 >first : level 0 5 2
+124 >first : post
+124 >first : hard
 Reset(0, 1) from gameMode 0
 recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
-135 >first : quit
+124 >first : quit
 shuffleOpenings = 0
 StartChildProcess (dir=".") make run
-139 >first : xboard
+128 >first : xboard
 protover 2
-139 >first : new
+128 >first : new
 random
-139 >first : level 0 5 2
-139 >first : post
-139 >first : hard
-139 >first : force
+128 >first : level 0 5 2
+128 >first : post
+128 >first : hard
+128 >first : force
 StartChildProcess (dir=".") fairymax
-139 >second: xboard
+129 >second: xboard
 protover 2
-140 <first : java Main
-175 <first : feature sigint=0 san=0 done=1
-176 >first : accepted sigint
-176 >first : accepted san
-176 >first : accepted done
-177 >second: new
+130 <first : java Main
+159 <first : feature sigint=0 san=0 done=1
+159 >first : accepted sigint
+159 >first : accepted san
+159 >first : accepted done
+160 >second: new
 random
-sd 2
-177 >second: level 0 5 2
-177 >second: post
-177 >second: hard
-177 >second: force
+sd 1
+160 >second: level 0 5 2
+160 >second: post
+160 >second: hard
+160 >second: force
 New game (1): make-fairymax (w)
-187 >first : computer
-187 >second: computer
-187 >first : black
-187 >first : time 30000
-187 >first : otim 30000
-187 >first : white
+170 >first : computer
+170 >second: computer
+171 >first : black
+171 >first : time 30000
+171 >first : otim 30000
+171 >first : white
 book hit = (NULL)
-187 >first : go
+171 >first : go
 nps: w=-1, b=-1
-202 <second: tellics say     Fairy-Max 5.0b
-202 <second: tellics say     by H.G. Muller
-203 <second: feature myname="Fairy-Max 5.0b"
-203 >second: accepted myname
-203 <second: feature memory=1 exclude=1
-203 >second: accepted memory
-203 >second: accepted exclude
-203 <second: feature setboard=0 xedit=1 ping=1 done=0
-203 >second: accepted setboard
-203 >second: accepted xedit
-203 >second: accepted ping
-203 >second: accepted done
-203 <second: feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
-203 >second: accepted variants
-203 <second: feature option="Resign -check 0"
-203 >second: accepted option
-203 <second: feature option="Resign Threshold -spin 800 200 1200"
-203 >second: accepted option
-203 <second: feature option="Claim draw after -spin 50 0 200"
-203 >second: accepted option
-203 <second: feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
-203 >second: accepted option
-203 <second: feature option="Multi-PV Margin -spin 0 0 1000"
-203 >second: accepted option
-203 <second: feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
-203 >second: accepted option
-203 <second: feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
-203 >second: accepted option
-203 <second: feature option="Dummy Slider Example -slider 20 0 100"
-203 >second: accepted option
-203 <second: feature option="Dummy String Example -string happy birthday!"
-203 >second: accepted option
-203 <second: feature option="Dummy Path Example -path ."
-203 >second: accepted option
-203 <second: feature option="Automatic persistent-hash dialog -check 0"
-203 >second: accepted option
-203 <second: feature option="Info -button"
-203 >second: accepted option
-203 <second: feature option="Save in hash file -button"
-203 >second: accepted option
-203 <second: feature option="Clear Hash -button"
-203 >second: accepted option
-203 <second: feature done=1
-203 >second: accepted done
-206 <first : 0 - 0 - 0
-221 <second: Error (unknown command): computer
-240 <first : 0 - 0 - 0
-240 <first : 0 - 0 - 0
-240 <first : 0 - 0 - 0
-241 <first : 0 - 0 - 0
-241 <first : 0 - 0 - 0
-258 <first : 0 - 0 - 0
-258 <first : 0 - 0 - 0
-271 <first : 0 - 0 - 0
-284 <first : 0 - 0 - 0
-291 <first : 0 - 0 - 0
-303 <first : 0 - 0 - 0
-315 <first : 0 - 0 - 0
-321 <first : 0 - 0 - 0
-326 <first : 0 - 0 - 0
-331 <first : 0 - 0 - 0
-388 <first :    A B C D E F G H
-388 <first : 1 |R|N|B|Q|K|B|N|R|
-388 <first : 2 |P|P|P| |P|P|P|P|
-388 <first : 3 | | | | | | | | |
-388 <first : 4 | | | |P| | | | |
-388 <first : 5 | | | | | | | | |
-388 <first : 6 | | | | | | | | |
-388 <first : 7 |p|p|p|p|p|p|p|p|
-388 <first : 8 |r|n|b|q|k|b|n|r|
-388 <first : 
-388 <first : move d2d4
-389 >second: time 30000
-389 >second: otim 30180
+176 <second: tellics say     Fairy-Max 5.0b
+176 <second: tellics say     by H.G. Muller
+176 <second: feature myname="Fairy-Max 5.0b"
+176 >second: accepted myname
+176 <second: feature memory=1 exclude=1
+176 >second: accepted memory
+176 >second: accepted exclude
+176 <second: feature setboard=0 xedit=1 ping=1 done=0
+176 >second: accepted setboard
+176 >second: accepted xedit
+176 >second: accepted ping
+176 >second: accepted done
+176 <second: feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
+176 >second: accepted variants
+176 <second: feature option="Resign -check 0"
+176 >second: accepted option
+176 <second: feature option="Resign Threshold -spin 800 200 1200"
+176 >second: accepted option
+176 <second: feature option="Claim draw after -spin 50 0 200"
+176 >second: accepted option
+176 <second: feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
+176 >second: accepted option
+176 <second: feature option="Multi-PV Margin -spin 0 0 1000"
+176 >second: accepted option
+176 <second: feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
+176 >second: accepted option
+176 <second: feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
+176 >second: accepted option
+176 <second: feature option="Dummy Slider Example -slider 20 0 100"
+176 >second: accepted option
+176 <second: feature option="Dummy String Example -string happy birthday!"
+176 >second: accepted option
+176 <second: feature option="Dummy Path Example -path ."
+176 >second: accepted option
+176 <second: feature option="Automatic persistent-hash dialog -check 0"
+176 >second: accepted option
+176 <second: feature option="Info -button"
+176 >second: accepted option
+176 <second: feature option="Save in hash file -button"
+176 >second: accepted option
+176 <second: feature option="Clear Hash -button"
+176 >second: accepted option
+176 <second: feature done=1
+176 >second: accepted done
+186 <first : 0 - 0 - 0
+192 <second: Error (unknown command): computer
+399 <first : 0 - 0 - 0
+399 <first : 0 - 0 - 0
+399 <first : 0 - 0 - 0
+399 <first : 0 - 0 - 0
+399 <first : 0 - 0 - 0
+529 <first : 0 - 0 - 0
+529 <first : 0 - 0 - 0
+645 <first : 0 - 0 - 0
+707 <first : 0 - 0 - 0
+816 <first : 0 - 0 - 0
+1025 <first : 0 - 0 - 0
+1282 <first : 0 - 0 - 0
+1391 <first : 0 - 0 - 0
+1491 <first : 0 - 0 - 0
+1572 <first : 0 - 0 - 0
+1613 <first :    A B C D E F G H
+1613 <first : 8 |r|n|b|q|k|b|n|r|
+1613 <first : 7 |p|p|p|p|p|p|p|p|
+1613 <first : 6 | | | | | | | | |
+1613 <first : 5 | | | | | | | | |
+1613 <first : 4 | | | |P| | | | |
+1613 <first : 3 | | | | | | | | |
+1613 <first : 2 |P|P|P| |P|P|P|P|
+1613 <first : 1 |R|N|B|Q|K|B|N|R|
+1613 <first : 
+1613 <first : move d2d4
+1613 >second: time 30000
+1613 >second: otim 30055
 book hit = (NULL)
-389 >second: d2d4
-389 >second: black
-389 >second: go
-462 <second: # times @ 2639178564
-462 <second: # 16+16 pieces, centr = (1,1) R=40
-462 <second:  1     14        0          3 d7d5
-462 <second:  1     15        0          5 f7f5
-462 <second:  1     17        0          7 f7f6
-462 <second:  1     19        0         13 h7h6
-462 <second:  1     23        0         15 g8f6
-462 <second:  2      4        0         29 g8f6 c2c4
-462 <second: # times @ 2639178564: real=0 cpu=0
-462 <second: # promo = 0 (`) GT = 0
-462 <second: move g8f6
-462 >first : time 30180
-462 >first : otim 30192
+1613 >second: d2d4
+1613 >second: black
+1613 >second: go
+1687 <second: # times @ 2641363309
+1687 <second: # 16+16 pieces, centr = (1,1) R=40
+1687 <second:  1     14        0          3 d7d5
+1687 <second:  1     19        0          9 e7e6
+1687 <second:  1     24        0         11 b8c6
+1687 <second: # times @ 2641363309: real=0 cpu=0
+1687 <second: # promo = 0 (`) GT = 0
+1687 <second: move b8c6
+1687 >first : time 30055
+1687 >first : otim 30192
 book hit = (NULL)
-462 >first : g8f6
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-557 <first : 2 - 2 - 2
-558 <first : 2 - 2 - 2
-558 <first :    A B C D E F G H
-558 <first : 1 |R|N|B|Q|K|B|N|R|
-558 <first : 2 |P|P|P| | |P|P|P|
-558 <first : 3 | | | | | | | | |
-558 <first : 4 | | | |P|P| | | |
-558 <first : 5 | | | | | | | | |
-558 <first : 6 | | | | | |n| | |
-558 <first : 7 |p|p|p|p|p|p|p|p|
-558 <first : 8 |r|n|b|q|k|b| |r|
-558 <first : 
-558 <first : move e2e4
+1687 >first : b8c6
+1782 <first : 2 - 2 - 2
+1984 <first : 2 - 2 - 2
+2611 <first : 2 - 2 - 2
+2988 <first : 2 - 2 - 2
+3098 <first : 2 - 2 - 2
+3099 <first : 2 - 2 - 2
+3224 <first : 2 - 2 - 2
+3224 <first : 2 - 2 - 2
+3304 <first : 2 - 2 - 2
+3376 <first : 2 - 2 - 2
+3451 <first : 2 - 2 - 2
+3499 <first : 2 - 2 - 2
+3640 <first : 2 - 2 - 2
+3697 <first : 2 - 2 - 2
+3770 <first : 2 - 2 - 2
+3835 <first : 2 - 2 - 2
+3835 <first :    A B C D E F G H
+3835 <first : 8 |r| |b|q|k|b|n|r|
+3835 <first : 7 |p|p|p|p|p|p|p|p|
+3835 <first : 6 | | |n| | | | | |
+3835 <first : 5 | | | | | | | | |
+3835 <first : 4 | | | |P| | | | |
+3835 <first : 3 | | |N| | | | | |
+3835 <first : 2 |P|P|P| |P|P|P|P|
+3835 <first : 1 |R| |B|Q|K|B|N|R|
+3835 <first : 
+3835 <first : move b1c3
 Interrupting second
-558 >second: time 30192
-558 >second: otim 30370
+3835 >second: time 30192
+3835 >second: otim 30041
 book hit = (NULL)
-558 >second: e2e4
-633 <second: # times @ 2639178734
-633 <second: # 16+16 pieces, centr = (1,1) R=40
-633 <second:  1     62        0          3 f6e4
-633 <second:  2     63        0         39 f6e4 b1c3
-633 <second: # times @ 2639178735: real=1 cpu=0
-633 <second: # promo = 0 (`) GT = 0
-633 <second: move f6e4
-633 >first : time 30370
-633 >first : otim 30385
+3835 >second: b1c3
+3934 <second: # times @ 2641365531
+3934 <second: # 16+16 pieces, centr = (1,1) R=40
+3934 <second:  1   -180        0          3 c6d4
+3934 <second:  1    -11        0          3 c6a5
+3934 <second:  1     -3        0          3 c6b4
+3934 <second:  1     12        0          3 g8f6
+3934 <second:  1     15        0          3 d7d5
+3934 <second:  1     30        0          5 f7f5
+3935 <second: # times @ 2641365531: real=0 cpu=0
+3935 <second: # promo = 0 (`) GT = 0
+3935 <second: move f7f5
+3935 >first : time 30041
+3935 >first : otim 30382
 book hit = (NULL)
-633 >first : f6e4
-728 <first : 4 - 4 - 4
-728 <first : 4 - 4 - 4
-728 <first : 4 - 4 - 4
-736 <first : 4 - 4 - 4
-739 <first : 4 - 4 - 4
-761 <first : 4 - 4 - 4
-772 <first : 4 - 4 - 4
-772 <first : 4 - 4 - 4
-779 <first : 4 - 4 - 4
-786 <first : 4 - 4 - 4
-793 <first : 4 - 4 - 4
-796 <first : 4 - 4 - 4
-796 <first : 4 - 4 - 4
-802 <first : 4 - 4 - 4
-809 <first : 4 - 4 - 4
-817 <first : 4 - 4 - 4
-817 <first :    A B C D E F G H
-817 <first : 1 |R| |B|Q|K|B|N|R|
-817 <first : 2 |P|P|P| | |P|P|P|
-817 <first : 3 | | |N| | | | | |
-817 <first : 4 | | | |P|n| | | |
-817 <first : 5 | | | | | | | | |
-817 <first : 6 | | | | | | | | |
-818 <first : 7 |p|p|p|p|p|p|p|p|
-818 <first : 8 |r|n|b|q|k|b| |r|
-818 <first : 
-818 <first : move b1c3
+3935 >first : f7f5
+4009 <first : 4 - 4 - 4
+4213 <first : 4 - 4 - 4
+4671 <first : 4 - 4 - 4
+4812 <first : 4 - 4 - 4
+4851 <first : 4 - 4 - 4
+4851 <first : 4 - 4 - 4
+4942 <first : 4 - 4 - 4
+4942 <first : 4 - 4 - 4
+5025 <first : 4 - 4 - 4
+5106 <first : 4 - 4 - 4
+5106 <first : 4 - 4 - 4
+5151 <first : 4 - 4 - 4
+5307 <first : 4 - 4 - 4
+5368 <first : 4 - 4 - 4
+5453 <first : 4 - 4 - 4
+5533 <first : 4 - 4 - 4
+5534 <first :    A B C D E F G H
+5534 <first : 8 |r| |b|q|k|b|n|r|
+5534 <first : 7 |p|p|p|p|p| |p|p|
+5534 <first : 6 | | |n| | | | | |
+5534 <first : 5 | | | | | |p| | |
+5534 <first : 4 | | | |P| | | | |
+5534 <first : 3 | | |N| | |N| | |
+5534 <first : 2 |P|P|P| |P|P|P|P|
+5534 <first : 1 |R| |B|Q|K|B| |R|
+5534 <first : 
+5534 <first : move g1f3
 Interrupting second
-818 >second: time 30385
-818 >second: otim 30551
+5534 >second: time 30382
+5534 >second: otim 30081
 book hit = (NULL)
-818 >second: b1c3
-913 <second: # times @ 2639178993
-913 <second: # 15+16 pieces, centr = (1,1) R=40
-913 <second:  1     68        0          3 e4c3
-913 <second:  1     81        0          9 e4d6
-913 <second:  2     51        0         31 e4d6 c1f4
-913 <second:  2     68        0         34 e4c3 b2c3
-913 <second:  2     80        0        156 f7f5 c1f4
-913 <second: # times @ 2639178993: real=0 cpu=0
-913 <second: # promo = 0 (`) GT = 0
-913 <second: move f7f5
-913 >first : time 30551
-913 >first : otim 30575
+5534 >second: g1f3
+5631 <second: # times @ 2641367229
+5631 <second: # 16+16 pieces, centr = (1,1) R=40
+5631 <second:  1   -182        0          3 c6d4
+5631 <second:  1    -11        0          3 c6a5
+5631 <second:  1     -4        0          3 c6b4
+5631 <second:  1     12        0          7 g8f6
+5631 <second:  1     16        0          9 a7a6
+5631 <second:  1     19        0         15 d7d5
+5631 <second: # times @ 2641367229: real=0 cpu=0
+5631 <second: # promo = 0 (`) GT = 0
+5631 <second: move d7d5
+5631 >first : time 30081
+5631 >first : otim 30572
 book hit = (NULL)
-913 >first : f7f5
-989 <first : 6 - 6 - 6
-989 <first : 6 - 6 - 6
-989 <first : 6 - 6 - 6
-993 <first : 6 - 6 - 6
-996 <first : 6 - 6 - 6
-1019 <first : 6 - 6 - 6
-1039 <first : 6 - 6 - 6
-1040 <first : 6 - 6 - 6
-1054 <first : 6 - 6 - 6
-1066 <first : 6 - 6 - 6
-1066 <first : 6 - 6 - 6
-1072 <first : 6 - 6 - 6
-1072 <first : 6 - 6 - 6
-1081 <first : 6 - 6 - 6
-1092 <first : 6 - 6 - 6
-1103 <first : 6 - 6 - 6
-1103 <first :    A B C D E F G H
-1103 <first : 1 |R| |B|Q|K|B| |R|
-1103 <first : 2 |P|P|P| | |P|P|P|
-1103 <first : 3 | | |N| | |N| | |
-1103 <first : 4 | | | |P|n| | | |
-1103 <first : 5 | | | | | |p| | |
-1103 <first : 6 | | | | | | | | |
-1103 <first : 7 |p|p|p|p|p| |p|p|
-1103 <first : 8 |r|n|b|q|k|b| |r|
-1103 <first : 
-1103 <first : move g1f3
+5631 >first : d7d5
+5705 <first : 6 - 6 - 6
+5898 <first : 6 - 6 - 6
+6167 <first : 6 - 6 - 6
+6295 <first : 6 - 6 - 6
+6343 <first : 6 - 6 - 6
+6343 <first : 6 - 6 - 6
+6654 <first : 6 - 6 - 6
+6712 <first : 6 - 6 - 6
+6849 <first : 6 - 6 - 6
+6949 <first : 6 - 6 - 6
+6949 <first : 6 - 6 - 6
+6949 <first : 6 - 6 - 6
+7104 <first : 6 - 6 - 6
+7104 <first : 6 - 6 - 6
+7202 <first : 6 - 6 - 6
+7289 <first : 6 - 6 - 6
+7289 <first :    A B C D E F G H
+7289 <first : 8 |r| |b|q|k|b|n|r|
+7289 <first : 7 |p|p|p| |p| |p|p|
+7289 <first : 6 | | |n| | | | | |
+7289 <first : 5 | | | |p| |p| | |
+7289 <first : 4 | | | |P|P| | | |
+7289 <first : 3 | | |N| | |N| | |
+7289 <first : 2 |P|P|P| | |P|P|P|
+7289 <first : 1 |R| |B|Q|K|B| |R|
+7289 <first : 
+7289 <first : move e2e4
 Interrupting second
-1103 >second: time 30575
-1103 >second: otim 30732
+7290 >second: time 30572
+7290 >second: otim 30115
 book hit = (NULL)
-1103 >second: g1f3
-1199 <second: # times @ 2639179279
-1199 <second: # 15+16 pieces, centr = (1,1) R=40
-1199 <second:  1     68        0          3 e4c3
-1199 <second:  1     71        0          3 e4f6
-1199 <second:  1     75        0          3 b8c6
-1199 <second:  2     74        0         37 b8c6 c1f4
-1199 <second: # times @ 2639179279: real=0 cpu=0
-1199 <second: # promo = 0 (`) GT = 0
-1199 <second: move b8c6
-1199 >first : time 30732
-1199 >first : otim 30766
+7290 >second: e2e4
+7367 <second: # times @ 2641368985
+7367 <second: # 16+16 pieces, centr = (1,1) R=40
+7367 <second:  1     75        0          3 f5e4
+7367 <second: # times @ 2641368985: real=0 cpu=0
+7367 <second: # promo = 0 (`) GT = 0
+7367 <second: move f5e4
+7368 >first : time 30115
+7368 >first : otim 30765
 book hit = (NULL)
-1199 >first : b8c6
-1294 <first : 8 - 8 - 8
-1294 <first : 8 - 8 - 8
-1294 <first : 8 - 8 - 8
-1305 <first : 8 - 8 - 8
-1310 <first : 8 - 8 - 8
-1428 <first : 8 - 8 - 8
-1463 <first : 8 - 8 - 8
-1467 <first : 8 - 8 - 8
-1480 <first : 8 - 8 - 8
-1493 <first : 8 - 8 - 8
-1494 <first : 8 - 8 - 8
-1501 <first : 8 - 8 - 8
-1501 <first : 8 - 8 - 8
-1501 <first : 8 - 8 - 8
-1515 <first : 8 - 8 - 8
-1528 <first : 8 - 8 - 8
-1528 <first :    A B C D E F G H
-1528 <first : 1 |R| | |Q|K|B| |R|
-1528 <first : 2 |P|P|P| | |P|P|P|
-1528 <first : 3 | | |N| |B|N| | |
-1529 <first : 4 | | | |P|n| | | |
-1529 <first : 5 | | | | | |p| | |
-1529 <first : 6 | | |n| | | | | |
-1529 <first : 7 |p|p|p|p|p| |p|p|
-1529 <first : 8 |r| |b|q|k|b| |r|
-1529 <first : 
-1529 <first : move c1e3
+7368 >first : f5e4
+7468 <first : 8 - 8 - 8
+7898 <first : 8 - 8 - 8
+8397 <first : 8 - 8 - 8
+8648 <first : 8 - 8 - 8
+8775 <first : 8 - 8 - 8
+8813 <first : 8 - !@#!@#!@#!@#!@#
+8816 <first : King g1
+8816 <first : null
+8816 <first : 2
+8913 <first : !@#!@#!@#!@#!@#
+8913 <first : King g1
+8913 <first : null
+8913 <first : 2
+9023 <first : !@#!@#!@#!@#!@#
+9023 <first : King g1
+9023 <first : null
+9023 <first : 2
+9136 <first : !@#!@#!@#!@#!@#
+9136 <first : King g1
+9136 <first : null
+9136 <first : 2
+9252 <first : !@#!@#!@#!@#!@#
+9252 <first : King g1
+9252 <first : null
+9252 <first : 2
+9310 <first : 8 - 8
+9780 <first : 8 - 8 - 8
+9850 <first : 8 - 8 - 8
+10028 <first : 8 - 8 - 8
+10207 <first : 8 - 8 - 8
+10207 <first : 8 - 8 - 8
+10207 <first : 8 - 8 - 8
+10207 <first : 8 - 8 - 8
+10207 <first : 8 - 8 - 8
+10385 <first : 8 - 8 - 8
+10561 <first : 8 - 8 - 8
+10561 <first :    A B C D E F G H
+10561 <first : 8 |r| |b|q|k|b|n|r|
+10561 <first : 7 |p|p|p| |p| |p|p|
+10561 <first : 6 | | |n| | | | | |
+10561 <first : 5 | | | |p| | | | |
+10561 <first : 4 | | | |P|p| | | |
+10561 <first : 3 | | |N| |B|N| | |
+10561 <first : 2 |P|P|P| | |P|P|P|
+10561 <first : 1 |R| | |Q|K|B| |R|
+10561 <first : 
+10561 <first : move c1e3
 Interrupting second
-1529 >second: time 30766
-1529 >second: otim 30899
+10561 >second: time 30765
+10561 >second: otim 29995
 book hit = (NULL)
-1529 >second: c1e3
-1623 <second: # times @ 2639179705
-1623 <second: # 15+16 pieces, centr = (1,1) R=40
-1623 <second:  1     68        0          3 e4c3
-1623 <second:  1     71        0          3 e4f6
-1623 <second:  1     75        0          3 d7d5
-1623 <second:  2     70        0        284 d7d5 f1d3
-1623 <second: # times @ 2639179705: real=0 cpu=0
-1623 <second: # promo = 0 (`) GT = 0
-1623 <second: move d7d5
-1624 >first : time 30899
-1624 >first : otim 30956
+10561 >second: c1e3
+10660 <second: # times @ 2641372257
+10661 <second: # 15+16 pieces, centr = (1,1) R=40
+10661 <second:  1    233        0          3 e4f3
+10661 <second: # times @ 2641372257: real=0 cpu=0
+10661 <second: # promo = 0 (`) GT = 0
+10661 <second: move e4f3
+10661 >first : time 29995
+10661 >first : otim 30955
 book hit = (NULL)
-1624 >first : d7d5
-1699 <first : 10 - 10 - 10
-1699 <first : 10 - 10 - 10
-1714 <first : 10 - 10 - 10
-1759 <first : 10 - 10 - 10
-1763 <first : 10 - 10 - 10
-1825 <first : 10 - 10 - 10
-1869 <first : 10 - 10 - 10
-1874 <first : 10 - 10 - 10
-1889 <first : 10 - 10 - 10
-1903 <first : 10 - 10 - 10
-1903 <first : 10 - 10 - 10
-1903 <first : 10 - 10 - 10
-1903 <first : 10 - 10 - 10
-1903 <first : 10 - 10 - 10
-1919 <first : 10 - 10 - 10
-1932 <first : 10 - 10 - 10
-1933 <first :    A B C D E F G H
-1933 <first : 1 |R| | |Q|K|B| |R|
-1933 <first : 2 |P|P|P| | |P|P|P|
-1933 <first : 3 | | |N| |B| | | |
-1933 <first : 4 | | | |P|n| | | |
-1933 <first : 5 | | | |p|N|p| | |
-1933 <first : 6 | | |n| | | | | |
-1933 <first : 7 |p|p|p| |p| |p|p|
-1933 <first : 8 |r| |b|q|k|b| |r|
-1933 <first : 
-1933 <first : move f3e5
+10661 >first : e4f3
+10825 <first : 10 - 10 - 10
+11308 <first : 10 - 10 - 10
+11758 <first : 10 - 10 - 10
+11818 <first : 10 - !@#!@#!@#!@#!@#
+11819 <first : King b1
+11819 <first : null
+11819 <first : 2
+11967 <first : !@#!@#!@#!@#!@#
+11967 <first : King b1
+11967 <first : null
+11967 <first : 2
+12072 <first : !@#!@#!@#!@#!@#
+12072 <first : King b1
+12072 <first : null
+12072 <first : 2
+12194 <first : !@#!@#!@#!@#!@#
+12194 <first : King b1
+12194 <first : null
+12194 <first : 2
+12341 <first : 10 - 10
+12374 <first : 10 - !@#!@#!@#!@#!@#
+12374 <first : King b1
+12374 <first : null
+12374 <first : 2
+12411 <first : 10 - 10
+12458 <first : 10 - !@#!@#!@#!@#!@#
+12458 <first : King g1
+12458 <first : null
+12458 <first : 2
+12565 <first : !@#!@#!@#!@#!@#
+12565 <first : King g1
+12565 <first : null
+12565 <first : 2
+12689 <first : !@#!@#!@#!@#!@#
+12689 <first : King g1
+12689 <first : null
+12689 <first : 2
+12803 <first : !@#!@#!@#!@#!@#
+12803 <first : King g1
+12803 <first : null
+12803 <first : 2
+12921 <first : !@#!@#!@#!@#!@#
+12921 <first : King g1
+12921 <first : null
+12921 <first : 2
+12970 <first : 10 - 10
+12970 <first : 10 - 10 - 10
+13042 <first : 10 - 10 - 10
+13210 <first : 10 - 10 - 10
+13363 <first : 10 - 10 - 10
+13363 <first : 10 - 10 - 10
+13363 <first : 10 - 10 - 10
+13363 <first : 10 - 10 - 10
+13364 <first : 10 - 10 - 10
+13597 <first : 10 - 10 - 10
+13758 <first : 10 - 10 - 10
+13758 <first :    A B C D E F G H
+13758 <first : 8 |r| |b|q|k|b|n|r|
+13758 <first : 7 |p|p|p| |p| |p|p|
+13758 <first : 6 | | |n| | | | | |
+13758 <first : 5 | | | |p| | | | |
+13758 <first : 4 | | | |P| | | | |
+13758 <first : 3 | | |N|B|B|p| | |
+13758 <first : 2 |P|P|P| | |P|P|P|
+13758 <first : 1 |R| | |Q|K| | |R|
+13758 <first : 
+13758 <first : move f1d3
 Interrupting second
-1933 >second: time 30956
-1933 >second: otim 31069
+13758 >second: time 30955
+13758 >second: otim 29886
 book hit = (NULL)
-1933 >second: f3e5
-2027 <second: # times @ 2639180109
-2027 <second: # 15+16 pieces, centr = (1,1) R=40
-2027 <second:  1     80        0          3 c6e5
-2027 <second:  1     88        0          3 c8e6
-2027 <second:  2     82        0        187 c8e6 f2f4
-2027 <second: # times @ 2639180110: real=1 cpu=0
-2027 <second: # promo = 0 (`) GT = 0
-2027 <second: move c8e6
-2028 >first : time 31069
-2028 >first : otim 31147
+13758 >second: f1d3
+13856 <second: # times @ 2641375453
+13857 <second: # 14+16 pieces, centr = (1,1) R=36
+13857 <second:  1    510        0          3 f3g2
+13857 <second: # times @ 2641375453: real=0 cpu=0
+13857 <second: # promo = 0 (`) GT = 0
+13857 <second: move f3g2
+13857 >first : time 29886
+13857 >first : otim 31145
 book hit = (NULL)
-2028 >first : c8e6
-2123 <first : 12 - 12 - 12
-2123 <first : 12 - 12 - 12
-2141 <first : 12 - 12 - 12
-2281 <first : 12 - 12 - 12
-2287 <first : 12 - 12 - 12
-2382 <first : 12 - 12 - 12
-2408 <first : 12 - 12 - 12
-2411 <first : 12 - 12 - 12
-2420 <first : 12 - 12 - 12
-2427 <first : 12 - 12 - 12
-2427 <first : 12 - 12 - 12
-2427 <first : 12 - 12 - 12
-2427 <first : 12 - 12 - 12
-2434 <first : 12 - 12 - 12
-2442 <first : 12 - 12 - 12
-2451 <first : 12 - 12 - 12
-2451 <first :    A B C D E F G H
-2451 <first : 1 |R| | |Q|K|B| |R|
-2451 <first : 2 |P|P|P| | |P|P|P|
-2451 <first : 3 | | | | |B| | | |
-2451 <first : 4 | | | |P|n| | | |
-2451 <first : 5 | | | |N|N|p| | |
-2451 <first : 6 | | |n| |b| | | |
-2451 <first : 7 |p|p|p| |p| |p|p|
-2451 <first : 8 |r| | |q|k|b| |r|
-2451 <first : 
-2451 <first : move c3d5
+13857 >first : f3g2
+14121 <first : 12 - 12 - 12
+14869 <first : 12 - 12 - 12
+15568 <first : 12 - 12 - 12
+15658 <first : 12 - !@#!@#!@#!@#!@#
+15658 <first : King b1
+15658 <first : null
+15658 <first : 2
+15898 <first : !@#!@#!@#!@#!@#
+15898 <first : King b1
+15898 <first : null
+15898 <first : 2
+16191 <first : !@#!@#!@#!@#!@#
+16191 <first : King b1
+16191 <first : null
+16191 <first : 2
+16500 <first : !@#!@#!@#!@#!@#
+16500 <first : King b1
+16500 <first : null
+16500 <first : 2
+16686 <first : !@#!@#!@#!@#!@#
+16686 <first : King b1
+16686 <first : null
+16686 <first : 2
+16924 <first : 12 - 12
+16990 <first : 12 - !@#!@#!@#!@#!@#
+16990 <first : King b1
+16990 <first : null
+16990 <first : 2
+17171 <first : 12 - 12
+18256 <first : 12 - 12 - 12
+18256 <first : 12 - 12 - 12
+18478 <first : 12 - 12 - 12
+GameEnds(29, xboard exit, 2)
+GE(29, xboard exit, 2) bare king k=16 color=66
+18480 >first : result * {xboard exit}
 Interrupting second
-2451 >second: time 31147
-2451 >second: otim 31226
-book hit = (NULL)
-2451 >second: c3d5
-2545 <second: # times @ 2639180627
-2545 <second: # 15+15 pieces, centr = (1,1) R=40
-2545 <second:  1    260        0          3 e6d5
-2545 <second:  2    254        0        195 e6d5 c2c4
-2545 <second: # times @ 2639180629: real=2 cpu=0
-2545 <second: # promo = 0 (`) GT = 0
-2545 <second: move e6d5
-2545 >first : time 31226
-2545 >first : otim 31337
-book hit = (NULL)
-2545 >first : e6d5
-2619 <first : 14 - 14 - 14
-2619 <first : 14 - 14 - 14
-2619 <first : 14 - 14 - 14
-2619 <first : 14 - 14 - 14
-2619 <first : 14 - 14 - 14
-2672 <first : 14 - 14 - 14
-2745 <first : 14 - 14 - 14
-2754 <first : 14 - 14 - 14
-2775 <first : 14 - 14 - 14
-2795 <first : 14 - 14 - 14
-2819 <first : 14 - 14 - 14
-2819 <first : 14 - 14 - 14
-2819 <first : 14 - 14 - 14
-2837 <first : 14 - 14 - 14
-2859 <first : 14 - 14 - 14
-2880 <first : 14 - 14 - 14
-2880 <first :    A B C D E F G H
-2880 <first : 1 |R| | |Q|K| | |R|
-2880 <first : 2 |P|P|P| |B|P|P|P|
-2880 <first : 3 | | | | |B| | | |
-2880 <first : 4 | | | |P|n| | | |
-2880 <first : 5 | | | |b|N|p| | |
-2880 <first : 6 | | |n| | | | | |
-2880 <first : 7 |p|p|p| |p| |p|p|
-2880 <first : 8 |r| | |q|k|b| |r|
-2880 <first : 
-2880 <first : move f1e2
-Interrupting second
-2881 >second: time 31337
-2881 >second: otim 31393
-book hit = (NULL)
-2881 >second: f1e2
-2954 <second: # times @ 2639181057
-2954 <second: # 14+15 pieces, centr = (1,1) R=37
-2954 <second:  1    265        0          3 c6e5
-2954 <second:  1    266        0          3 a7a5
-2954 <second:  2    253        0        173 a7a5 e1g1 c6e5 d4e5
-2954 <second:  2    266        0       1172 c6e5 d4e5
-2954 <second: # times @ 2639181060: real=3 cpu=10
-2954 <second: # promo = 0 (`) GT = 0
-2954 <second: move c6e5
-2954 >first : time 31393
-2954 >first : otim 31530
-book hit = (NULL)
-2954 >first : c6e5
-3048 <first : 16 - 16 - 16
-3048 <first : 16 - 16 - 16
-3048 <first : 16 - 16 - 16
-3077 <first : 16 - 16 - 16
-3087 <first : 16 - 16 - 16
-3176 <first : 16 - 16 - 16
-3176 <first : 16 - 16 - 16
-3184 <first : 16 - 16 - 16
-3197 <first : 16 - 16 - 16
-3214 <first : 16 - 16 - 16
-3234 <first : 16 - 16 - 16
-3247 <first : 16 - 16 - 16
-3247 <first : 16 - 16 - 16
-3263 <first : 16 - 16 - 16
-3280 <first : 16 - 16 - 16
-3297 <first : 16 - 16 - 16
-3297 <first :    A B C D E F G H
-3297 <first : 1 |R| | |Q| |R|K| |
-3297 <first : 2 |P|P|P| |B|P|P|P|
-3297 <first : 3 | | | | |B| | | |
-3297 <first : 4 | | | |P|n| | | |
-3297 <first : 5 | | | |b|n|p| | |
-3297 <first : 6 | | | | | | | | |
-3297 <first : 7 |p|p|p| |p| |p|p|
-3297 <first : 8 |r| | |q|k|b| |r|
-3297 <first : 
-3297 <first : move e1g1
-Interrupting second
-3298 >second: time 31530
-3298 >second: otim 31558
-book hit = (NULL)
-3298 >second: e1g1
-3371 <second: # times @ 2639181475
-3371 <second: # 13+15 pieces, centr = (1,1) R=34
-3371 <second:  1    326        0         39 e4f2 f1f2
-3371 <second:  1    339        0        166 d8d6 d4e5 d6e5
-3371 <second:  1    425        0        302 d5c4 d4e5 d8d1 e2d1 c4f1 g1f1
-3371 <second:  1    514        0        344 e5c4
-3371 <second:  2    516        0        469 e5c4 e2h5
-3371 <second: # times @ 2639181476: real=1 cpu=0
-3371 <second: # promo = 0 (`) GT = 0
-3371 <second: move e5c4
-3371 >first : time 31558
-3371 >first : otim 31722
-book hit = (NULL)
-3371 >first : e5c4
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first : 19 - 19 - 19
-3466 <first :    A B C D E F G H
-3466 <first : 1 |R| | | | |R|K| |
-3466 <first : 2 |P|P|P| |B|P|P|P|
-3466 <first : 3 | | | |Q|B| | | |
-3466 <first : 4 | | |n|P|n| | | |
-3466 <first : 5 | | | |b| |p| | |
-3466 <first : 6 | | | | | | | | |
-3466 <first : 7 |p|p|p| |p| |p|p|
-3466 <first : 8 |r| | |q|k|b| |r|
-3466 <first : 
-3466 <first : move d1d3
-Interrupting second
-3466 >second: time 31722
-3466 >second: otim 31749
-book hit = (NULL)
-3466 >second: d1d3
-3540 <second: # times @ 2639181642
-3540 <second: # 13+15 pieces, centr = (1,1) R=34
-3540 <second:  1    581        0          3 c4b2
-3540 <second:  2    581        0        103 c4b2 d3a3
-3540 <second: # times @ 2639181644: real=2 cpu=0
-3540 <second: # promo = 0 (`) GT = 0
-3540 <second: move c4b2
-3540 >first : time 31749
-3540 >first : otim 31915
-book hit = (NULL)
-3540 >first : c4b2
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3635 <first : 21 - 21 - 21
-3638 <first : 21 - 21 - 21
-3638 <first :    A B C D E F G H
-3639 <first : 1 |R| | | | |R|K| |
-3639 <first : 2 |P|n|P| | |P|P|P|
-3639 <first : 3 | | | |Q|B|B| | |
-3639 <first : 4 | | | |P|n| | | |
-3639 <first : 5 | | | |b| |p| | |
-3639 <first : 6 | | | | | | | | |
-3639 <first : 7 |p|p|p| |p| |p|p|
-3639 <first : 8 |r| | |q|k|b| |r|
-3639 <first : 
-3639 <first : move e2f3
-Interrupting second
-3639 >second: time 31915
-3639 >second: otim 31939
-book hit = (NULL)
-3639 >second: e2f3
-3712 <second: # times @ 2639181814
-3712 <second: # 12+15 pieces, centr = (1,1) R=33
-3712 <second:  1   1184        0          3 b2d3
-3712 <second:  2   1185        0          7 b2d3 c2d3
-3712 <second: # times @ 2639181815: real=1 cpu=10
-3712 <second: # promo = 0 (`) GT = 0
-3712 <second: move b2d3
-3712 >first : time 31939
-3712 >first : otim 32108
-book hit = (NULL)
-3712 >first : b2d3
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first : 23 - 23 - 23
-3806 <first :    A B C D E F G H
-3806 <first : 1 | | | |R| |R|K| |
-3806 <first : 2 |P| |P| | |P|P|P|
-3806 <first : 3 | | | |n|B|B| | |
-3806 <first : 4 | | | |P|n| | | |
-3806 <first : 5 | | | |b| |p| | |
-3806 <first : 6 | | | | | | | | |
-3806 <first : 7 |p|p|p| |p| |p|p|
-3806 <first : 8 |r| | |q|k|b| |r|
-3806 <first : 
-3806 <first : move a1d1
-Interrupting second
-3807 >second: time 32108
-3807 >second: otim 32130
-book hit = (NULL)
-3807 >second: a1d1
-3900 <second: # times @ 2639181983
-3900 <second: # 11+15 pieces, centr = (1,1) R=23
-3900 <second:  1   1312        0         19 d3f2 e3f2 d5a2
-3900 <second:  1   1431        0         19 d3b2
-3901 <second:  1   1437        0         19 d3b4
-3901 <second:  2   1442        0        255 d3b4 f3h5
-3901 <second: # times @ 2639181984: real=1 cpu=0
-3901 <second: # promo = 0 (`) GT = 0
-3901 <second: move d3b4
-3901 >first : time 32130
-3901 >first : otim 32298
-book hit = (NULL)
-3901 >first : d3b4
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first : 25 - 25 - 25
-3995 <first :    A B C D E F G H
-3995 <first : 1 | | | |R|R| |K| |
-3995 <first : 2 |P| |P| | |P|P|P|
-3995 <first : 3 | | | | |B|B| | |
-3995 <first : 4 | |n| |P|n| | | |
-3995 <first : 5 | | | |b| |p| | |
-3995 <first : 6 | | | | | | | | |
-3995 <first : 7 |p|p|p| |p| |p|p|
-3995 <first : 8 |r| | |q|k|b| |r|
-3995 <first : 
-3995 <first : move f1e1
-Interrupting second
-3995 >second: time 32298
-3995 >second: otim 32320
-book hit = (NULL)
-3995 >second: f1e1
-4068 <second: # times @ 2639182171
-4068 <second: # 11+15 pieces, centr = (1,1) R=23
-4068 <second:  1   1516        0          3 b4c2
-4068 <second:  2   1521        0         90 b4c2 f3h5
-4068 <second: # times @ 2639182172: real=1 cpu=0
-4068 <second: # promo = 0 (`) GT = 0
-4068 <second: move b4c2
-4068 >first : time 32320
-4068 >first : otim 32491
-book hit = (NULL)
-4068 >first : b4c2
-4161 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first : 27 - 27 - 27
-4162 <first :    A B C D E F G H
-4162 <first : 1 | |R| | |R| |K| |
-4162 <first : 2 |P| |n| | |P|P|P|
-4162 <first : 3 | | | | |B|B| | |
-4162 <first : 4 | | | |P|n| | | |
-4162 <first : 5 | | | |b| |p| | |
-4162 <first : 6 | | | | | | | | |
-4162 <first : 7 |p|p|p| |p| |p|p|
-4162 <first : 8 |r| | |q|k|b| |r|
-4162 <first : 
-4162 <first : move d1b1
-Interrupting second
-4162 >second: time 32491
-4162 >second: otim 32511
-book hit = (NULL)
-4162 >second: d1b1
-4235 <second: # times @ 2639182337
-4235 <second: # 10+15 pieces, centr = (1,1) R=23
-4235 <second:  1   1753        0          3 c2e1
-4235 <second:  2   1753        0          7 c2e1 b1e1
-4235 <second: # times @ 2639182339: real=2 cpu=0
-4235 <second: # promo = 0 (`) GT = 0
-4235 <second: move c2e1
-4235 >first : time 32511
-4235 >first : otim 32684
-book hit = (NULL)
-4235 >first : c2e1
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first : 29 - 29 - 29
-4328 <first :    A B C D E F G H
-4328 <first : 1 | | | | |n| |K| |
-4328 <first : 2 |P| | | | |P|P|P|
-4328 <first : 3 | | | | |B|B| | |
-4328 <first : 4 | | | |P|n| | | |
-4328 <first : 5 | | | |b| |p| | |
-4328 <first : 6 | | | | | | | | |
-4328 <first : 7 |p|R|p| |p| |p|p|
-4328 <first : 8 |r| | |q|k|b| |r|
-4328 <first : 
-4328 <first : move b1b7
-Interrupting second
-4329 >second: time 32684
-4329 >second: otim 32701
-book hit = (NULL)
-4329 >second: b1b7
-4423 <second: # times @ 2639182504
-4423 <second: # 9+14 pieces, centr = (1,1) R=18
-4423 <second:  1   2317        0          3 d5b7
-4423 <second:  2   2319        0         55 d5b7 f3e2
-4423 <second: # times @ 2639182504: real=0 cpu=0
-4423 <second: # promo = 0 (`) GT = 0
-4423 <second: move d5b7
-4423 >first : time 32701
-4423 >first : otim 32874
-book hit = (NULL)
-4423 >first : d5b7
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first : 31 - 31 - 31
-4518 <first :    A B C D E F G H
-4518 <first : 1 | | | | |n| |K| |
-4518 <first : 2 |P| | | | |P|P|P|
-4518 <first : 3 | | | | |B|B| | |
-4518 <first : 4 | | | | |n| | | |
-4518 <first : 5 | | | |P| |p| | |
-4518 <first : 6 | | | | | | | | |
-4518 <first : 7 |p|b|p| |p| |p|p|
-4518 <first : 8 |r| | |q|k|b| |r|
-4518 <first : 
-4518 <first : move d4d5
-Interrupting second
-4519 >second: time 32874
-4519 >second: otim 32892
-book hit = (NULL)
-4519 >second: d4d5
-4592 <second: # times @ 2639182694
-4592 <second: # 8+14 pieces, centr = (1,1) R=12
-4592 <second:  1   2420        0          3 b7d5
-4592 <second:  2   2424        0        110 b7d5 f3h5
-4592 <second: # times @ 2639182695: real=1 cpu=0
-4592 <second: # promo = 0 (`) GT = 0
-4592 <second: move b7d5
-4592 >first : time 32892
-4592 >first : otim 33067
-book hit = (NULL)
-4592 >first : b7d5
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first : 33 - 33 - 33
-4686 <first :    A B C D E F G H
-4686 <first : 1 | | | | |n| |K| |
-4686 <first : 2 |P| | | | |P|P|P|
-4686 <first : 3 | | | | | |B| | |
-4686 <first : 4 | | | |B|n| | | |
-4686 <first : 5 | | | |b| |p| | |
-4686 <first : 6 | | | | | | | | |
-4686 <first : 7 |p| |p| |p| |p|p|
-4686 <first : 8 |r| | |q|k|b| |r|
-4686 <first : 
-4686 <first : move e3d4
-Interrupting second
-4686 >second: time 33067
-4686 >second: otim 33082
-book hit = (NULL)
-4686 >second: e3d4
-4760 <second: # times @ 2639182861
-4760 <second: # 7+14 pieces, centr = (1,1) R=12
-4760 <second:  1   2472        0          3 e1f3
-4760 <second:  2   2472        0         48 e1f3 g2f3
-4760 <second: # times @ 2639182862: real=1 cpu=10
-4760 <second: # promo = 0 (`) GT = 0
-4760 <second: move e1f3
-4760 >first : time 33082
-4761 >first : otim 33259
-book hit = (NULL)
-4761 >first : e1f3
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 44 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 126 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 35 - 35
-4854 <first : 35 - 117 - 35
-4854 <first : 35 - 126 - 35
-4854 <first :    A B C D E F G H
-4854 <first : 1 | | | | | | | |K|
-4854 <first : 2 |P| | | | |P|P|P|
-4854 <first : 3 | | | | | |n| | |
-4854 <first : 4 | | | |B|n| | | |
-4854 <first : 5 | | | |b| |p| | |
-4854 <first : 6 | | | | | | | | |
-4854 <first : 7 |p| |p| |p| |p|p|
-4854 <first : 8 |r| | |q|k|b| |r|
-4854 <first : 
-4854 <first : move g1h1
-Interrupting second
-4854 >second: time 33259
-4854 >second: otim 33273
-book hit = (NULL)
-4854 >second: g1h1
-4927 <second: # times @ 2639183029
-4927 <second: # 6+14 pieces, centr = (1,1) R=8
-4927 <second:  1   3003        0          3 f3d4
-4927 <second:  2   2987        0         29 f3d4 f2f3
-4927 <second: # times @ 2639183030: real=1 cpu=0
-4927 <second: # promo = 0 (`) GT = 0
-4927 <second: move f3d4
-4927 >first : time 33273
-4927 >first : otim 33452
-book hit = (NULL)
-4927 >first : f3d4
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first : 37 - 37 - 37
-5021 <first :    A B C D E F G H
-5021 <first : 1 | | | | | | |K| |
-5021 <first : 2 |P| | | | |P|P|P|
-5021 <first : 3 | | | | | | | | |
-5021 <first : 4 | | | |n|n| | | |
-5021 <first : 5 | | | |b| |p| | |
-5021 <first : 6 | | | | | | | | |
-5021 <first : 7 |p| |p| |p| |p|p|
-5021 <first : 8 |r| | |q|k|b| |r|
-5021 <first : 
-5021 <first : move h1g1
-Interrupting second
-5021 >second: time 33452
-5021 >second: otim 33464
-book hit = (NULL)
-5021 >second: h1g1
-5094 <second: # times @ 2639183197
-5095 <second: # 5+14 pieces, centr = (1,1) R=5
-5095 <second:  1   3045        0          3 d5a2
-5095 <second:  2   3035        0          9 d5a2 f2f4
-5095 <second: # times @ 2639183197: real=0 cpu=0
-5095 <second: # promo = 0 (`) GT = 0
-5095 <second: move d5a2
-5095 >first : time 33464
-5095 >first : otim 33645
-book hit = (NULL)
-5095 >first : d5a2
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first : 39 - 39 - 39
-5188 <first :    A B C D E F G H
-5188 <first : 1 | | | | | | |K| |
-5188 <first : 2 |b| | | | | |P|P|
-5188 <first : 3 | | | | | |P| | |
-5188 <first : 4 | | | |n|n| | | |
-5188 <first : 5 | | | | | |p| | |
-5188 <first : 6 | | | | | | | | |
-5188 <first : 7 |p| |p| |p| |p|p|
-5188 <first : 8 |r| | |q|k|b| |r|
-5188 <first : 
-5188 <first : move f2f3
-Interrupting second
-5188 >second: time 33645
-5188 >second: otim 33654
-book hit = (NULL)
-5188 >second: f2f3
-5262 <second: # times @ 2639183364
-5262 <second: # 4+14 pieces, centr = (1,1) R=5
-5262 <second:  1   2886        0          3 d4f3
-5262 <second:  1   3066        0          3 d4e2
-5262 <second:  1   3067        0          3 e4g5
-5262 <second:  1   3068        0          3 e4f6
-5262 <second:  2   3059        0         21 e4f6 g1f2
-5262 <second:  2   3063        0        227 d4e2 g1f1
-5262 <second: # times @ 2639183364: real=0 cpu=0
-5262 <second: # promo = 0 (`) GT = 0
-5262 <second: move d4e2
-5262 >first : time 33654
-5262 >first : otim 33837
-book hit = (NULL)
-5262 >first : d4e2
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first : 41 - 41 - 41
-5355 <first :    A B C D E F G H
-5355 <first : 1 | | | | | | |K| |
-5355 <first : 2 |b| | | |n| |P|P|
-5355 <first : 3 | | | | | | | | |
-5355 <first : 4 | | | | |P| | | |
-5355 <first : 5 | | | | | |p| | |
-5355 <first : 6 | | | | | | | | |
-5355 <first : 7 |p| |p| |p| |p|p|
-5355 <first : 8 |r| | |q|k|b| |r|
-5355 <first : 
-5355 <first : move f3e4
-GameEnds(27, Xboard: Forfeit due to invalid move: f3e4 (f3e4 via `0, `0) res=24, 4)
-GE(27, Xboard: Forfeit due to invalid move: f3e4 (f3e4 via `0, `0) res=24, 4) bare king k=14 color=66
-5356 >first : result 0-1 {Xboard: Forfeit due to invalid move: f3e4 (f3e4 via `0, `0) res=24}
-Interrupting second
-5356 >second: result 0-1 {Xboard: Forfeit due to invalid move: f3e4 (f3e4 via `0, `0) res=24}
-5356 >first : quit
-5369 >second: force
-5369 >second: ping 1
-5371 <second: Error (unknown command): result
-5371 <second: pong 1
-GameEnds(27, Xboard: Forfeit due to invalid move: f3e4 (f3e4 via `0, `0) res=24, 2)
-9035 >second: quit
+18480 >second: result * {xboard exit}
+18480 >second: force
+18480 >second: ping 1
+18482 >first : quit
+18490 >second: quit

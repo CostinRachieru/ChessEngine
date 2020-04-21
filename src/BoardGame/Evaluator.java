@@ -1,5 +1,6 @@
 package BoardGame;
 
+import ChessPieces.King;
 import ChessPieces.Piece;
 import Helper.Constants;
 
@@ -221,10 +222,15 @@ public class Evaluator {
                                 whiteScore += queenSquareWhite[i * Constants.BOARD_SIZE + j];
                                 break;
                             case 'K':
-                                if (isEndgame()) {
-                                    whiteScore += kingSquareEndGameWhite[i * Constants.BOARD_SIZE + j];
+                                King king = board.getKing("White");
+                                if (king.isCheck(king.getLine(), king.getColumn())) {
+                                    whiteScore -= 100000;
                                 } else {
-                                    whiteScore += kingSquareOpeningWhite[i * Constants.BOARD_SIZE + j];
+                                    if (isEndgame()) {
+                                        whiteScore += kingSquareEndGameWhite[i * Constants.BOARD_SIZE + j];
+                                    } else {
+                                        whiteScore += kingSquareOpeningWhite[i * Constants.BOARD_SIZE + j];
+                                    }
                                 }
                                 break;
                         }
@@ -262,10 +268,15 @@ public class Evaluator {
                                 blackScore += queenSquareBlack[i * Constants.BOARD_SIZE + j];
                                 break;
                             case 'k':
-                                if (isEndgame()) {
-                                    blackScore += kingSquareEndGameBlack[i * Constants.BOARD_SIZE + j];
+                                King king = board.getKing("Black");
+                                if (king.isCheck(king.getLine(), king.getColumn())) {
+                                    whiteScore -= 100000;
                                 } else {
-                                    blackScore += kingSquareOpeningBlack[i * Constants.BOARD_SIZE + j];
+                                    if (isEndgame()) {
+                                        blackScore += kingSquareEndGameBlack[i * Constants.BOARD_SIZE + j];
+                                    } else {
+                                        blackScore += kingSquareOpeningBlack[i * Constants.BOARD_SIZE + j];
+                                    }
                                 }
                                 break;
                         }

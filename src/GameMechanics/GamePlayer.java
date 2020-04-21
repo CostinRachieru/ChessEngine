@@ -8,7 +8,7 @@ import Helper.Helper;
 import java.util.ArrayList;
 
 public class GamePlayer {
-    private static final int MAX_DEPTH = 3;
+    private static final int MAX_DEPTH = 4;
     private static final int INITIAL_DEPTH = 1;
     private static final boolean INITIAL_IS_MAXIMIZING = false;
     private static final int KING_POINTS = 900;
