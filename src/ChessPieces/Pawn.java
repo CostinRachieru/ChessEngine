@@ -48,13 +48,17 @@ public final class Pawn extends Piece {
             if (board.isEmpty(newLine - 1, newColumn)) {
                 newLine--;
                 if (newLine > 0) {
-                    moves.add(new Position(newLine, newColumn));
+                    if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                        moves.add(new Position(newLine, newColumn));
+                    }
                 }
                 // Two forward.
                 if (newLine > 1) {
                     if (board.isEmpty(newLine - 1, newColumn) && newLine + 1 == 7) {
                         newLine--;
-                        moves.add(new Position(newLine, newColumn));
+                        if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                            moves.add(new Position(newLine, newColumn));
+                        }
                     }
                 }
             }
@@ -64,7 +68,9 @@ public final class Pawn extends Piece {
             if (newColumn < 8 && newLine > 1) {
                 if (!board.isEmpty(newLine - 1, newColumn + 1)) {
                     if (!board.getPiece(newLine - 1, newColumn + 1).getTeam().equals(team)) {
-                        moves.add(new Position(newLine - 1, newColumn + 1));
+                        if (board.isMoveValid(this, new Position(newLine - 1, newColumn + 1))) {
+                            moves.add(new Position(newLine - 1, newColumn + 1));
+                        }
                     }
                 }
             }
@@ -72,7 +78,9 @@ public final class Pawn extends Piece {
             if (newColumn > 1 && newLine > 1) {
                 if (!board.isEmpty(newLine - 1, newColumn - 1)) {
                     if (!board.getPiece(newLine - 1, newColumn - 1).getTeam().equals(team)) {
-                        moves.add(new Position(newLine - 1, newColumn - 1));
+                        if (board.isMoveValid(this, new Position(newLine - 1, newColumn - 1))) {
+                            moves.add(new Position(newLine - 1, newColumn - 1));
+                        }
                     }
                 }
             }
@@ -102,13 +110,17 @@ public final class Pawn extends Piece {
             if (board.isEmpty(newLine + 1, newColumn)) {
                 newLine++;
                 if (newLine < 9) {
-                    moves.add(new Position(newLine, newColumn));
+                    if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                        moves.add(new Position(newLine, newColumn));
+                    }
                 }
                 // Two forward.
                 if (newLine < 8) {
                     if (board.isEmpty(newLine + 1, newColumn) && newLine - 1 == 2) {
                         newLine++;
-                        moves.add(new Position(newLine, newColumn));
+                        if (board.isMoveValid(this, new Position(newLine, newColumn))) {
+                            moves.add(new Position(newLine, newColumn));
+                        }
                     }
                 }
             }
@@ -118,7 +130,9 @@ public final class Pawn extends Piece {
             if (newColumn < 8 && newLine < 8) {
                 if (!board.isEmpty(newLine + 1, newColumn + 1)) {
                     if (!board.getPiece(newLine + 1, newColumn + 1).getTeam().equals(team)) {
-                        moves.add(new Position(newLine + 1, newColumn + 1));
+                        if (board.isMoveValid(this, new Position(newLine + 1, newColumn + 1))) {
+                            moves.add(new Position(newLine + 1, newColumn + 1));
+                        }
                     }
                 }
             }
@@ -126,7 +140,9 @@ public final class Pawn extends Piece {
             if (newColumn > 1 && newLine < 8) {
                 if (!board.isEmpty(newLine + 1, newColumn - 1)) {
                     if (!board.getPiece(newLine + 1, newColumn - 1).getTeam().equals(team)) {
-                        moves.add(new Position(newLine + 1, newColumn - 1));
+                        if (board.isMoveValid(this, new Position(newLine + 1, newColumn - 1))) {
+                            moves.add(new Position(newLine + 1, newColumn - 1));
+                        }
                     }
                 }
             }
