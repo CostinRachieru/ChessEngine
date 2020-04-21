@@ -80,6 +80,10 @@ public class Board {
         }
     }
 
+    public ArrayList<Piece> getMoveHistory() {
+        return moveHistory;
+    }
+
     public final boolean isEmpty(final Integer line, final Integer column) {
         return board[line][column] == null;
     }
@@ -124,6 +128,7 @@ public class Board {
         King king = getKing(piece.getTeam());
         if (king != null) {
             if (king.isCheck(king.getLine(), king.getColumn())) {
+                undoMove();
                 return false;
             }
         }
@@ -154,6 +159,10 @@ public class Board {
     private int isCastling(Piece piece, Position newPos) {
         // It is a king.
         if (!piece.getType().equals("King")) {
+            return 0;
+        }
+        // Never moved.
+        if (piece.getHadMoved() == true) {
             return 0;
         }
         // Moves on the same line
