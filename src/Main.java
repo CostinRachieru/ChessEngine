@@ -95,12 +95,6 @@ public class Main {
                 System.exit(0);
             }
 
-            // TODO: debug
-            if (command.equals("undo")) {
-                board.undoMove();
-                board.printBoard();
-            }
-
             if (command.length() >= 4) {
                 // Checks if it is a move from the xboard.
                 boolean first = command.charAt(0) >= 'a' && command.charAt(0) <= 'h';
@@ -120,6 +114,7 @@ public class Main {
                     board.moveEnemyPiece(command);
 //                    board.printBoard();  // TODO: debug | remove later
                     writer.write(gamePlayer.playTurn(team));  // make next move
+                    King king = new King(1,7, "Black");
                     writer.flush();
                     continue;
                 }

@@ -1,5 +1,6 @@
 package BoardGame;
 
+import ChessPieces.King;
 import ChessPieces.Piece;
 import Helper.Constants;
 
@@ -195,88 +196,80 @@ public class Evaluator {
         Integer whiteScore = 0;
         Integer blackScore = 0;
 
+        for (int i = 0; i < Constants.BOARD_SIZE; ++i) {
+            for (int j = 0; j < Constants.BOARD_SIZE; ++j) {
+                if (!board.isEmpty(i + 1, j + 1) && board.getPiece(i + 1, j + 1).isAlive()) {
+                    switch (board.pieceSymbol(board.getPiece(i + 1, j + 1))) {
+                        case 'P':
+                            whiteScore += Constants.PAWN_VALUE;
+                            whiteScore += pawnSquareWhite[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'N':
+                            whiteScore += Constants.KNIGHT_VALUE;
+                            whiteScore += knightSquareWhite[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'B':
+                            whiteScore += Constants.BISHOP_VALUE;
+                            whiteScore += bishopSquareWhite[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'R':
+                            whiteScore += Constants.ROOK_VALUE;
+                            whiteScore += rookSquareWhite[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'Q':
+                            whiteScore += Constants.QUEEN_VALUE;
+                            whiteScore += queenSquareWhite[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'K':
+                            if (isEndgame()) {
+                                whiteScore += kingSquareEndGameWhite[i * Constants.BOARD_SIZE + j];
+                            } else {
+                                whiteScore += kingSquareOpeningWhite[i * Constants.BOARD_SIZE + j];
+                            }
+                            break;
+                        case 'p':
+                            blackScore += Constants.PAWN_VALUE;
+                            blackScore += pawnSquareBlack[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'n':
+                            blackScore += Constants.KNIGHT_VALUE;
+                            blackScore += knightSquareBlack[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'b':
+                            blackScore += Constants.BISHOP_VALUE;
+                            blackScore += bishopSquareBlack[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'r':
+                            blackScore += Constants.ROOK_VALUE;
+                            blackScore += rookSquareBlack[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'q':
+                            blackScore += Constants.QUEEN_VALUE;
+                            blackScore += queenSquareBlack[i * Constants.BOARD_SIZE + j];
+                            break;
+                        case 'k':
+                            if (isEndgame()) {
+                                blackScore += kingSquareEndGameBlack[i * Constants.BOARD_SIZE + j];
+                            } else {
+                                blackScore += kingSquareOpeningBlack[i * Constants.BOARD_SIZE + j];
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+//            if (board.canCastle(team)) {
+//                whiteScore += Constants.CAN_CASTLE_BONUS;
+//            }
+
+
+//            if (board.canCastle(team)) {
+//                blackScore += Constants.CAN_CASTLE_BONUS;
+//            }
         if (team.equals("White")) {
-            for (int i = 0; i < Constants.BOARD_SIZE; ++i) {
-                for (int j = 0; j < Constants.BOARD_SIZE; ++j) {
-                    if (!board.isEmpty(i + 1, j + 1) && board.getPiece(i + 1, j + 1).isAlive()) {
-                        switch (board.pieceSymbol(board.getPiece(i + 1, j + 1))) {
-                            case 'P':
-                                whiteScore += Constants.PAWN_VALUE;
-                                whiteScore += pawnSquareWhite[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'N':
-                                whiteScore += Constants.KNIGHT_VALUE;
-                                whiteScore += knightSquareWhite[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'B':
-                                whiteScore += Constants.BISHOP_VALUE;
-                                whiteScore += bishopSquareWhite[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'R':
-                                whiteScore += Constants.ROOK_VALUE;
-                                whiteScore += rookSquareWhite[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'Q':
-                                whiteScore += Constants.QUEEN_VALUE;
-                                whiteScore += queenSquareWhite[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'K':
-                                if (isEndgame()) {
-                                    whiteScore += kingSquareEndGameWhite[i * Constants.BOARD_SIZE + j];
-                                } else {
-                                    whiteScore += kingSquareOpeningWhite[i * Constants.BOARD_SIZE + j];
-                                }
-                                break;
-                        }
-                    }
-                }
-            }
-            if (board.canCastle(team)) {
-                whiteScore += Constants.CAN_CASTLE_BONUS;
-            }
-
-            return whiteScore;
+            return whiteScore - blackScore;
         } else {
-            for (int i = 0; i < Constants.BOARD_SIZE; ++i) {
-                for (int j = 0; j < Constants.BOARD_SIZE; ++j) {
-                    if (!board.isEmpty(i + 1, j + 1) && board.getPiece(i + 1, j + 1).isAlive()) {
-                        switch (board.pieceSymbol(board.getPiece(i + 1, j + 1))) {
-                            case 'p':
-                                blackScore += Constants.PAWN_VALUE;
-                                blackScore += pawnSquareBlack[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'n':
-                                blackScore += Constants.KNIGHT_VALUE;
-                                blackScore += knightSquareBlack[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'b':
-                                blackScore += Constants.BISHOP_VALUE;
-                                blackScore += bishopSquareBlack[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'r':
-                                blackScore += Constants.ROOK_VALUE;
-                                blackScore += rookSquareBlack[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'q':
-                                blackScore += Constants.QUEEN_VALUE;
-                                blackScore += queenSquareBlack[i * Constants.BOARD_SIZE + j];
-                                break;
-                            case 'k':
-                                if (isEndgame()) {
-                                    blackScore += kingSquareEndGameBlack[i * Constants.BOARD_SIZE + j];
-                                } else {
-                                    blackScore += kingSquareOpeningBlack[i * Constants.BOARD_SIZE + j];
-                                }
-                                break;
-                        }
-                    }
-                }
-            }
-            if (board.canCastle(team)) {
-                blackScore += Constants.CAN_CASTLE_BONUS;
-            }
-
-            return blackScore;
+            return blackScore - whiteScore;
         }
     }
 }

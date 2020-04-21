@@ -1,4 +1,7 @@
+
 package ChessPieces;
+
+import java.util.ArrayList;
 
 public class PieceHistory {
     private Integer prevLine;
