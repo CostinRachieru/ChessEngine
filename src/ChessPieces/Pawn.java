@@ -3,17 +3,22 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import static Helper.Constants.PAWN_VALUE;
 
 public final class Pawn extends Piece {
     public boolean movedTwo;
 
     public Pawn(final Integer line, final Integer column, final String color) {
+        value = PAWN_VALUE;
         this.line = line;
         this.column = column;
         team = color;
         type = "Pawn";
         movedTwo = false;
         hadMoved = false;
+        history = new LinkedList<>();
     }
 
     @Override
@@ -23,11 +28,9 @@ public final class Pawn extends Piece {
 
     @Override
     public final void move(Position newPos) {
-        prevLine = line;
-        prevColumn = column;
-        line = newPos.getLine();
-        column = newPos.getColumn();
-        if (Math.abs(prevColumn - column) == 2) {
+        int dist = Math.abs(newPos.getColumn() - this.column);
+        super.move(newPos);
+        if (dist == 2) {
             movedTwo = true;
         } else {
             movedTwo = false;

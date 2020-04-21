@@ -1,13 +1,14 @@
 package GameMechanics;
 
 import BoardGame.Board;
+import BoardGame.Evaluator;
 import ChessPieces.*;
 import Helper.Helper;
 
 import java.util.ArrayList;
 
 public class GamePlayer {
-    private static final int MAX_DEPTH = 3;
+    private static final int MAX_DEPTH = 2;
     private static final int INITIAL_DEPTH = 1;
     private static final boolean INITIAL_IS_MAXIMIZING = false;
     private static final int KING_POINTS = 900;
@@ -34,147 +35,83 @@ public class GamePlayer {
         String nextMove;
         Piece bestPiece = null;
         Position bestPosition = null;
-//        ArrayList<Piece> pieces = new ArrayList<>(board.getPieces(team));
-        ArrayList<Piece> pieces = board.getPieces(team);
-        System.out.println(pieces);  // TODO: debug
+        ArrayList<Piece> pieces = new ArrayList<>(board.getPieces(team));
 
         setTeam(team);
         // check every possible move and return the best of them
-//        for (Piece piece : pieces) {
-        for (int i = 0; i < pieces.size(); ++i) {
-            Piece piece = pieces.get(i);
-            System.out.println("Currently exploring " + piece + " of type: " + piece.getType());  // TODO: debug
-            ArrayList<Position> possibleMoves = piece.getMoves();
-            for (Position nextPosition : possibleMoves) {
-                System.out.println("Current move: " + nextPosition);  // TODO: debug
-                board.movePiece(piece, nextPosition);
-                score = minimax(INITIAL_DEPTH, INITIAL_IS_MAXIMIZING, Helper.enemyTeam(team));
-                if (score > maxScore) {
-                    maxScore = score;
-                    bestPiece = piece;
-                    bestPosition = nextPosition;
+        for (Piece piece : pieces) {
+            if (piece.isAlive()) {
+                System.out.println("Currently exploring " + piece);  // TODO: debug
+                ArrayList<Position> possibleMoves = piece.getMoves();
+                for (Position nextPosition : possibleMoves) {
+                    System.out.println("Current move: " + nextPosition);  // TODO: debug
+                    board.movePiece(piece, nextPosition);
+                    score = minimax(INITIAL_DEPTH, INITIAL_IS_MAXIMIZING, Helper.enemyTeam(team));
+                    System.out.println("Score is: " + score);
+                    if (score > maxScore) {
+                        maxScore = score;
+                        bestPiece = piece;
+                        bestPosition = nextPosition;
+                    }
+                    // return board to initial state
+                    board.undoMove();
                 }
-                // return board to initial state
-                board.undoMove(piece);
             }
         }
 
         if (bestPiece != null) {
             nextMove = "move " + bestPiece.toStringPosition() + bestPosition.toString() + "\n";
+            System.out.println("Best move is: " + bestPiece + " at " + bestPosition);
             board.movePiece(bestPiece, bestPosition);
         } else {
-            nextMove = "exit\n";
+            nextMove = "quit\n";
         }
 
-//        board.printBoard();  // TODO: debug | remove later
+        board.printBoard();  // TODO: debug | remove later
         return nextMove;
     }
 
     public int minimax(int depth, boolean isMaximizing, String currentTeam) {
         // System.out.print("DEPTH: " + depth + " ");  // TODO: debug
+        Evaluator evaluator = Evaluator.getInstance();
         int bestScore, score;
-//        ArrayList<Piece> pieces = new ArrayList<Piece>(board.getPieces(currentTeam));
-        ArrayList<Piece> pieces = board.getPieces(currentTeam);
-        // System.out.println(pieces); // TODO: debug
-        King king = board.getKing(currentTeam);
-        if (king != null) {
-            if (depth == MAX_DEPTH || king.isCheckMate()) {
-                // System.out.println(evaluate(this.team)); //TODO: debug
-                return evaluate(this.team);
-            }
-        } else {
-            return evaluate(this.team);
+        ArrayList<Piece> pieces = new ArrayList<Piece>(board.getPieces(currentTeam));
+        if (depth == MAX_DEPTH) /*|| board.getKing(currentTeam).isCheckMate())*/ {
+            return evaluator.eval(this.team);
         }
 
         if (isMaximizing) {
             bestScore = Integer.MIN_VALUE;
-//            for (Piece piece : pieces) {
-            for (int i = 0; i < pieces.size(); ++i) {
-                Piece piece = pieces.get(i);
-                 System.out.println("Currently exploring " + piece);  // TODO: debug
-                ArrayList<Position> possibleMoves = piece.getMoves();
-                for (Position mov : possibleMoves) {
-                    System.out.print(mov + " ");
-                }
-                System.out.println();
-//                board.printBoard();
-                for (Position nextPos : possibleMoves) {
-                    System.out.println("Current move: " + nextPos);  // TODO: debug
-                    board.movePiece(piece, nextPos);
-//                    board.printBoard();
-                    score = minimax(depth + 1, !isMaximizing, Helper.enemyTeam(currentTeam));
-                    System.out.println("score: " + score);
-                    bestScore = Math.max(bestScore, score);
-                    System.out.println("best score now:" + bestScore);
-                    board.undoMove(piece);
+            for (Piece piece : pieces) {
+                if (piece.isAlive()) {
+                    // System.out.println("Currently exploring " + piece);  // TODO: debug
+                    ArrayList<Position> possibleMoves = piece.getMoves();
+                    for (Position nextPos : possibleMoves) {
+                        // System.out.println("Current move: " + nextPos);  // TODO: debug
+                        board.movePiece(piece, nextPos);
+                        score = minimax(depth + 1, !isMaximizing, Helper.enemyTeam(currentTeam));
+                        bestScore = Math.max(bestScore, score);
+                        board.undoMove();
+                    }
                 }
             }
         } else {
             bestScore = Integer.MAX_VALUE;
-//            for (Piece piece : pieces) {
-            for (int i = 0; i < pieces.size(); ++i) {
-                Piece piece = pieces.get(i);
-                System.out.println("Currently exploring " + piece);  // TODO: debug
-                ArrayList<Position> possibleMoves = piece.getMoves();
-                for (Position mov : possibleMoves) {
-                    System.out.print(mov + " ");
-                }
-                System.out.println();
-                for (Position nextPos : possibleMoves) {
-                     System.out.println("Current move: " + nextPos);  // TODO: debug
-                    board.movePiece(piece, nextPos);
-//                    board.printBoard();
-                    score = minimax(depth + 1, !isMaximizing, Helper.enemyTeam(currentTeam));
-                    System.out.println("score: " + score);
-                    // TODO: AM SCHIMBAT AICI CU MATH.MAX;
-                    bestScore = Math.min(bestScore, score);
-                    System.out.println("best score now:" + bestScore);
-                    board.undoMove(piece);
+            for (Piece piece : pieces) {
+                if (piece.isAlive()) {
+                    // System.out.println("Currently exploring " + piece);  // TODO: debug
+                    ArrayList<Position> possibleMoves = piece.getMoves();
+                    for (Position nextPos : possibleMoves) {
+                        // System.out.println("Current move: " + nextPos);  // TODO: debug
+                        board.movePiece(piece, nextPos);
+                        score = minimax(depth + 1, !isMaximizing, Helper.enemyTeam(currentTeam));
+                        bestScore = Math.min(bestScore, score);
+                        board.undoMove();
+                    }
                 }
             }
         }
 
         return bestScore;
-    }
-
-    public final int evaluate(String team) {
-        if (team.equals("White")) {
-            return evaluateForWhite() - evaluateForBlack();
-        } else {
-            return evaluateForBlack() - evaluateForWhite();
-        }
-    }
-
-    public final int evaluateForWhite() {
-        int sum = 0;
-
-        for (Piece piece : board.getWhitePieces()) {
-            sum += evaluatePiece(piece);
-        }
-
-        return sum;
-    }
-
-    public final int evaluateForBlack() {
-        int sum = 0;
-
-        for (Piece piece : board.getBlackPieces()) {
-            sum += evaluatePiece(piece);
-        }
-
-        return sum;
-    }
-
-    public final int evaluatePiece(Piece piece) {
-        String pieceType = piece.getType();
-        switch (pieceType) {
-            case "King": return KING_POINTS;
-            case "Queen": return QUEEN_POINTS;
-            case "Rook": return ROOK_POINTS;
-            case "Bishop": return BISHOP_POINTS;
-            case "Knight": return KNIGHT_POINTS;
-            case "Pawn": return PAWN_POINTS;
-            default : return 0;
-        }
     }
 }

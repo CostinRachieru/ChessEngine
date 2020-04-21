@@ -3,15 +3,20 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import static Helper.Constants.QUEEN_VALUE;
 
 public final class Queen extends Piece {
 
     public Queen(final Integer line, final Integer column, final String color) {
+        value = QUEEN_VALUE;
         this.line = line;
         this.column = column;
         team = color;
         type = "Queen";
         hadMoved = false;
+        history = new LinkedList<>();
     }
     public ArrayList<Position> getMoves() {
         Board board = Board.getInstance();

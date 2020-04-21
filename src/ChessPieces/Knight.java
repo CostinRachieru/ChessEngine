@@ -3,15 +3,20 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import static Helper.Constants.KNIGHT_VALUE;
 
 public final class Knight extends Piece {
 
     public Knight(final Integer line, final Integer column, final String color) {
+        value = KNIGHT_VALUE;
         this.line = line;
         this.column = column;
         team = color;
         type = "Knight";
         hadMoved = false;
+        history = new LinkedList<>();
     }
 
     public ArrayList<Position> getMoves() {

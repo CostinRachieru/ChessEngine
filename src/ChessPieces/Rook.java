@@ -3,16 +3,21 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import static Helper.Constants.ROOK_VALUE;
 
 public final class Rook extends Piece {
     boolean hadMoved;
 
     public Rook(final Integer line, final Integer column, final String color) {
+        value = ROOK_VALUE;
         this.line = line;
         this.column = column;
         team = color;
         type = "Rook";
         hadMoved = false;
+        history = new LinkedList<>();
     }
     public ArrayList<Position> getMoves() {
         Board board = Board.getInstance();

@@ -3,15 +3,20 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import static Helper.Constants.BISHOP_VALUE;
 
 public final class Bishop extends Piece {
 
     public Bishop(final Integer line, final Integer column, final String color) {
+        value = BISHOP_VALUE;
         this.line = line;
         this.column = column;
         team = color;
         type = "Bishop";
         hadMoved = false;
+        history = new LinkedList<>();
     }
     public ArrayList<Position> getMoves() {
         Board board = Board.getInstance();

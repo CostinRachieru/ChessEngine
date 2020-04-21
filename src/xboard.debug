@@ -4,68 +4,450 @@ recognized 'normal' (-1) as variant normal
 recognized 'normal' (-1) as variant normal
 shuffleOpenings = 0
 shuffleOpenings = 0
-Version: xboard 4.9.1 + fairymax ()
+Version: xboard 4.9.1 + make ()
 Reset(1, 0) from gameMode 0
 recognized 'normal' (-1) as variant normal
 GameEnds(0, (null), 2)
 shuffleOpenings = 0
-StartChildProcess (dir=".") fairymax
-98 >first : xboard
+StartChildProcess (dir=".") make run
+99 >first : xboard
 protover 2
-147 <first : tellics say     Fairy-Max 5.0b
-148 <first : tellics say     by H.G. Muller
-148 <first : feature myname="Fairy-Max 5.0b"
-148 >first : accepted myname
-148 <first : feature memory=1 exclude=1
-148 >first : accepted memory
-148 >first : accepted exclude
-148 <first : feature setboard=0 xedit=1 ping=1 done=0
-148 >first : accepted setboard
-148 >first : accepted xedit
-148 >first : accepted ping
-148 >first : accepted done
-148 <first : feature variants="normal,nocastle,shatranj,asean,makruk,cambodian,ai-wok,courier,knightmate,capablanca,gothic,janus,falcon,cylinder,berolina,super,seirawan,spartan,great,light-brigade,king-of-the-hill,bifurcator,team-mate,los-alamos,ciccolini,mexican,grande-acedrex,roman,almost-wildebeest,fairy"
-148 >first : accepted variants
-148 <first : feature option="Resign -check 0"
-148 >first : accepted option
-148 <first : feature option="Resign Threshold -spin 800 200 1200"
-148 >first : accepted option
-148 <first : feature option="Claim draw after -spin 50 0 200"
-148 >first : accepted option
-148 <first : feature option="Ini File -file /usr/share/games/fairymax/fmax.ini"
-148 >first : accepted option
-148 <first : feature option="Multi-PV Margin -spin 0 0 1000"
-148 >first : accepted option
-148 <first : feature option="Variant fairy selects -combo FIDE-Clobberers /// Clobberers-FIDE /// FIDE-Nutters /// Nutters-FIDE /// Clobberers-Nutters /// Nutters-Clobberers /// FIDE-Rookies /// Rookies-FIDE /// Clobberers-Rookies /// Rookies-Clobberers /// Nutters-Rookies /// Rookies-Nutters"
-148 >first : accepted option
-148 <first : feature option="Makruk rules -combo makruk /// Cambodian /// Ai-wok"
-148 >first : accepted option
-148 <first : feature option="Dummy Slider Example -slider 20 0 100"
-148 >first : accepted option
-148 <first : feature option="Dummy String Example -string happy birthday!"
-148 >first : accepted option
-148 <first : feature option="Dummy Path Example -path ."
-148 >first : accepted option
-148 <first : feature option="Automatic persistent-hash dialog -check 0"
-148 >first : accepted option
-148 <first : feature option="Info -button"
-148 >first : accepted option
-148 <first : feature option="Save in hash file -button"
-148 >first : accepted option
-148 <first : feature option="Clear Hash -button"
-148 >first : accepted option
-148 <first : feature done=1
-148 >first : accepted done
-149 >first : memory 68
-149 >first : new
+100 <first : java Main
+134 <first : feature sigint=0 san=0 done=1
+134 >first : accepted sigint
+134 >first : accepted san
+134 >first : accepted done
+135 >first : new
 random
-149 >first : level 0 5 2
-149 >first : post
-149 >first : hard
-149 >first : ping 1
-172 <first : pong 1
+135 >first : level 0 5 2
+135 >first : post
+135 >first : hard
+nps: w=-1, b=-1
+nps: w=-1, b=-1
+2373 >first : time 30000
+2373 >first : otim 30200
+book hit = (NULL)
+2373 >first : a2a4
+2446 <first : Currently exploring Rook a8
+2446 <first : Currently exploring Knight b8
+2446 <first : Current move: c6
+2446 <first : Score is: 3945
+2446 <first : Current move: a6
+2446 <first : Score is: 3905
+2446 <first : Currently exploring Bishop c8
+2446 <first : Currently exploring Queen d8
+2446 <first : Currently exploring King e8
+2446 <first : Currently exploring Bishop f8
+2446 <first : Currently exploring Knight g8
+2446 <first : Current move: h6
+2446 <first : Score is: 3905
+2446 <first : Current move: f6
+2446 <first : Score is: 3945
+2446 <first : Currently exploring Rook h8
+2446 <first : Currently exploring Pawn a7
+2446 <first : Current move: a6
+2446 <first : Score is: 3895
+2446 <first : Current move: a5
+2446 <first : Score is: 3890
+2446 <first : Currently exploring Pawn b7
+2447 <first : Current move: b6
+2447 <first : Score is: 3880
+2447 <first : Current move: b5
+2448 <first : Score is: 3785
+2448 <first : Currently exploring Pawn c7
+2448 <first : Current move: c6
+2448 <first : Score is: 3875
+2448 <first : Current move: c5
+2449 <first : Score is: 3885
+2449 <first : Currently exploring Pawn d7
+2449 <first : Current move: d6
+2450 <first : Score is: 3915
+2450 <first : Current move: d5
+2450 <first : Score is: 3935
+2450 <first : Currently exploring Pawn e7
+2450 <first : Current move: e6
+2451 <first : Score is: 3915
+2451 <first : Current move: e5
+2452 <first : Score is: 3935
+2452 <first : Currently exploring Pawn f7
+2452 <first : Current move: f6
+2453 <first : Score is: 3875
+2453 <first : Current move: f5
+2453 <first : Score is: 3885
+2453 <first : Currently exploring Pawn g7
+2453 <first : Current move: g6
+2454 <first : Score is: 3880
+2454 <first : Current move: g5
+2458 <first : Score is: 3885
+2458 <first : Currently exploring Pawn h7
+2458 <first : Current move: h6
+2458 <first : Score is: 3895
+2458 <first : Current move: h5
+2458 <first : Score is: 3890
+2467 <first : Best move is: Knight b8 at c6
+2475 <first :    A B C D E F G H
+2475 <first : 1 |R|N|B|Q|K|B|N|R|
+2475 <first : 2 | |P|P|P|P|P|P|P|
+2475 <first : 3 | | | | | | | | |
+2475 <first : 4 |P| | | | | | | |
+2475 <first : 5 | | | | | | | | |
+2475 <first : 6 | | |n| | | | | |
+2475 <first : 7 |p|p|p|p|p|p|p|p|
+2475 <first : 8 |r| |b|q|k|b|n|r|
+2475 <first : 
+2475 <first : move b8c6
+3575 >first : time 30189
+3575 >first : otim 30290
+book hit = (NULL)
+3575 >first : b2b4
+3658 <first : Currently exploring Rook a8
+3658 <first : Current move: b8
+3658 <first : Score is: 3945
+3658 <first : Currently exploring Knight c6
+3658 <first : Current move: b8
+3658 <first : Score is: 3895
+3658 <first : Current move: e5
+3658 <first : Score is: 3955
+3658 <first : Current move: d4
+3658 <first : Score is: 3955
+3658 <first : Current move: b4
+3658 <first : Score is: 3940
+3658 <first : Current move: a5
+3658 <first : Score is: 3615
+3658 <first : Currently exploring Bishop c8
+3658 <first : Currently exploring Queen d8
+3658 <first : Currently exploring King e8
+3658 <first : Currently exploring Bishop f8
+3658 <first : Currently exploring Knight g8
+3658 <first : Current move: h6
+3658 <first : Score is: 3955
+3658 <first : Current move: f6
+3658 <first : Score is: 3995
+3658 <first : Currently exploring Rook h8
+3658 <first : Currently exploring Pawn a7
+3658 <first : Current move: a6
+3658 <first : Score is: 3945
+3658 <first : Current move: a5
+3658 <first : Score is: 3840
+3658 <first : Currently exploring Pawn b7
+3658 <first : Current move: b6
+3658 <first : Score is: 3930
+3658 <first : Current move: b5
+3658 <first : Score is: 3835
+3658 <first : Currently exploring Pawn c7
+3658 <first : Currently exploring Pawn d7
+3658 <first : Current move: d6
+3658 <first : Score is: 3965
+3658 <first : Current move: d5
+3658 <first : Score is: 3985
+3658 <first : Currently exploring Pawn e7
+3658 <first : Current move: e6
+3658 <first : Score is: 3965
+3658 <first : Current move: e5
+3658 <first : Score is: 3985
+3658 <first : Currently exploring Pawn f7
+3658 <first : Current move: f6
+3658 <first : Score is: 3925
+3658 <first : Current move: f5
+3658 <first : Score is: 3935
+3658 <first : Currently exploring Pawn g7
+3658 <first : Current move: g6
+3658 <first : Score is: 3930
+3658 <first : Current move: g5
+3658 <first : Score is: 3935
+3658 <first : Currently exploring Pawn h7
+3658 <first : Current move: h6
+3658 <first : Score is: 3945
+3658 <first : Current move: h5
+3658 <first : Score is: 3940
+3658 <first : Best move is: Knight g8 at f6
+3658 <first :    A B C D E F G H
+3658 <first : 1 |R|N|B|Q|K|B|N|R|
+3658 <first : 2 | | |P|P|P|P|P|P|
+3658 <first : 3 | | | | | | | | |
+3658 <first : 4 |P|P| | | | | | |
+3658 <first : 5 | | | | | | | | |
+3658 <first : 6 | | |n| | |n| | |
+3658 <first : 7 |p|p|p|p|p|p|p|p|
+3658 <first : 8 |r| |b|q|k|b| |r|
+3658 <first : 
+3658 <first : move g8f6
+4760 >first : time 30381
+4760 >first : otim 30379
+book hit = (NULL)
+4760 >first : c2c4
+4841 <first : Currently exploring Rook a8
+4841 <first : Current move: b8
+4841 <first : Score is: 3995
+4841 <first : Currently exploring Knight c6
+4841 <first : Current move: b8
+4841 <first : Score is: 3945
+4841 <first : Current move: e5
+4841 <first : Score is: 4005
+4841 <first : Current move: d4
+4841 <first : Score is: 4005
+4841 <first : Current move: b4
+4841 <first : Score is: 3990
+4841 <first : Current move: a5
+4841 <first : Score is: 3665
+4841 <first : Currently exploring Bishop c8
+4841 <first : Currently exploring Queen d8
+4841 <first : Currently exploring King e8
+4841 <first : Currently exploring Bishop f8
+4841 <first : Currently exploring Knight f6
+4841 <first : Current move: g8
+4841 <first : Score is: 3945
+4841 <first : Current move: h5
+4841 <first : Score is: 3955
+4841 <first : Current move: g4
+4841 <first : Score is: 3990
+4841 <first : Current move: e4
+4841 <first : Score is: 4005
+4841 <first : Current move: d5
+4841 <first : Score is: 3665
+4841 <first : Currently exploring Rook h8
+4841 <first : Current move: g8
+4841 <first : Score is: 3995
+4841 <first : Currently exploring Pawn a7
+4841 <first : Current move: a6
+4841 <first : Score is: 3995
+4841 <first : Current move: a5
+4841 <first : Score is: 3890
+4841 <first : Currently exploring Pawn b7
+4841 <first : Current move: b6
+4841 <first : Score is: 3980
+4841 <first : Current move: b5
+4841 <first : Score is: 3885
+4841 <first : Currently exploring Pawn c7
+4841 <first : Currently exploring Pawn d7
+4841 <first : Current move: d6
+4842 <first : Score is: 4015
+4842 <first : Current move: d5
+4842 <first : Score is: 3915
+4842 <first : Currently exploring Pawn e7
+4842 <first : Current move: e6
+4842 <first : Score is: 4015
+4842 <first : Current move: e5
+4842 <first : Score is: 4035
+4842 <first : Currently exploring Pawn f7
+4842 <first : Currently exploring Pawn g7
+4842 <first : Current move: g6
+4842 <first : Score is: 3980
+4842 <first : Current move: g5
+4842 <first : Score is: 3985
+4842 <first : Currently exploring Pawn h7
+4842 <first : Current move: h6
+4842 <first : Score is: 3995
+4842 <first : Current move: h5
+4842 <first : Score is: 3990
+4842 <first : Best move is: Pawn e7 at e5
+4842 <first :    A B C D E F G H
+4842 <first : 1 |R|N|B|Q|K|B|N|R|
+4842 <first : 2 | | | |P|P|P|P|P|
+4842 <first : 3 | | | | | | | | |
+4842 <first : 4 |P|P|P| | | | | |
+4842 <first : 5 | | | | |p| | | |
+4842 <first : 6 | | |n| | |n| | |
+4842 <first : 7 |p|p|p|p| |p|p|p|
+4842 <first : 8 |r| |b|q|k|b| |r|
+4842 <first : 
+4842 <first : move e7e5
+5860 >first : time 30573
+5860 >first : otim 30478
+book hit = (NULL)
+5860 >first : d2d4
+5941 <first : Currently exploring Rook a8
+5941 <first : Current move: b8
+5941 <first : Score is: 3915
+5941 <first : Currently exploring Knight c6
+5941 <first : Current move: b8
+5941 <first : Score is: 3865
+5941 <first : Current move: e7
+5941 <first : Score is: 3910
+5941 <first : Current move: d4
+5941 <first : Score is: 3705
+5941 <first : Current move: b4
+5941 <first : Score is: 3910
+5941 <first : Current move: a5
+5941 <first : Score is: 3705
+5941 <first : Currently exploring Bishop c8
+5941 <first : Currently exploring Queen d8
+5941 <first : Current move: e7
+5941 <first : Score is: 3920
+5941 <first : Currently exploring King e8
+5941 <first : Current move: e7
+5941 <first : Score is: 3915
+5941 <first : Currently exploring Bishop f8
+5941 <first : Current move: e7
+5941 <first : Score is: 3895
+5941 <first : Current move: d6
+5941 <first : Score is: 3905
+5941 <first : Current move: c5
+5941 <first : Score is: 3690
+5941 <first : Current move: b4
+5941 <first : Score is: 3900
+5941 <first : Currently exploring Knight f6
+5941 <first : Current move: g8
+5941 <first : Score is: 3460
+5941 <first : Current move: h5
+5941 <first : Score is: 3440
+5941 <first : Current move: g4
+5941 <first : Score is: 3475
+5941 <first : Current move: e4
+5941 <first : Score is: 3490
+5941 <first : Current move: d5
+5941 <first : Score is: 3270
+5941 <first : Currently exploring Rook h8
+5941 <first : Current move: g8
+5941 <first : Score is: 3300
+5941 <first : Current move: f8
+5941 <first : Score is: 3300
+5941 <first : Currently exploring Pawn b7
+5941 <first : Current move: b6
+5941 <first : Score is: 3285
+5941 <first : Current move: b5
+5941 <first : Score is: 3190
+5941 <first : Currently exploring Pawn c7
+5941 <first : Currently exploring Pawn d7
+5941 <first : Current move: d6
+5941 <first : Score is: 3210
+5941 <first : Currently exploring Pawn e5
+5941 <first : Current move: e4
+5941 <first : Score is: 3215
+5942 <first : Current move: d4
+5942 <first : Score is: 3090
+5942 <first : Currently exploring Pawn f7
+5942 <first : Current move: f6
+5942 <first : Score is: 2980
+5942 <first : Current move: f5
+5942 <first : Score is: 2870
+5942 <first : Currently exploring Pawn h7
+5942 <first : Current move: h6
+5942 <first : Score is: 2870
+5942 <first : Current move: h5
+5942 <first : Score is: 2865
+5942 <first : Best move is: Queen d8 at e7
+5942 <first :    A B C D E F G H
+5942 <first : 1 |R| |B|Q|K|B| |R|
+5942 <first : 2 | | | | |P|P|P|P|
+5942 <first : 3 |N| | | | | | |N|
+5942 <first : 4 |P|b|P| | | | | |
+5942 <first : 5 | | | |n| | | |p|
+5942 <first : 6 | | |n|p| | | | |
+5942 <first : 7 | | |p| |q| | | |
+5942 <first : 8 |r| | | |k|r| | |
+5942 <first : 
+5942 <first : move d8e7
+7044 >first : time 30765
+7044 >first : otim 30567
+book hit = (NULL)
+7044 >first : e2e4
+7117 <first : Currently exploring Rook a8
+7117 <first : Current move: a7
+7117 <first : Score is: 1470
+7117 <first : Current move: a6
+7117 <first : Score is: 1470
+7117 <first : Current move: a5
+7117 <first : Score is: 1470
+7117 <first : Current move: a4
+7117 <first : Score is: 1710
+7117 <first : Current move: b8
+7117 <first : Score is: 1970
+7117 <first : Current move: c8
+7117 <first : Score is: 1470
+7117 <first : Current move: d8
+7117 <first : Score is: 1470
+7117 <first : Currently exploring Knight c6
+7117 <first : Current move: b8
+7117 <first : Score is: 1420
+7117 <first : Current move: e7
+7117 <first : Score is: 1140
+7117 <first : Current move: e5
+7117 <first : Score is: 1140
+7117 <first : Current move: d4
+7117 <first : Score is: 1140
+7117 <first : Current move: a5
+7117 <first : Score is: 1140
+7117 <first : Current move: a7
+7117 <first : Score is: 1140
+7117 <first : Currently exploring King e8
+7117 <first : Current move: d7
+7117 <first : Score is: 1140
+7117 <first : Current move: f7
+7117 <first : Score is: 1140
+7117 <first : Current move: e7
+7117 <first : Score is: 1140
+7117 <first : Currently exploring Bishop b4
+7117 <first : Current move: a5
+7117 <first : Score is: 1125
+7117 <first : Current move: c5
+7117 <first : Score is: 1145
+7117 <first : Current move: a3
+7117 <first : Score is: 1125
+7117 <first : Current move: c3
+7117 <first : Score is: 1140
+7117 <first : Current move: d2
+7117 <first : Score is: 1135
+7117 <first : Current move: e1
+7117 <first : Score is: 1125
+7117 <first : Currently exploring Knight d5
+7117 <first : Current move: e7
+7117 <first : Score is: 810
+7117 <first : Current move: f6
+7117 <first : Score is: 810
+7117 <first : Current move: f4
+7117 <first : Score is: 810
+7117 <first : Current move: e3
+7117 <first : Score is: 810
+7117 <first : Current move: c3
+7117 <first : Score is: 810
+7117 <first : Current move: b4
+7117 <first : Score is: 810
+7117 <first : Current move: b6
+7117 <first : Score is: 810
+7117 <first : Currently exploring Rook f8
+7117 <first : Current move: f7
+7117 <first : Score is: 810
+7117 <first : Current move: f6
+7117 <first : Score is: 310
+7117 <first : Current move: f5
+7117 <first : Score is: 310
+7117 <first : Current move: f4
+7117 <first : Score is: 310
+7117 <first : Current move: f3
+7117 <first : Score is: 635
+7117 <first : Current move: f2
+7117 <first : Score is: 635
+7117 <first : Current move: g8
+7117 <first : Score is: 810
+7117 <first : Current move: h8
+7117 <first : Score is: 310
+7117 <first : Current move: e8
+7117 <first : Score is: 310
+7117 <first : Currently exploring Pawn c7
+7117 <first : Current move: c6
+7117 <first : Score is: 290
+7117 <first : Current move: c5
+7117 <first : Score is: 300
+7117 <first : Currently exploring Pawn d6
+7117 <first : Current move: d5
+7117 <first : Score is: 320
+7117 <first : Currently exploring Pawn h5
+7117 <first : Current move: h4
+7117 <first : Score is: 325
+7117 <first : Best move is: Rook d8 at b8
+7117 <first :    A B C D E F G H
+7117 <first : 1 |R|B|B|Q|K| |N|R|
+7117 <first : 2 | | | |b| | |P|P|
+7117 <first : 3 |N| | | | | | | |
+7117 <first : 4 | | |P| |P| | |p|
+7117 <first : 5 | | |p|p| | | | |
+7117 <first : 6 | |n| | | | | | |
+7117 <first : 7 | | | | | | | | |
+7117 <first : 8 | |r| | |r| | | |
+7117 <first : 
+7117 <first : move d8b8
 GameEnds(29, xboard exit, 2)
-23848 >first : result * {xboard exit}
-23848 >first : force
-23848 >first : ping 2
-23848 >first : quit
+169960 >first : result * {xboard exit}
+169960 >first : force
+169960 >first : quit
