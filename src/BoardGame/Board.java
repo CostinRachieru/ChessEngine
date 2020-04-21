@@ -1,10 +1,7 @@
 
 package BoardGame;
 
-import ChessPieces.King;
-import ChessPieces.Piece;
-import ChessPieces.PieceFactory;
-import ChessPieces.Position;
+import ChessPieces.*;
 import Helper.Helper;
 
 import java.util.ArrayList;
@@ -17,9 +14,7 @@ public class Board {
     private Piece[][] board = new Piece[10][10];
     private ArrayList<Piece> whitePieces;
     private ArrayList<Piece> blackPieces;
-    private ArrayList<Boolean> wasCaptured = new ArrayList<Boolean>();
-    private ArrayList<Piece> whiteCapturedPieces = new ArrayList<Piece>();
-    private ArrayList<Piece> blackCapturedPieces = new ArrayList<Piece>();
+    private ArrayList<Piece> moveHistory;
 
     private static Board instance = null;
 
@@ -37,6 +32,7 @@ public class Board {
     public final void init() {
         whitePieces = new ArrayList<>();
         blackPieces = new ArrayList<>();
+        moveHistory = new ArrayList<>();
         PieceFactory pieceFactory = PieceFactory.getInstance();
         board[1][1] = pieceFactory.createPiece("Rook", 1, 1, "White");
         whitePieces.add(board[1][1]);
@@ -127,7 +123,7 @@ public class Board {
                 return false;
             }
         }
-        undoMove(piece);
+        undoMove();
         return true;
     }
 
@@ -147,18 +143,6 @@ public class Board {
             }
         }
         return pawns;
-    }
-
-    // TODO: improve capture with getPiece function
-    private void capture(Piece lostPiece) {
-        board[lostPiece.getLine()][lostPiece.getColumn()] = null;
-        if (lostPiece.getTeam().equals("White")) {
-            whitePieces.remove(lostPiece);
-            whiteCapturedPieces.add(lostPiece);
-        } else {
-            blackPieces.remove(lostPiece);
-            blackCapturedPieces.add(lostPiece);
-        }
     }
 
     /* Return 0 if it is not a castling move, a positive number if it is Kingside castling or a
@@ -181,61 +165,45 @@ public class Board {
     }
 
     public final void movePiece(Piece piece, Position newPos) {
-        int castlingType = isCastling(piece, newPos);
-        // Assumes that the castling move is valid.
-        if (castlingType != 0) {
-            // Move the king the board.
-            board[piece.getLine()][piece.getColumn()] = null;
-            board[newPos.getLine()][newPos.getColumn()] = piece;
-            // Moves the rook on the board.
-            if (castlingType < 0) {
-                Piece rook = getPiece(piece.getLine(), LEFT_COLUMN);
-                board[piece.getLine()][LEFT_COLUMN] = null;
-                board[piece.getLine()][newPos.getColumn() + 1] = rook;
-                rook.move(new Position(piece.getLine(), newPos.getColumn() + 1));
-            } else {
-                Piece rook = getPiece(piece.getLine(), RIGHT_COLUMN);
-                board[piece.getLine()][RIGHT_COLUMN] = null;
-                board[piece.getLine()][newPos.getColumn() - 1] = rook;
-                rook.move(new Position(piece.getLine(), newPos.getColumn() - 1));
-            }
-            piece.move(newPos);
-        } else {
-            if (!isEmpty(newPos.getLine(), newPos.getColumn())) {
-                Piece lostPiece = getPiece(newPos.getLine(), newPos.getColumn());
-                capture(lostPiece);
-                wasCaptured.add(true);
-            } else {
-                wasCaptured.add(false);
-            }
-            board[piece.getLine()][piece.getColumn()] = null;
-            board[newPos.getLine()][newPos.getColumn()] = piece;
-            piece.move(newPos);
+        PieceHistory pieceHistory = piece.createHistoy();
+        int newLine = newPos.getLine();
+        int newCol = newPos.getColumn();
+
+        if (!isEmpty(newLine, newCol)) {
+            Piece capturedPiece = getPiece(newLine, newCol);
+            pieceHistory.setHasCaptured(true);
+            pieceHistory.setCapturedPiece(capturedPiece);
+            capturedPiece.setAlive(false);
+        }
+
+        board[piece.getLine()][piece.getColumn()] = null;
+        board[newLine][newCol] = piece;
+        piece.move(newPos);
+        piece.addHistory(pieceHistory);
+
+        moveHistory.add(piece);
+    }
+
+    public final void undoMove() {
+        Piece piece = moveHistory.get(moveHistory.size() - 1);
+        moveHistory.remove(moveHistory.size() - 1);
+        PieceHistory pieceHistory = piece.getLastHistory();
+        int currentLine = piece.getLine();
+        int currentCol = piece.getColumn();
+        int prevLine = pieceHistory.getPrevLine();
+        int prevCol = pieceHistory.getPrevCol();
+
+        board[currentLine][currentCol] = null;
+        piece.restoreToLastState(pieceHistory);
+        board[prevLine][prevCol] = piece;
+
+        if (pieceHistory.hasCaptured()) {
+            Piece capturedPiece = pieceHistory.getCapturedPiece();
+            capturedPiece.setAlive(true);
+            board[currentLine][currentCol] = capturedPiece;
         }
     }
 
-    // Move piece back to the old position. Place back on the board any captured piece
-    public final void undoMove(Piece piece) {
-        Position oldPos = new Position(piece.getPrevLine(), piece.getPrevColumn());
-        Piece enemyPiece;
-
-        movePiece(piece, oldPos);
-        boolean restoreCapturedPiece = wasCaptured.get(wasCaptured.size() - 1);
-        wasCaptured.remove(wasCaptured.size() - 1);
-        if (restoreCapturedPiece) {
-            String enemyTeam = Helper.enemyTeam(piece.getTeam());
-            if (enemyTeam.equals("White")) {
-                enemyPiece = whiteCapturedPieces.get(whiteCapturedPieces.size() - 1);
-                whiteCapturedPieces.remove(whiteCapturedPieces.size() - 1);
-                whitePieces.add(enemyPiece);
-            } else {
-                enemyPiece = blackCapturedPieces.get(blackCapturedPieces.size() - 1);
-                blackCapturedPieces.remove(blackCapturedPieces.size() - 1);
-                blackPieces.add(enemyPiece);
-            }
-            board[enemyPiece.getLine()][enemyPiece.getColumn()] = enemyPiece;
-        }
-    }
 
     public final void moveEnemyPiece(String move) {
         Position prevPos = new Position(move.substring(0,2));
@@ -252,6 +220,7 @@ public class Board {
         }
     }
 
+    // DEBUG METHODS
     // print board for debugging
     public final void printBoard() {
         String res = "   A B C D E F G H\n";
@@ -293,20 +262,4 @@ public class Board {
             }
         }
     }
-
-//    public void setWhitePieces(ArrayList<Piece> whitePieces) {
-//        this.whitePieces = whitePieces;
-//    }
-//
-//    public void setBlackPieces(ArrayList<Piece> blackPieces) {
-//        this.blackPieces = blackPieces;
-//    }
-//
-//    public void setPieces(ArrayList<Piece> pieces, String team) {
-//        if (team.equals("White")) {
-//            setWhitePieces(pieces);
-//        } else {
-//            setBlackPieces(pieces);
-//        }
-//    }
 }

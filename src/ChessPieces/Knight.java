@@ -3,6 +3,7 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public final class Knight extends Piece {
 
@@ -12,6 +13,7 @@ public final class Knight extends Piece {
         team = color;
         type = "Knight";
         hadMoved = false;
+        history = new LinkedList<>();
     }
 
     public ArrayList<Position> getMoves() {

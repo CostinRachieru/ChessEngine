@@ -3,6 +3,7 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public final class Pawn extends Piece {
     public boolean movedTwo;
@@ -14,6 +15,7 @@ public final class Pawn extends Piece {
         type = "Pawn";
         movedTwo = false;
         hadMoved = false;
+        history = new LinkedList<>();
     }
 
     @Override
@@ -23,11 +25,9 @@ public final class Pawn extends Piece {
 
     @Override
     public final void move(Position newPos) {
-        prevLine = line;
-        prevColumn = column;
-        line = newPos.getLine();
-        column = newPos.getColumn();
-        if (Math.abs(prevColumn - column) == 2) {
+        int dist = Math.abs(newPos.getColumn() - this.column);
+        super.move(newPos);
+        if (dist == 2) {
             movedTwo = true;
         } else {
             movedTwo = false;

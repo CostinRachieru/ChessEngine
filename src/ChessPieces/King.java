@@ -3,6 +3,7 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import static Helper.Constants.LEFT_COLUMN;
 import static Helper.Constants.RIGHT_COLUMN;
@@ -16,6 +17,7 @@ public final class King extends Piece {
         team = color;
         type = "King";
         hadMoved = false;
+        history = new LinkedList<>();
     }
 
     public boolean canCastleKingSide() {
@@ -37,9 +39,7 @@ public final class King extends Piece {
                 // The rook never moved.
                 boolean allSquaresEmpty = true;
                 for (int i = column + 1; i < RIGHT_COLUMN; ++i) {
-                    System.out.println("verifica: " + i);
                     if (!board.isEmpty(line, i)) {
-                        System.out.println("!@#!@#!@#");
                         allSquaresEmpty = false;
                         break;
                     }
@@ -451,11 +451,11 @@ public final class King extends Piece {
         if (canCastleQueenSide()) {
             moves.add(new Position(line, column - 2));
         }
+
         // Castling Kingside
-        // TODO: uncomment
-//        if (canCastleKingSide()) {
-//            moves.add(new Position(line, column + 2));
-//        }
+        if (canCastleKingSide()) {
+            moves.add(new Position(line, column + 2));
+        }
 
         // Up - Left
         if (isOnBoard(line + 1, column - 1) && !isCheck(line + 1, column - 1)) {

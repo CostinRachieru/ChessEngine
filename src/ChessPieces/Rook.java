@@ -3,6 +3,7 @@ package ChessPieces;
 import BoardGame.Board;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public final class Rook extends Piece {
     boolean hadMoved;
@@ -13,6 +14,7 @@ public final class Rook extends Piece {
         team = color;
         type = "Rook";
         hadMoved = false;
+        history = new LinkedList<>();
     }
     public ArrayList<Position> getMoves() {
         Board board = Board.getInstance();
