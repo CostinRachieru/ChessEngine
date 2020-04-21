@@ -100,10 +100,6 @@ public abstract class Piece {
         return line > 0 && line < 9 && column > 0 && column < 9;
     }
 
-    public boolean isCheckMate() {
-        return false;
-    }
-
     public boolean movedTwoPawn() {
         return false;
     }

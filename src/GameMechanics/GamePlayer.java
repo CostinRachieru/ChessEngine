@@ -40,8 +40,6 @@ public class GamePlayer {
         // check every possible move and return the best of them
         for (int i = 0; i < pieces.size(); ++i) {
             Piece piece = pieces.get(i);
-            int kk = board.getMoveHistory().size();
-            System.out.print (board.getMoveHistory().size() + " - ");
             if (piece.isAlive()) {
                 ArrayList<Position> possibleMoves = piece.getMoves();
                 for (Position nextPosition : possibleMoves) {
@@ -56,13 +54,6 @@ public class GamePlayer {
                     }
                 }
             }
-            System.out.print (board.getMoveHistory().size() + " - ");
-            int k = board.getMoveHistory().size();
-            while (k > kk) {
-                board.undoMove();
-                k = board.getMoveHistory().size();
-            }
-            System.out.println(board.getMoveHistory().size());
         }
 
         if (bestPiece != null) {
@@ -77,7 +68,6 @@ public class GamePlayer {
     }
 
     public int minimax(int depth, boolean isMaximizing, String currentTeam) {
-        // System.out.print("DEPTH: " + depth + " ");  // TODO: debug
         Evaluator evaluator = Evaluator.getInstance();
         int bestScore, score;
         ArrayList<Piece> pieces = board.getPieces(team);
@@ -106,14 +96,8 @@ public class GamePlayer {
                 Piece piece = pieces.get(i);
                 if (piece.isAlive()) {
                     ArrayList<Position> possibleMoves = piece.getMoves();
-//                    for (Position nextPos : possibleMoves) {
-                    for (int k = 0; k < possibleMoves.size(); ++k) {
-                        Position nextPos = possibleMoves.get(k);
+                    for (Position nextPos : possibleMoves) {
                         if (!piece.isOnBoard(nextPos.getLine(), nextPos.getColumn())) {
-                            System.out.println("!@#!@#!@#!@#!@#");
-                            System.out.println(piece.toString());
-                            System.out.println(nextPos.toString());
-                            System.out.println(possibleMoves.size());
                             continue;
                         }
                         board.movePiece(piece, nextPos);

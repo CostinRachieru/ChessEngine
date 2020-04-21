@@ -62,6 +62,21 @@ public final class King extends Piece {
         return false;
     }
 
+    public final boolean isCheckMate() {
+        Board board = Board.getInstance();
+        if (isCheck(line, column)) {
+            for (Piece piece : board.getPieces(team)) {
+                if (piece.isAlive) {
+                    if (piece.getMoves().size() > 0) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
     public boolean canCastleQueenSide() {
         Integer rookLine = line;
         Integer rookColumn = LEFT_COLUMN;
