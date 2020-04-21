@@ -123,6 +123,7 @@ public class Board {
         King king = getKing(piece.getTeam());
         if (king != null) {
             if (king.isCheck(king.getLine(), king.getColumn())) {
+                undoMove();
                 return false;
             }
         }
